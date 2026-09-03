@@ -101,6 +101,13 @@ function searchStops(q, limit = 8) {
   if (!raw) return [];
   const key = fold(raw);
   if (!key) return [];
+
+  // নামের মাঝখানে খোঁজা তখনই, যখন টুকরাটা যথেষ্ট বড়। "zzzqqq" ভাঁজ হয়ে
+  // দাঁড়ায় মাত্র "jk", আর সেটা "জাতীয় চিড়িয়াখানা"-র ভেতরে কাকতালীয়ভাবে
+  // পাওয়া যায় — এত ছোট টুকরায় যা খুশি মিলে যায়। সংখ্যা অবশ্য ছোট হলেও
+  // অর্থবহ ("১০" লিখে মিরপুর ১০ খোঁজা স্বাভাবিক), তাই তাকে ছাড় দিই।
+  const midKey = key.length >= 3 || /^\d+$/.test(key);
+  const midRaw = raw.length >= 3;
   const solid = [];
 
   for (let i = 0; i < STOPS.length; i++) {
@@ -108,7 +115,8 @@ function searchStops(q, limit = 8) {
     for (const k of STOPS[i].keys) {
       if (k === key || k === raw) { score = 0; break; }
       if (k.startsWith(key) || k.startsWith(raw)) score = Math.min(score, 1);
-      else if (k.includes(key) || k.includes(raw)) score = Math.min(score, 2);
+      else if ((midKey && k.includes(key)) || (midRaw && k.includes(raw)))
+        score = Math.min(score, 2);
     }
     if (score < 99) solid.push({ id: i, score, n: STOP_ROUTES[i].length });
   }
@@ -321,7 +329,7 @@ let linesPromise = null;
 
 function loadLines() {
   if (!linesPromise) {
-    linesPromise = fetch("data/lines.json?v=8")
+    linesPromise = fetch("data/lines.json?v=12")
       .then((r) => r.json())
       .then((v) => { LINES = v; return v; })
       .catch((e) => { console.warn("ম্যাপের লাইন আনা গেল না:", e); return null; });
@@ -428,11 +436,18 @@ const STATE_LOOK = {
 function statusPill(r) {
   if (!window.Community) return "";
   const s = Community.statusOf(r.k);
+  const star = s.ratingCount
+    ? ` <span class="st-star">★ ${toBn(s.rating.toFixed(1))}</span>` : "";
+
+  // চলে কি না কেউ বলেনি, কিন্তু রেটিং বা মন্তব্য আছে — তখন "কেউ এখনো
+  // জানায়নি" বলা ভুল হয়, কারণ মানুষ মত তো দিয়েছেন
+  if (s.state === "unknown" && s.ratingCount) {
+    return `<span class="st st-mix">💬 ${toBn(s.ratingCount)} জনের মত আছে</span>${star}`;
+  }
+
   const look = STATE_LOOK[s.state];
   const who = s.state === "unknown" ? "" :
     ` <span class="st-n">${toBn(s.state === "no" ? s.no : s.runs)} জন</span>`;
-  const star = s.ratingCount
-    ? ` <span class="st-star">★ ${toBn(s.rating.toFixed(1))}</span>` : "";
   return `<span class="st ${look.cls}">${look.icon} ${look.word}${who}</span>${star}`;
 }
 
@@ -871,16 +886,22 @@ async function openVote(ri) {
   const mine = Community.myVoteOf(r.k) || {};
   voteDraft = { vote: mine.v || null, rating: mine.rating || 0 };
 
+  const already = !!(mine.v || mine.rating || mine.text);
   $("#voteTitle").textContent = r.bn;
   const s = Community.statusOf(r.k);
-  $("#voteSub").textContent = s.total
-    ? `এ পর্যন্ত ${toBn(s.total)} জন জানিয়েছেন — ${toBn(s.runs)} জন বলেছেন চলে, ${toBn(s.no)} জন বলেছেন চলে না`
-    : "এই বাস নিয়ে এখনো কেউ কিছু জানাননি — আপনিই প্রথম";
+  $("#voteSub").textContent = already
+    ? "আপনি আগে জানিয়েছেন — চাইলে বদলে দিতে পারেন"
+    : s.total
+      ? `এ পর্যন্ত ${toBn(s.total)} জন জানিয়েছেন — ${toBn(s.runs)} জন বলেছেন চলে, ${toBn(s.no)} জন বলেছেন চলে না`
+      : "এই বাস নিয়ে এখনো কেউ কিছু জানাননি — আপনিই প্রথম";
   $("#voteText").value = mine.text || "";
   $("#voteName").value = mine.name || "";
   $("#textCount").textContent = toBn((mine.text || "").length);
   $("#voteMsg").textContent = "";
   $("#voteMsg").className = "vote-msg";
+  // গতবার জমা দেওয়ার পর বোতামটা "জমা হয়েছে ✓" হয়ে বন্ধ ছিল, ফিরিয়ে আনি
+  $("#voteSubmit").disabled = false;
+  $("#voteSubmit").textContent = already ? "বদলে দিন" : "জমা দিন";
   paintVoteForm();
 
   $("#reviewList").innerHTML = `<p class="rv-loading">অন্যদের মত আসছে…</p>`;
@@ -889,6 +910,10 @@ async function openVote(ri) {
 
   try {
     const rows = await Community.reviewsOf(r.k);
+    // সার্ভারে যা আছে সেটাই আসল। ব্রাউজারে জমানো কপি বাসি হতে পারে —
+    // অন্য ডিভাইসে মত বদলানো হয়েছে, বা ডেটা মুছে গেছে। জানালা খোলাই
+    // আছে কিনা দেখে নিই, নইলে ব্যবহারকারীর টাইপ করা লেখা মুছে যাবে।
+    if (voteFor === r) syncFormFromServer(rows);
     renderReviews(rows);
   } catch (e) {
     $("#reviewList").innerHTML =
@@ -896,16 +921,49 @@ async function openVote(ri) {
   }
 }
 
+/* সার্ভারের নিজের মত দিয়ে ফর্মটা ঠিক করে নিই */
+function syncFormFromServer(rows) {
+  const mine = rows.find((x) => x.mine);
+  const draftTouched = $("#voteText").value.trim() || voteDraft.vote || voteDraft.rating;
+
+  if (!mine) {
+    // ব্রাউজার বলছে মত দিয়েছি, সার্ভার বলছে দেইনি — সার্ভারই ঠিক
+    if (!draftTouched) {
+      voteDraft = { vote: null, rating: 0 };
+      $("#voteText").value = "";
+      $("#voteName").value = "";
+      $("#textCount").textContent = toBn(0);
+      $("#voteSub").textContent = "এই বাস নিয়ে এখনো কেউ কিছু জানাননি — আপনিই প্রথম";
+      $("#voteSubmit").textContent = "জমা দিন";
+      paintVoteForm();
+    }
+    return;
+  }
+  // এখনো কিছু টাইপ করেননি — সার্ভারের লেখাটাই বসিয়ে দিই
+  if (!draftTouched) {
+    voteDraft = { vote: mine.v || null, rating: mine.rating || 0 };
+    $("#voteText").value = mine.text || "";
+    $("#voteName").value = mine.name || "";
+    $("#textCount").textContent = toBn((mine.text || "").length);
+    $("#voteSub").textContent = "আপনি আগে জানিয়েছেন — চাইলে বদলে দিতে পারেন";
+    $("#voteSubmit").textContent = "বদলে দিন";
+    paintVoteForm();
+  }
+}
+
 function renderReviews(rows) {
   const withText = rows.filter((x) => (x.text || "").trim());
   if (!withText.length) {
     $("#reviewList").innerHTML =
-      `<div class="rv-head">অন্যরা কী বলছেন</div>
+      `<div class="rv-head">যাত্রীরা কী বলছেন</div>
        <p class="rv-loading">এখনো কেউ কিছু লেখেননি।</p>`;
     return;
   }
+  // শুধু নিজের লেখাটাই থাকলে "অন্যরা" বলা ভুল হয়
+  const onlyMine = withText.every((x) => x.mine);
   $("#reviewList").innerHTML =
-    `<div class="rv-head">অন্যরা কী বলছেন <span>${toBn(withText.length)}টি</span></div>` +
+    `<div class="rv-head">${onlyMine ? "আপনার লেখা" : "যাত্রীরা কী বলছেন"}` +
+    ` <span>${toBn(withText.length)}টি</span></div>` +
     withText.map((x) => {
       const when = x.at && x.at.toMillis ? timeAgo(x.at.toMillis()) : "";
       const stars = x.rating ? "★".repeat(x.rating) + "☆".repeat(5 - x.rating) : "";
@@ -952,13 +1010,19 @@ async function saveVote() {
     });
     msg.textContent = "ধন্যবাদ! আপনার মত সবাই দেখতে পাবে।";
     msg.className = "vote-msg good";
-    renderReviews(await Community.reviewsOf(voteFor.k));
+    btn.textContent = "জমা হয়েছে ✓";
+    // জমা হয়ে গেলে জানালাটা নিজেই বন্ধ হয়ে যাক। লেখাটা বক্সে পড়ে থাকলে
+    // মনে হয় জমা হয়নি, আর নিচের তালিকায় একই লেখা দেখে দ্বিগুণ মনে হয়।
+    // মতটা হারায় না — আবার খুললে আগের লেখাই ফিরে আসে, বদলানোও যায়।
+    setTimeout(() => { if (voteFor) closeVote(); }, 1100);
   } catch (e) {
-    msg.textContent = "জমা দেওয়া গেল না — ইন্টারনেট দেখে আবার চেষ্টা করুন। " + e.message;
+    // ইংরেজি টেকনিক্যাল বার্তা ব্যবহারকারীকে দেখিয়ে লাভ নেই, কনসোলে থাক
+    console.warn("মত জমা দেওয়া গেল না:", e);
+    msg.textContent = "জমা দেওয়া গেল না। ইন্টারনেট দেখে আবার চেষ্টা করুন — "
+      + "আপনার লেখা মুছে যায়নি।";
     msg.className = "vote-msg bad";
-  } finally {
     btn.disabled = false;
-    btn.textContent = "জমা দিন";
+    btn.textContent = "আবার চেষ্টা করুন";
   }
 }
 
@@ -1017,7 +1081,7 @@ async function renderReports() {
 /* ──────────────────────── চালু করা ──────────────────────── */
 
 async function boot() {
-  const res = await fetch("data/data.json?v=8");
+  const res = await fetch("data/data.json?v=12");
   DATA = await res.json();
   STOPS = DATA.stops;
   ROUTES = DATA.routes;
@@ -1151,8 +1215,10 @@ async function boot() {
   $("#voteBtns").addEventListener("click", (e) => {
     const b = e.target.closest(".vbtn");
     if (!b) return;
-    // একই বোতামে আবার চাপলে ভোট তুলে নেওয়া
-    voteDraft.vote = voteDraft.vote === b.dataset.v ? null : b.dataset.v;
+    // বাছাই করা বোতামে আবার চাপলে ভোট মুছে যাবে না — কেউ নিশ্চিত করতে
+    // গিয়ে দুইবার চাপলেই মত হারিয়ে যেত। মন বদলালে অন্য বোতামে চাপবেন,
+    // নিশ্চিত না হলে "জানি না" আছে।
+    voteDraft.vote = b.dataset.v;
     paintVoteForm();
   });
   $("#starRow").addEventListener("click", (e) => {
