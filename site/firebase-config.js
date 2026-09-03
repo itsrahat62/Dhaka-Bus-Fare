@@ -15,12 +15,12 @@
    খালি রাখলে সাইট চলবে, শুধু ভোট-রিভিউর অংশটা বন্ধ থাকবে। */
 
 window.FIREBASE_CONFIG = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: "",
+  apiKey: "AIzaSyAQQ6_H5X8Sq5-VgPNoPRh1drhM82vu6Rc",
+  authDomain: "varakoto-51f66.firebaseapp.com",
+  projectId: "varakoto-51f66",
+  storageBucket: "varakoto-51f66.firebasestorage.app",
+  messagingSenderId: "614306119923",
+  appId: "1:614306119923:web:f3dec10de0a72a7c887786",
 };
 
 /* লোকাল এমুলেটরে যাচাই: ঠিকানার শেষে ?emulator=1 জুড়ে দিলে আসল
