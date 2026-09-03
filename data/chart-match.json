@@ -1,0 +1,479 @@
+{
+ "Achim Paribahan": {
+  "page": "p3-26",
+  "no": "এ-২৭৩",
+  "from": "গাবতলী",
+  "to": "রামপুরা",
+  "a": "Gabtoli",
+  "b": "Rampura Bridge",
+  "km": null
+ },
+ "Alif": {
+  "page": "p2-22",
+  "no": "এ-৩৩৩",
+  "from": "মিরপুর-১৪",
+  "to": "নন্দন পার্ক",
+  "a": "Mirpur 14",
+  "b": "Nandan Park",
+  "km": 39.8
+ },
+ "Anabil Super": {
+  "page": "p3-07",
+  "no": "এ-২২৫",
+  "from": "সায়েদাবাদ",
+  "to": "গাজীপুর",
+  "a": "Sayedabad",
+  "b": "Gazipur Bypass",
+  "km": 42.0
+ },
+ "Arnob": {
+  "page": "p2-13",
+  "no": "এ-৩১৪",
+  "from": "হেমায়েতপুর",
+  "to": "ডেমরা স্টাফ কোয়ার্টার",
+  "a": "Hemayetpur",
+  "b": "Demra Staff Quarter",
+  "km": 38.8
+ },
+ "Asmani": {
+  "page": "p5-01",
+  "no": "এ-৩৬২",
+  "from": "ধউর",
+  "to": "মদনপুর",
+  "a": "Dhour",
+  "b": "Madanpur",
+  "km": 38.5
+ },
+ "Bahon": {
+  "page": "p4-11",
+  "no": "এ-১২৯",
+  "from": "মিরপুর-১৪",
+  "to": "খিলগাঁও তালতলা",
+  "a": "Mirpur 14",
+  "b": "Khilgaon",
+  "km": 25.7
+ },
+ "Balaka": {
+  "page": "p3-07",
+  "no": "এ-২২৫",
+  "from": "সায়েদাবাদ",
+  "to": "গাজীপুর",
+  "a": "Sayedabad",
+  "b": "Gazipur Bypass",
+  "km": 42.0
+ },
+ "Best Satabdi AC": {
+  "page": "p2-27",
+  "no": "এ-৩৫৫",
+  "from": "কুড়িল বিশ্বরোড",
+  "to": "আজিমপুর",
+  "a": "Kuril Bishwa Road",
+  "b": "Azimpur",
+  "km": 17.5
+ },
+ "Bihanga": {
+  "page": "p4-02",
+  "no": "এ-১০২",
+  "from": "পল্লবী",
+  "to": "সদরঘাট",
+  "a": "Pallabi",
+  "b": "Sadarghat",
+  "km": null
+ },
+ "Bikalpa Bus Auto Service": {
+  "page": "p5-27",
+  "no": "এ-৪৫৮",
+  "from": "মিরপুর-১২",
+  "to": "মতিঝিল",
+  "a": "Mirpur 12",
+  "b": "Motijheel",
+  "km": 15.3
+ },
+ "Bikash": {
+  "page": "p2-27",
+  "no": "এ-৩৫৫",
+  "from": "কুড়িল বিশ্বরোড",
+  "to": "আজিমপুর",
+  "a": "Kuril Bishwa Road",
+  "b": "Azimpur",
+  "km": 17.5
+ },
+ "Bikash Paribahan": {
+  "page": "p2-27",
+  "no": "এ-৩৫৫",
+  "from": "কুড়িল বিশ্বরোড",
+  "to": "আজিমপুর",
+  "a": "Kuril Bishwa Road",
+  "b": "Azimpur",
+  "km": 17.5
+ },
+ "BRTC": {
+  "page": "p5-19",
+  "no": "এ-৪২৯",
+  "from": "সাভার",
+  "to": "সাইনবোর্ড",
+  "a": "Savar",
+  "b": "Sign Board",
+  "km": 34.0
+ },
+ "BRTC#9": {
+  "page": "p3-25",
+  "no": "এ-২৭১",
+  "from": "গাবতলী",
+  "to": "গাজীপুর",
+  "a": "Gabtoli",
+  "b": "Gazipur Bypass",
+  "km": 36.7
+ },
+ "City Link": {
+  "page": "p2-19",
+  "no": "এ-৩২৯",
+  "from": "বসিলা",
+  "to": "সাইনবোর্ড",
+  "a": "Bosila",
+  "b": "Sign Board",
+  "km": null
+ },
+ "D Link": {
+  "page": "p3-20",
+  "no": "এ-২৬০",
+  "from": "ফুলবাড়ীয়া পঙ্গু হাসপাতাল",
+  "to": "ধামরাই",
+  "a": "Fulbaria",
+  "b": "Dhamrai",
+  "km": 42.0
+ },
+ "Dewan": {
+  "page": "p2-27",
+  "no": "এ-৩৫৫",
+  "from": "কুড়িল বিশ্বরোড",
+  "to": "আজিমপুর",
+  "a": "Kuril Bishwa Road",
+  "b": "Azimpur",
+  "km": 17.5
+ },
+ "Dip Paribahan": {
+  "page": "p2-27",
+  "no": "এ-৩৫৫",
+  "from": "কুড়িল বিশ্বরোড",
+  "to": "আজিমপুর",
+  "a": "Kuril Bishwa Road",
+  "b": "Azimpur",
+  "km": 17.5
+ },
+ "Dishari": {
+  "page": "p2-01",
+  "no": "এ-২৮৫",
+  "from": "চিড়িয়াখানা",
+  "to": "কেরানীগঞ্জ (নতুন জেলখানা)",
+  "a": "Chiriyakhana",
+  "b": "Keraniganj",
+  "km": 21.0
+ },
+ "Green Anabil": {
+  "page": "p3-07",
+  "no": "এ-২২৫",
+  "from": "সায়েদাবাদ",
+  "to": "গাজীপুর",
+  "a": "Sayedabad",
+  "b": "Gazipur Bypass",
+  "km": 42.0
+ },
+ "Hazi Transport": {
+  "page": "p5-27",
+  "no": "এ-৪৫৮",
+  "from": "মিরপুর-১২",
+  "to": "মতিঝিল",
+  "a": "Mirpur 12",
+  "b": "Motijheel",
+  "km": 15.3
+ },
+ "Itihash": {
+  "page": "p4-25",
+  "no": "এ-১৮২",
+  "from": "মিরপুর-১৪",
+  "to": "চন্দ্রা",
+  "a": "Mirpur 14",
+  "b": "Chandra",
+  "km": 42.5
+ },
+ "Labbayek": {
+  "page": "p5-19",
+  "no": "এ-৪২৯",
+  "from": "সাভার",
+  "to": "সাইনবোর্ড",
+  "a": "Savar",
+  "b": "Sign Board",
+  "km": 34.0
+ },
+ "Lams Paribahan": {
+  "page": "p5-27",
+  "no": "এ-৪৫৮",
+  "from": "মিরপুর-১২",
+  "to": "মতিঝিল",
+  "a": "Mirpur 12",
+  "b": "Motijheel",
+  "km": 15.3
+ },
+ "Meghla Transport": {
+  "page": "p3-15",
+  "no": "এ-২৫২",
+  "from": "ভুলতা",
+  "to": "সায়েন্সল্যাব",
+  "a": "Vulta",
+  "b": "Science Lab",
+  "km": null
+ },
+ "Mirpur Link": {
+  "page": "p4-09",
+  "no": "এ-১২২",
+  "from": "মিরপুর-১২ (ইসিবি চত্বর)",
+  "to": "আজিমপুর",
+  "a": "ECB Square",
+  "b": "Azimpur",
+  "km": 22.0
+ },
+ "Mirpur United Service": {
+  "page": "p4-02",
+  "no": "এ-১০২",
+  "from": "পল্লবী",
+  "to": "সদরঘাট",
+  "a": "Pallabi",
+  "b": "Sadarghat",
+  "km": null
+ },
+ "MM Lovely": {
+  "page": "p5-19",
+  "no": "এ-৪২৯",
+  "from": "সাভার",
+  "to": "সাইনবোর্ড",
+  "a": "Savar",
+  "b": "Sign Board",
+  "km": 34.0
+ },
+ "Mohona": {
+  "page": "p5-17",
+  "no": "এ-৪২২",
+  "from": "কামরাঙ্গীরচর (বেড়ীবাঁধ)",
+  "to": "কোনাবাড়ী",
+  "a": "Beribadh",
+  "b": "Konabari",
+  "km": null
+ },
+ "Moumita": {
+  "page": "p2-21",
+  "no": "এ-৩৩১",
+  "from": "নন্দন পার্ক",
+  "to": "সাইনবোর্ড",
+  "a": "Nandan Park",
+  "b": "Sign Board",
+  "km": null
+ },
+ "Nilachol Dhaka": {
+  "page": "p5-16",
+  "no": "এ-৪২১",
+  "from": "সাইনবোর্ড",
+  "to": "নবীনগর",
+  "a": "Sign Board",
+  "b": "Nobinagar",
+  "km": null
+ },
+ "Paristhan": {
+  "page": "p4-22",
+  "no": "এ-১৬৬",
+  "from": "মোহাম্মদপুর (বাস স্ট্যান্ড)",
+  "to": "উত্তরা হাউজ বিল্ডিং",
+  "a": "Mohammadpur",
+  "b": "House Building",
+  "km": 20.5
+ },
+ "Projapati": {
+  "page": "p3-24",
+  "no": "এ-২৭০",
+  "from": "বসিলা",
+  "to": "কামারপাড়া",
+  "a": "Bosila",
+  "b": "Kamarpara",
+  "km": 29.2
+ },
+ "Provati Banasree": {
+  "page": "p3-03",
+  "no": "এ-২২০",
+  "from": "ফুলবাড়িয়া",
+  "to": "শ্রীপুর বর্মী",
+  "a": "Fulbaria",
+  "b": "Sreepur",
+  "km": null
+ },
+ "Purbachol Logistics and Transport": {
+  "page": "p4-25",
+  "no": "এ-১৮২",
+  "from": "মিরপুর-১৪",
+  "to": "চন্দ্রা",
+  "a": "Mirpur 14",
+  "b": "Chandra",
+  "km": 42.5
+ },
+ "Raida Dhaka": {
+  "page": "p2-14",
+  "no": "এ-৩১৭",
+  "from": "দিয়াবাড়ী",
+  "to": "পোস্তগোলা",
+  "a": "Diabari",
+  "b": "Postagola",
+  "km": 27.3
+ },
+ "Rajdhani Super Dhaka": {
+  "page": "p2-13",
+  "no": "এ-৩১৪",
+  "from": "হেমায়েতপুর",
+  "to": "ডেমরা স্টাফ কোয়ার্টার",
+  "a": "Hemayetpur",
+  "b": "Demra Staff Quarter",
+  "km": 38.8
+ },
+ "Ramjan Dhaka": {
+  "page": "p3-26",
+  "no": "এ-২৭৩",
+  "from": "গাবতলী",
+  "to": "রামপুরা",
+  "a": "Gabtoli",
+  "b": "Rampura Bridge",
+  "km": null
+ },
+ "Robrob Dhaka": {
+  "page": "p3-26",
+  "no": "এ-২৭৩",
+  "from": "গাবতলী",
+  "to": "রামপুরা",
+  "a": "Gabtoli",
+  "b": "Rampura Bridge",
+  "km": null
+ },
+ "Salsabil": {
+  "page": "p3-07",
+  "no": "এ-২২৫",
+  "from": "সায়েদাবাদ",
+  "to": "গাজীপুর",
+  "a": "Sayedabad",
+  "b": "Gazipur Bypass",
+  "km": 42.0
+ },
+ "Savar Paribahan": {
+  "page": "p5-23",
+  "no": "এ-৪৩৬",
+  "from": "সদরঘাট ভিক্টোরিয়া পার্ক",
+  "to": "বাইপাইল",
+  "a": "Sadarghat",
+  "b": "Baipayl",
+  "km": null
+ },
+ "Shadhin": {
+  "page": "p5-07",
+  "no": "এ-৩৭৮",
+  "from": "ডেমরা স্টাফ কোয়ার্টার",
+  "to": "বসিলা",
+  "a": "Demra Staff Quarter",
+  "b": "Bosila",
+  "km": 23.5
+ },
+ "Shadhin Express": {
+  "page": "p2-05",
+  "no": "এ-২৯৫",
+  "from": "মিরপুর-১২",
+  "to": "মাওয়া",
+  "a": "Mirpur 12",
+  "b": "Maowa",
+  "km": 53.0
+ },
+ "Suveccha": {
+  "page": "p2-21",
+  "no": "এ-৩৩১",
+  "from": "নন্দন পার্ক",
+  "to": "সাইনবোর্ড",
+  "a": "Nandan Park",
+  "b": "Sign Board",
+  "km": null
+ },
+ "Siam Transport": {
+  "page": "p5-02",
+  "no": "এ-৩৬৫",
+  "from": "নবীনগর",
+  "to": "ধউর",
+  "a": "Nobinagar",
+  "b": "Dhour",
+  "km": null
+ },
+ "Talukdar": {
+  "page": "p2-16",
+  "no": "এ-৩২০",
+  "from": "চিড়িয়াখানা",
+  "to": "যাত্রাবাড়ী",
+  "a": "Chiriyakhana",
+  "b": "Jatrabari",
+  "km": null
+ },
+ "Tanjil Paribahan": {
+  "page": "p4-12",
+  "no": "এ-১৩১",
+  "from": "মিরপুর চিড়িয়াখানা",
+  "to": "সদরঘাট",
+  "a": "Chiriyakhana",
+  "b": "Sadarghat",
+  "km": 16.0
+ },
+ "Thikana": {
+  "page": "p2-21",
+  "no": "এ-৩৩১",
+  "from": "নন্দন পার্ক",
+  "to": "সাইনবোর্ড",
+  "a": "Nandan Park",
+  "b": "Sign Board",
+  "km": null
+ },
+ "Thikana Express": {
+  "page": "p2-26",
+  "no": "এ-৩৫৪",
+  "from": "আজিমপুর",
+  "to": "নন্দনপার্ক",
+  "a": "Azimpur",
+  "b": "Nandan Park",
+  "km": null
+ },
+ "Transilva": {
+  "page": "p4-07",
+  "no": "এ-১১৫",
+  "from": "মিরপুর-১ (বৈশাখী সুপার মার্কেট)",
+  "to": "যাত্রাবাড়ী",
+  "a": "Mirpur 1",
+  "b": "Jatrabari",
+  "km": 17.6
+ },
+ "Trust Transport Services#3": {
+  "page": "p3-28",
+  "no": "এ-২৮০",
+  "from": "মিরপুর ডিওএইচএস",
+  "to": "মতিঝিল",
+  "a": "Mirpur DOHS",
+  "b": "Motijheel",
+  "km": 18.9
+ },
+ "VIP 27": {
+  "page": "p2-27",
+  "no": "এ-৩৫৫",
+  "from": "কুড়িল বিশ্বরোড",
+  "to": "আজিমপুর",
+  "a": "Kuril Bishwa Road",
+  "b": "Azimpur",
+  "km": 17.5
+ },
+ "Winner": {
+  "page": "p2-27",
+  "no": "এ-৩৫৫",
+  "from": "কুড়িল বিশ্বরোড",
+  "to": "আজিমপুর",
+  "a": "Kuril Bishwa Road",
+  "b": "Azimpur",
+  "km": 17.5
+ }
+}

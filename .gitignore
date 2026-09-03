@@ -1,0 +1,19 @@
+# পাইথন
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# বিআরটিএ-র মূল PDF — ভারী, দরকার হলে brta.gov.bd থেকে নামানো যায়।
+# এগুলো থেকে বানানো ছবি site/charts/-এ আছে, সেগুলোই সাইটে লাগে।
+data/brta/*.pdf
+
+# শিরোনামের শিট — শুধু চার্টের তালিকা বানানোর সময় লেগেছিল
+data/headers/
+
+# এডিটর
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db

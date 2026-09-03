@@ -1,0 +1,2196 @@
+{
+ "300 Feet": {
+  "lat": 23.7806085,
+  "lon": 90.3683729,
+  "bn": "",
+  "osm_name": "60 Feet Road",
+  "type": "highway/tertiary",
+  "display": "60 Feet Road, আমতলা, পশ্চিম আগারগাঁও, শ্যামলী, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1916, বাংলাদেশ",
+  "query": "300 Feet, Dhaka, Bangladesh"
+ },
+ "Abdullahpur": {
+  "lat": 23.8806844,
+  "lon": 90.401847,
+  "bn": "আব্দুল্লাহপুর",
+  "osm_name": "আব্দুল্লাহপুর",
+  "type": "place/quarter",
+  "display": "আব্দুল্লাহপুর, ফায়দাবাদ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1276, বাংলাদেশ",
+  "query": "Abdullahpur, Uttara, Dhaka"
+ },
+ "Adabor": {
+  "lat": 23.7737569,
+  "lon": 90.3574328,
+  "bn": "",
+  "osm_name": "Adabor Main Road",
+  "type": "highway/residential",
+  "display": "Adabor Main Road, বিজলি মহল্লা, জহুরী মহল্লা, শ্যামলী, মোহাম্মদপুর, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1207, বাংলাদেশ",
+  "query": "Adabor, Dhaka, Bangladesh"
+ },
+ "Adamjee College": {
+  "lat": 23.7944687,
+  "lon": 90.3941234,
+  "bn": "",
+  "osm_name": "Adamjee Cantonment College",
+  "type": "amenity/college",
+  "display": "Adamjee Cantonment College, শহীদ মইনুল রোড, সেনাপল্লী, কচুক্ষেত, ইব্রাহিমপুর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 2467, বাংলাদেশ",
+  "query": "Adamjee College, Dhaka, Bangladesh"
+ },
+ "Agargaon": {
+  "lat": 23.781597,
+  "lon": 90.3762317,
+  "bn": "আগারগাঁও",
+  "osm_name": "আগারগাঁও",
+  "type": "place/suburb",
+  "display": "আগারগাঁও, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1916, বাংলাদেশ",
+  "query": "Agargaon, Dhaka, Bangladesh"
+ },
+ "Airport": {
+  "lat": 23.7839727,
+  "lon": 90.3991227,
+  "bn": "",
+  "osm_name": "Digital Marketing Hub-Best Marketing Solution Ajency in Bangladesh",
+  "type": "amenity/marketplace",
+  "display": "Digital Marketing Hub-Best Marketing Solution Ajency in Bangladesh, নতুন বিমানবন্দর সড়ক, চেয়ারম্যান বাড়ি, আরজতপাড়া, মহাখালী, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 2467, বাংলাদেশ",
+  "query": "Airport, Dhaka, Bangladesh"
+ },
+ "Amin Bazar": {
+  "lat": 23.7981904,
+  "lon": 90.3379349,
+  "bn": "",
+  "osm_name": "Al Amin Verities Store",
+  "type": "shop/variety_store",
+  "display": "Al Amin Verities Store, N501, জাহানাবাদ, ছোট দিয়াবাড়ী, বিশিল, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1916, বাংলাদেশ",
+  "query": "Amin Bazar, Dhaka, Bangladesh"
+ },
+ "Ansar Camp": {
+  "lat": 23.7910955,
+  "lon": 90.353924,
+  "bn": "আনসার ক্যাম্প",
+  "osm_name": "আনসার ক্যাম্প",
+  "type": "highway/bus_stop",
+  "display": "আনসার ক্যাম্প, Ansar Camp Road, স্টাফ কোয়ার্টার, মধ্য পাইকপাড়া, পাইকপাড়া, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1916, বাংলাদেশ",
+  "query": "Ansar Camp, Dhaka, Bangladesh"
+ },
+ "Arambagh": {
+  "lat": 23.7308424,
+  "lon": 90.4212047,
+  "bn": "",
+  "osm_name": "Arambagh Bus stop",
+  "type": "highway/bus_stop",
+  "display": "Arambagh Bus stop, আউটার সার্কুলার রোড, ব্যাংক কলোনী, আরামবাগ, মতিঝিল, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1203, বাংলাদেশ",
+  "query": "Arambagh, Dhaka, Bangladesh"
+ },
+ "Arambagh Kingdom": {
+  "lat": 23.7309015,
+  "lon": 90.4215656,
+  "bn": "",
+  "osm_name": "Arambagh Bus stop",
+  "type": "highway/bus_stop",
+  "display": "Arambagh Bus stop, আউটার সার্কুলার রোড, ব্যাংক কলোনী, আরামবাগ, মতিঝিল, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1203, বাংলাদেশ",
+  "query": "Arambagh, Motijheel, Dhaka"
+ },
+ "Asad Gate": {
+  "lat": 23.7601299,
+  "lon": 90.3727245,
+  "bn": "আসাদ গেট",
+  "osm_name": "আসাদ গেট",
+  "type": "historic/memorial",
+  "display": "আসাদ গেট, আসাদ এভিনিউ, চানমিয়া হাউজিং, বাঁশবাড়ি, লালমাটিয়া, মোহাম্মদপুর, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1207, বাংলাদেশ",
+  "query": "Asad Gate, Dhaka, Bangladesh"
+ },
+ "Ashulia": {
+  "lat": 23.8969898,
+  "lon": 90.3289577,
+  "bn": "আশুলিয়া",
+  "osm_name": "আশুলিয়া",
+  "type": "place/suburb",
+  "display": "আশুলিয়া, সুজাবাদ, সাভার উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1341, বাংলাদেশ",
+  "query": "Ashulia, Dhaka, Bangladesh"
+ },
+ "Ashulia Bazar": {
+  "lat": 23.8969898,
+  "lon": 90.3289577,
+  "bn": "আশুলিয়া",
+  "osm_name": "আশুলিয়া",
+  "type": "place/suburb",
+  "display": "আশুলিয়া, সুজাবাদ, সাভার উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1341, বাংলাদেশ",
+  "query": "Ashulia, Savar, Dhaka"
+ },
+ "Azampur": {
+  "lat": 23.8665496,
+  "lon": 90.4100105,
+  "bn": "আজমপুর",
+  "osm_name": "আজমপুর",
+  "type": "place/suburb",
+  "display": "আজমপুর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1276, বাংলাদেশ",
+  "query": "Azampur, Dhaka, Bangladesh"
+ },
+ "Azimpur": {
+  "lat": 23.7252946,
+  "lon": 90.3834641,
+  "bn": "আজিমপুর",
+  "osm_name": "আজিমপুর",
+  "type": "place/suburb",
+  "display": "আজিমপুর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1211, বাংলাদেশ",
+  "query": "Azimpur, Dhaka, Bangladesh"
+ },
+ "Babubazar": {
+  "lat": 23.7121703,
+  "lon": 90.4026584,
+  "bn": "",
+  "osm_name": "Zakir Homeo Hall, Mona Complex, Babubazar Bridge, Dhaka",
+  "type": "amenity/pharmacy",
+  "display": "Zakir Homeo Hall, Mona Complex, Babubazar Bridge, Dhaka, Armanian Street, জিন্দাবাহার, নয়াবাজার, আরমানিটোলা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1100, বাংলাদেশ",
+  "query": "Babubazar, Dhaka, Bangladesh"
+ },
+ "Badda": {
+  "lat": 23.7765425,
+  "lon": 90.4463012,
+  "bn": "বাড্ডা",
+  "osm_name": "বাড্ডা",
+  "type": "place/borough",
+  "display": "বাড্ডা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, বাংলাদেশ",
+  "query": "Badda, Dhaka, Bangladesh"
+ },
+ "Badda Link Road": {
+  "lat": 23.7703817,
+  "lon": 90.4228747,
+  "bn": "মেরুল বাড্ডা স্টপ - হাতিরঝিল চক্রাকার বাস",
+  "osm_name": "মেরুল বাড্ডা স্টপ - হাতিরঝিল চক্রাকার বাস",
+  "type": "highway/bus_stop",
+  "display": "মেরুল বাড্ডা স্টপ - হাতিরঝিল চক্রাকার বাস, Hatirjheel Link Road, মেরুল বাড্ডা, গুলশান, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1029, বাংলাদেশ",
+  "query": "Badda Link Road, Dhaka, Bangladesh"
+ },
+ "Baipayl": {
+  "lat": 23.9360375,
+  "lon": 90.2973311,
+  "bn": "",
+  "osm_name": "Tourist Police Savar Ashulia Office",
+  "type": "amenity/police",
+  "display": "Tourist Police Savar Ashulia Office, ঢাকা–আশুলিয়া এলিভেটেড এক্সপ্রেসওয়ে, Civil Aviation Staff Quarter, সেক্টর ৯, আশুলিয়া, সেক্টর ৪, সুজাবাদ, সাভার উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1341, বাংলাদেশ",
+  "query": "Baipail, Ashulia, Savar"
+ },
+ "Baitul Mukarram": {
+  "lat": 23.7294725,
+  "lon": 90.412617,
+  "bn": "বায়তুল মোকাররম জাতীয় মসজিদ",
+  "osm_name": "বায়তুল মোকাররম জাতীয় মসজিদ",
+  "type": "amenity/place_of_worship",
+  "display": "বায়তুল মোকাররম জাতীয় মসজিদ, বাইতুল মোকাররম সড়ক, দিলকুশা, পল্টন, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1000, বাংলাদেশ",
+  "query": "Baitul Mukarram, Dhaka, Bangladesh"
+ },
+ "Bakshi Bazar": {
+  "lat": 23.7225591,
+  "lon": 90.3955594,
+  "bn": "",
+  "osm_name": "Bokshi Bazaar Bus stop, Bakshi Bazar Road, Dhaka",
+  "type": "highway/bus_stop",
+  "display": "Bokshi Bazaar Bus stop, Bakshi Bazar Road, Dhaka, অর্ফানেজ রোড, চানখারপুল, খাজে দেওয়ান, বকশীবাজার, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1211, বাংলাদেশ",
+  "query": "Bakshi Bazar, Dhaka, Bangladesh"
+ },
+ "Balughat": {
+  "lat": 23.8289374,
+  "lon": 90.3904119,
+  "bn": "বালুঘাট",
+  "osm_name": "বালুঘাট",
+  "type": "place/neighbourhood",
+  "display": "বালুঘাট, মাস্টারটেক, মানিকদি, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1206, বাংলাদেশ",
+  "query": "Balughat, Dhaka, Bangladesh"
+ },
+ "Banani": {
+  "lat": 23.790321,
+  "lon": 90.4076959,
+  "bn": "বনানী",
+  "osm_name": "বনানী",
+  "type": "place/suburb",
+  "display": "বনানী, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1213, বাংলাদেশ",
+  "query": "Banani, Dhaka, Bangladesh"
+ },
+ "Banasree": {
+  "lat": 23.7617123,
+  "lon": 90.4312774,
+  "bn": "বনশ্রী",
+  "osm_name": "বনশ্রী",
+  "type": "place/suburb",
+  "display": "বনশ্রী, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1219, বাংলাদেশ",
+  "query": "Banasree, Dhaka, Bangladesh"
+ },
+ "Bangla College": {
+  "lat": 23.7849521,
+  "lon": 90.3527616,
+  "bn": "সরকারি বাঙলা কলেজ",
+  "osm_name": "সরকারি বাঙলা কলেজ",
+  "type": "amenity/college",
+  "display": "সরকারি বাঙলা কলেজ, দারুস সালাম রোড, স্টাফ কোয়ার্টার, দক্ষিণ বিশিল, টোলারবাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1916, বাংলাদেশ",
+  "query": "Bangla College, Dhaka, Bangladesh"
+ },
+ "Bangla Motor": {
+  "lat": 23.7458397,
+  "lon": 90.3949387,
+  "bn": "বাংলা মোটর",
+  "osm_name": "বাংলা মোটর",
+  "type": "place/quarter",
+  "display": "বাংলা মোটর, কাওরান বাজার, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1234, বাংলাদেশ",
+  "query": "Bangla Motor, Dhaka, Bangladesh"
+ },
+ "Bangladesh Bank": {
+  "lat": 23.7263266,
+  "lon": 90.4227994,
+  "bn": "বাংলাদেশ ব্যাংক",
+  "osm_name": "বাংলাদেশ ব্যাংক",
+  "type": "amenity/bank",
+  "display": "বাংলাদেশ ব্যাংক, কমলাপুর সড়ক, ব্যাংক কলোনী, দক্ষিণ কমলাপুর, মতিঝিল, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1203, বাংলাদেশ",
+  "query": "Bangladesh Bank, Dhaka, Bangladesh"
+ },
+ "Baromi": {
+  "lat": 24.2452848,
+  "lon": 90.5224806,
+  "bn": "বরমী",
+  "osm_name": "বরমী",
+  "type": "place/village",
+  "display": "বরমী, শ্রীপুর উপজেলা (গাজীপুর), গাজীপুর জেলা, ঢাকা বিভাগ, বাংলাদেশ",
+  "query": "Barmi, Sreepur, Gazipur"
+ },
+ "Bashabo": {
+  "lat": 23.7405474,
+  "lon": 90.4333478,
+  "bn": "বাসাবো",
+  "osm_name": "বাসাবো",
+  "type": "place/suburb",
+  "display": "বাসাবো, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1214, বাংলাদেশ",
+  "query": "Bashabo, Dhaka, Bangladesh"
+ },
+ "Bashtola": {
+  "lat": 23.7944047,
+  "lon": 90.4225127,
+  "bn": "",
+  "osm_name": "Bashtola Road",
+  "type": "highway/residential",
+  "display": "Bashtola Road, গুলশান ২, গুলশান, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1212, বাংলাদেশ",
+  "query": "Bashtola, Dhaka, Bangladesh"
+ },
+ "Bashundhara": {
+  "lat": 23.8239025,
+  "lon": 90.4699552,
+  "bn": "",
+  "osm_name": "Bashundhara Kings Arena",
+  "type": "leisure/stadium",
+  "display": "Bashundhara Kings Arena, Road 8B, পিঙ্ক সিটি মডেল টাউন, পিঙ্ক সিটি, ডুমনী, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1229, বাংলাদেশ",
+  "query": "Bashundhara, Dhaka, Bangladesh"
+ },
+ "Bata Signal": {
+  "lat": 23.7390795,
+  "lon": 90.3886771,
+  "bn": "",
+  "osm_name": "Bata Signal Bus Stop, Elephant Rd, Dhaka",
+  "type": "highway/bus_stop",
+  "display": "Bata Signal Bus Stop, Elephant Rd, Dhaka, নিউ এলিফ্যান্ট রোড, কাঁটাবন, শাহবাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1205, বাংলাদেশ",
+  "query": "Bata Signal, Dhaka, Bangladesh"
+ },
+ "Beribadh": {
+  "lat": 23.7129947,
+  "lon": 90.3864015,
+  "bn": "বেড়িবাঁধ সড়ক",
+  "osm_name": "বেড়িবাঁধ সড়ক",
+  "type": "highway/trunk",
+  "display": "বেড়িবাঁধ সড়ক, কামালবাগ, নলগোলা, বাবু বাজার, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1310, বাংলাদেশ",
+  "query": "Beribadh, Dhaka, Bangladesh"
+ },
+ "Bijoy Sarani": {
+  "lat": 23.7683525,
+  "lon": 90.3918572,
+  "bn": "প্রধানমন্ত্রীর কার্যালয়",
+  "osm_name": "প্রধানমন্ত্রীর কার্যালয়",
+  "type": "office/government",
+  "display": "প্রধানমন্ত্রীর কার্যালয়, Office Of The Prime Minister Bangladesh, বিজয় সরণী, এলেনবাড়ী, তেজগাঁও, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1212, বাংলাদেশ",
+  "query": "Bijoy Sarani, Dhaka, Bangladesh"
+ },
+ "Birulia": {
+  "lat": 23.8501655,
+  "lon": 90.3339337,
+  "bn": "বিরুলিয়া",
+  "osm_name": "বিরুলিয়া",
+  "type": "place/village",
+  "display": "বিরুলিয়া, সাভার উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1341, বাংলাদেশ",
+  "query": "Birulia, Dhaka, Bangladesh"
+ },
+ "Board Bazar": {
+  "lat": 23.9452074,
+  "lon": 90.3825171,
+  "bn": "বোর্ড বাজার",
+  "osm_name": "বোর্ড বাজার",
+  "type": "place/suburb",
+  "display": "বোর্ড বাজার, গাজীপুর, গাজীপুর সদর উপজেলা, গাজীপুর জেলা, ঢাকা বিভাগ, 1712, বাংলাদেশ",
+  "query": "Board Bazar, Dhaka, Bangladesh"
+ },
+ "Bosila": {
+  "lat": 23.7485019,
+  "lon": 90.3431089,
+  "bn": "বসিলা",
+  "osm_name": "বসিলা",
+  "type": "place/suburb",
+  "display": "বসিলা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1312, বাংলাদেশ",
+  "query": "Bosila, Dhaka, Bangladesh"
+ },
+ "Bottola": {
+  "lat": 23.7295225,
+  "lon": 90.3683751,
+  "bn": "বটতলা",
+  "osm_name": "বটতলা",
+  "type": "landuse/residential",
+  "display": "বটতলা, মনেশ্বর, হাজারীবাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, বাংলাদেশ",
+  "query": "Bottola, Dhaka, Bangladesh"
+ },
+ "Cantonment": {
+  "lat": 23.8692291,
+  "lon": 90.2748201,
+  "bn": "",
+  "osm_name": "Savar Cantonment Zoo Rd, Savar Union",
+  "type": "highway/unclassified",
+  "display": "Savar Cantonment Zoo Rd, Savar Union, সিএন্ডবি, সাভার, সাভার উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1343, বাংলাদেশ",
+  "query": "Cantonment, Dhaka, Bangladesh"
+ },
+ "Chairman Bari": {
+  "lat": 23.7881472,
+  "lon": 90.4010004,
+  "bn": "চেয়ারম্যান বাড়ি",
+  "osm_name": "চেয়ারম্যান বাড়ি",
+  "type": "place/neighbourhood",
+  "display": "চেয়ারম্যান বাড়ি, কড়াইল, গুলশান, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 2467, বাংলাদেশ",
+  "query": "Chairman Bari, Dhaka, Bangladesh"
+ },
+ "Chandra": {
+  "lat": 24.0472727,
+  "lon": 90.2384011,
+  "bn": "চন্দ্রা",
+  "osm_name": "চন্দ্রা",
+  "type": "place/village",
+  "display": "চন্দ্রা, কালিয়াকৈর উপজেলা, গাজীপুর জেলা, ঢাকা বিভাগ, 1750, বাংলাদেশ",
+  "query": "Chandra, Kaliakair, Gazipur"
+ },
+ "Chankhar Pul": {
+  "lat": 23.7238334,
+  "lon": 90.4003441,
+  "bn": "",
+  "osm_name": "Chankhar Pul Bus Stop, Zahir Raihan Rd, Dhaka",
+  "type": "highway/bus_stop",
+  "display": "Chankhar Pul Bus Stop, Zahir Raihan Rd, Dhaka, সৈয়দ কামরুজ্জামান সরণী, আনন্দবাজার, নিমতলী, বংশাল, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1000, বাংলাদেশ",
+  "query": "Chankhar Pul, Dhaka, Bangladesh"
+ },
+ "Chashara": {
+  "lat": 23.6258395,
+  "lon": 90.5008939,
+  "bn": "উত্তর চাষারা সড়ক",
+  "osm_name": "উত্তর চাষারা সড়ক",
+  "type": "highway/residential",
+  "display": "উত্তর চাষারা সড়ক, নারায়ণগঞ্জ, নারায়ণগঞ্জ সদর উপজেলা, নারায়ণগঞ্জ জেলা, ঢাকা বিভাগ, 1400, বাংলাদেশ",
+  "query": "Chashara, Dhaka, Bangladesh"
+ },
+ "Chiriyakhana": {
+  "lat": 23.8122229,
+  "lon": 90.3469233,
+  "bn": "",
+  "osm_name": "Bangladesh National Zoo",
+  "type": "tourism/zoo",
+  "display": "Bangladesh National Zoo, চিড়িয়াখানা সড়ক, কাজি ফুরি, নবাবেরবাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1216, বাংলাদেশ",
+  "query": "Bangladesh National Zoo, Mirpur, Dhaka"
+ },
+ "Chittagong Road": {
+  "lat": 23.6977454,
+  "lon": 90.5092521,
+  "bn": "চিটাগং রোড বাস স্টেশন",
+  "osm_name": "চিটাগং রোড বাস স্টেশন",
+  "type": "amenity/bus_station",
+  "display": "চিটাগং রোড বাস স্টেশন, ঢাকা–কুমিল্লা মহাসড়ক, মাদানীনগর, সাইনবোর্ড, সানারপাড়, নারায়ণগঞ্জ, নারায়ণগঞ্জ সদর উপজেলা, নারায়ণগঞ্জ জেলা, ঢাকা বিভাগ, 1361, বাংলাদেশ",
+  "query": "Chittagong Road, Dhaka, Bangladesh"
+ },
+ "City College": {
+  "lat": 23.7397678,
+  "lon": 90.382567,
+  "bn": "",
+  "osm_name": "Dhaka City College",
+  "type": "amenity/college",
+  "display": "Dhaka City College, ধানমণ্ডি ২, ধানমন্ডি আবাসিক এলাকা, কাঁটাবন, জিগাতলা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1205, বাংলাদেশ",
+  "query": "City College, Dhaka, Bangladesh"
+ },
+ "CMH": {
+  "lat": 23.8143341,
+  "lon": 90.3980869,
+  "bn": "সম্মিলিত সামরিক হাসপাতাল (সিএমএইচ)",
+  "osm_name": "সম্মিলিত সামরিক হাসপাতাল (সিএমএইচ)",
+  "type": "amenity/hospital",
+  "display": "সম্মিলিত সামরিক হাসপাতাল (সিএমএইচ), Dhaka Combined Medical Hospital Entry Road, নির্ঝর আবাসিক, মাটিকাটা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1206, বাংলাদেশ",
+  "query": "CMH, Dhaka, Bangladesh"
+ },
+ "College Gate": {
+  "lat": 23.7503675,
+  "lon": 90.4199166,
+  "bn": "",
+  "osm_name": "College Gate",
+  "type": "amenity/college",
+  "display": "College Gate, Ansar HQ W Aly, চৌধুরীপাড়া ব্লক সি, গুলবাগ, খিলগাঁও, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1219, বাংলাদেশ",
+  "query": "College Gate, Dhaka, Bangladesh"
+ },
+ "Dainik Bangla Moor": {
+  "lat": 23.7301345,
+  "lon": 90.4152482,
+  "bn": "",
+  "osm_name": "Dainik Bangla Mor Bus Stop",
+  "type": "highway/bus_stop",
+  "display": "Dainik Bangla Mor Bus Stop, ডিআইটি এভিনিউ, কাপ্তান বাজার, দিলকুশা, গুলিস্তান, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1000, বাংলাদেশ",
+  "query": "Dainik Bangla Mor, Dhaka"
+ },
+ "Darussalam": {
+  "lat": 23.7570988,
+  "lon": 90.3704455,
+  "bn": "",
+  "osm_name": "Darussalam",
+  "type": "building/residential",
+  "display": "Darussalam, Block-B, Lalmatia, লালমাটিয়া, মোহাম্মদপুর, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1207, বাংলাদেশ",
+  "query": "Darussalam, Dhaka, Bangladesh"
+ },
+ "Dayaganj": {
+  "lat": 23.7104417,
+  "lon": 90.4246393,
+  "bn": "দয়াগঞ্জ",
+  "osm_name": "দয়াগঞ্জ",
+  "type": "place/suburb",
+  "display": "দয়াগঞ্জ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1204, বাংলাদেশ",
+  "query": "Dayaganj, Dhaka, Bangladesh"
+ },
+ "Demra Staff Quarter": {
+  "lat": 23.7197292,
+  "lon": 90.4905289,
+  "bn": "",
+  "osm_name": "Demra staff quarter",
+  "type": "amenity/bus_station",
+  "display": "Demra staff quarter, ঢাকা - ডেমরা মহাসড়ক, মৃধাবাড়ী, কাজীরগাঁও, কাজলা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1360, বাংলাদেশ",
+  "query": "Demra Staff Quarter, Dhaka, Bangladesh"
+ },
+ "Dhakeshwari": {
+  "lat": 23.7224743,
+  "lon": 90.3897214,
+  "bn": "",
+  "osm_name": "Dhakeshwari Mandir Bus stop, Azad Staff Quarter Dhakeshwari Rd, Dhaka",
+  "type": "highway/bus_stop",
+  "display": "Dhakeshwari Mandir Bus stop, Azad Staff Quarter Dhakeshwari Rd, Dhaka, অর্ফানেজ রোড, খাজে দেওয়ান, বকশীবাজার, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1211, বাংলাদেশ",
+  "query": "Dhakeshwari, Dhaka, Bangladesh"
+ },
+ "Dhamrai": {
+  "lat": 23.9183476,
+  "lon": 90.2142069,
+  "bn": "ধামরাই উপজেলা",
+  "osm_name": "ধামরাই উপজেলা",
+  "type": "boundary/administrative",
+  "display": "ধামরাই উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1350, বাংলাদেশ",
+  "query": "Dhamrai, Dhaka, Bangladesh"
+ },
+ "Dhanmondi 15": {
+  "lat": 23.7479124,
+  "lon": 90.3745866,
+  "bn": "ধানমন্ডি",
+  "osm_name": "ধানমন্ডি",
+  "type": "place/suburb",
+  "display": "ধানমন্ডি, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1205, বাংলাদেশ",
+  "query": "Dhanmondi 15, Dhaka, Bangladesh"
+ },
+ "Dhanmondi 27": {
+  "lat": 23.754089,
+  "lon": 90.3713507,
+  "bn": "রোড ১৬",
+  "osm_name": "রোড ১৬",
+  "type": "highway/secondary",
+  "display": "রোড ১৬, ধানমন্ডি আবাসিক এলাকা, লালমাটিয়া, মোহাম্মদপুর, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1207, বাংলাদেশ",
+  "query": "Dhanmondi 27, Dhaka, Bangladesh"
+ },
+ "Dhanmondi 32": {
+  "lat": 23.7380208,
+  "lon": 90.3859514,
+  "bn": "",
+  "osm_name": "",
+  "type": "building/yes",
+  "display": "32, Laboratory road, কাঁটাবন, কাঠালবাগান, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1205, বাংলাদেশ",
+  "query": "Dhanmondi 32, Dhaka, Bangladesh"
+ },
+ "Dholairpar": {
+  "lat": 23.7026053,
+  "lon": 90.4353396,
+  "bn": "ধোলাইরপাড়",
+  "osm_name": "ধোলাইরপাড়",
+  "type": "place/suburb",
+  "display": "ধোলাইরপাড়, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1232, বাংলাদেশ",
+  "query": "Dholairpar, Dhaka, Bangladesh"
+ },
+ "Dhour": {
+  "lat": 23.8911881,
+  "lon": 90.3718678,
+  "bn": "ধউর",
+  "osm_name": "ধউর",
+  "type": "place/suburb",
+  "display": "ধউর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1711, বাংলাদেশ",
+  "query": "Dhour, Dhaka, Bangladesh"
+ },
+ "Dhupkhola": {
+  "lat": 23.7063077,
+  "lon": 90.4219302,
+  "bn": "ধূপখোলা",
+  "osm_name": "ধূপখোলা",
+  "type": "place/quarter",
+  "display": "ধূপখোলা, গেন্ডারিয়া, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1204, বাংলাদেশ",
+  "query": "Dhupkhola, Dhaka, Bangladesh"
+ },
+ "Diabari": {
+  "lat": 23.8738492,
+  "lon": 90.3674197,
+  "bn": "দিয়াবাড়ি",
+  "osm_name": "দিয়াবাড়ি",
+  "type": "place/suburb",
+  "display": "দিয়াবাড়ি, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1231, বাংলাদেশ",
+  "query": "Diabari, Dhaka, Bangladesh"
+ },
+ "Duaripara": {
+  "lat": 23.8272661,
+  "lon": 90.3565405,
+  "bn": "দুয়ারিপাড়া",
+  "osm_name": "দুয়ারিপাড়া",
+  "type": "place/quarter",
+  "display": "দুয়ারিপাড়া, পল্লবী, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, বাংলাদেশ",
+  "query": "Duaripara, Dhaka, Bangladesh"
+ },
+ "ECB Square": {
+  "lat": 23.8225769,
+  "lon": 90.3934333,
+  "bn": "",
+  "osm_name": "ECB Chattar",
+  "type": "highway/primary",
+  "display": "ECB Chattar, নামাপাড়া, মাটিকাটা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1206, বাংলাদেশ",
+  "query": "ECB Chattar, Dhaka"
+ },
+ "Eden College": {
+  "lat": 23.7287949,
+  "lon": 90.3871052,
+  "bn": "ইডেন মহিলা কলেজ",
+  "osm_name": "ইডেন মহিলা কলেজ",
+  "type": "amenity/college",
+  "display": "ইডেন মহিলা কলেজ, আজিমপুর সড়ক, পলাশী, চৌধুরী বাজার, আজিমপুর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1211, বাংলাদেশ",
+  "query": "Eden College, Dhaka, Bangladesh"
+ },
+ "Fakirapul": {
+  "lat": 23.7325505,
+  "lon": 90.416987,
+  "bn": "",
+  "osm_name": "Fakirapul Jame Masjid",
+  "type": "amenity/place_of_worship",
+  "display": "Fakirapul Jame Masjid, sukkur paglar golli, নয়া পল্টন, ফকিরাপুল, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1000, বাংলাদেশ",
+  "query": "Fakirapul, Dhaka, Bangladesh"
+ },
+ "Fantasy Kingdom": {
+  "lat": 23.9342739,
+  "lon": 90.2914879,
+  "bn": "ফ্যান্টাসি কিংডম",
+  "osm_name": "ফ্যান্টাসি কিংডম",
+  "type": "tourism/theme_park",
+  "display": "ফ্যান্টাসি কিংডম, Government Road, নরসিংহপুর, সাভার, সাভার উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1349, বাংলাদেশ",
+  "query": "Fantasy Kingdom, Dhaka, Bangladesh"
+ },
+ "Farmgate": {
+  "lat": 23.758147,
+  "lon": 90.3896469,
+  "bn": "ফার্মগেট",
+  "osm_name": "ফার্মগেট",
+  "type": "place/quarter",
+  "display": "ফার্মগেট, তেজগাঁও, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1215, বাংলাদেশ",
+  "query": "Farmgate, Dhaka, Bangladesh"
+ },
+ "Fulbaria": {
+  "lat": 23.7247424,
+  "lon": 90.4058706,
+  "bn": "ফুলবাড়িয়া",
+  "osm_name": "ফুলবাড়িয়া",
+  "type": "place/quarter",
+  "display": "ফুলবাড়িয়া, গুলিস্তান, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1000, বাংলাদেশ",
+  "query": "Fulbaria, Gulistan, Dhaka"
+ },
+ "Gabtoli": {
+  "lat": 23.6324772,
+  "lon": 90.4891125,
+  "bn": "",
+  "osm_name": "Isdair-Gabtoli Road",
+  "type": "highway/living_street",
+  "display": "Isdair-Gabtoli Road, ফতুল্লা, নারায়ণগঞ্জ, নারায়ণগঞ্জ সদর উপজেলা, নারায়ণগঞ্জ জেলা, ঢাকা বিভাগ, 1400, বাংলাদেশ",
+  "query": "Gabtoli, Dhaka, Bangladesh"
+ },
+ "Gandaria": {
+  "lat": 23.7060804,
+  "lon": 90.4263861,
+  "bn": "",
+  "osm_name": "Gandaria railway Slum",
+  "type": "landuse/residential",
+  "display": "Gandaria railway Slum, পশ্চিম যাত্রাবাড়ী, গেন্ডারিয়া, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, বাংলাদেশ",
+  "query": "Gandaria, Dhaka, Bangladesh"
+ },
+ "Gazipur Bypass": {
+  "lat": 23.98465,
+  "lon": 90.3646149,
+  "bn": "",
+  "osm_name": "Cixing Bangladesh Ltd",
+  "type": "office/yes",
+  "display": "Cixing Bangladesh Ltd, Dhaka City Bypass, ভোগড়া, গাজীপুর, গাজীপুর সদর উপজেলা, গাজীপুর জেলা, ঢাকা বিভাগ, 1701, বাংলাদেশ",
+  "query": "Gazipur Bypass, Dhaka, Bangladesh"
+ },
+ "Gazipur Chourasta": {
+  "lat": 23.9900095,
+  "lon": 90.3815921,
+  "bn": "",
+  "osm_name": "Gazipur Chowrasta Bus Stand, Bus stop",
+  "type": "highway/bus_stop",
+  "display": "Gazipur Chowrasta Bus Stand, Bus stop, ঢাকা-ময়মনসিংহ মহাসড়ক, চান্দনা, গাজীপুর, গাজীপুর সদর উপজেলা, গাজীপুর জেলা, ঢাকা বিভাগ, 1700, বাংলাদেশ",
+  "query": "Chowrasta, Gazipur"
+ },
+ "Ghatar Char": {
+  "lat": 23.7362367,
+  "lon": 90.336007,
+  "bn": "",
+  "osm_name": "Ghatar Chor Govt Primary School",
+  "type": "amenity/school",
+  "display": "Ghatar Chor Govt Primary School, Ghatarchar Mor, চর ওয়াশপুর, ঘাটারচর, কেরাণীগঞ্জ উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1312, বাংলাদেশ",
+  "query": "Ghatar Char, Dhaka, Bangladesh"
+ },
+ "Golap Shah Mazar": {
+  "lat": 23.7249852,
+  "lon": 90.4108439,
+  "bn": "গোলাপ শাহ মাজার মোড়",
+  "osm_name": "গোলাপ শাহ মাজার মোড়",
+  "type": "junction/yes",
+  "display": "গোলাপ শাহ মাজার মোড়, ফুলবাড়িয়া সড়ক, কাপ্তান বাজার, সিদ্দিক বাজার, গুলিস্তান, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1000, বাংলাদেশ",
+  "query": "Golap Shah Mazar, Dhaka, Bangladesh"
+ },
+ "Golapbag Chourasta": {
+  "lat": 23.7172934,
+  "lon": 90.4295357,
+  "bn": "",
+  "osm_name": "Golapbagh Chowrasta Bus stop",
+  "type": "highway/bus_stop",
+  "display": "Golapbagh Chowrasta Bus stop, ধলপুর নতুন রাস্তা, কাজিরবাগ, ধলপুর, গোলাপবাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1203, বাংলাদেশ",
+  "query": "Golapbagh, Dhaka"
+ },
+ "GPO": {
+  "lat": 23.7289079,
+  "lon": 90.4116198,
+  "bn": "",
+  "osm_name": "GPO Road",
+  "type": "highway/unclassified",
+  "display": "GPO Road, বিজয়নগর, পল্টন, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1000, বাংলাদেশ",
+  "query": "GPO, Dhaka, Bangladesh"
+ },
+ "Gulistan": {
+  "lat": 23.7249037,
+  "lon": 90.4120785,
+  "bn": "গুলিস্তান",
+  "osm_name": "গুলিস্তান",
+  "type": "place/suburb",
+  "display": "গুলিস্তান, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1000, বাংলাদেশ",
+  "query": "Gulistan, Dhaka, Bangladesh"
+ },
+ "Gulshan 1": {
+  "lat": 23.780553,
+  "lon": 90.4169,
+  "bn": "গুলশান ১",
+  "osm_name": "গুলশান ১",
+  "type": "place/quarter",
+  "display": "গুলশান ১, গুলশান, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1212, বাংলাদেশ",
+  "query": "Gulshan 1, Dhaka, Bangladesh"
+ },
+ "Gulshan 2": {
+  "lat": 23.7947191,
+  "lon": 90.4136986,
+  "bn": "গুলশান ২",
+  "osm_name": "গুলশান ২",
+  "type": "place/quarter",
+  "display": "গুলশান ২, গুলশান, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1212, বাংলাদেশ",
+  "query": "Gulshan 2, Dhaka, Bangladesh"
+ },
+ "Gulshan Link Road": {
+  "lat": 23.7711656,
+  "lon": 90.4035023,
+  "bn": "",
+  "osm_name": "Phillip Morris International Bangladesh",
+  "type": "office/company",
+  "display": "Phillip Morris International Bangladesh, Tejgaon Gulshan Link Road, পূর্ব নাখালপাড়া, নিকেতন, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1208, বাংলাদেশ",
+  "query": "Gulshan Link Road, Dhaka, Bangladesh"
+ },
+ "Hasnabad": {
+  "lat": 23.6826364,
+  "lon": 90.4266133,
+  "bn": "হাসনাবাদ",
+  "osm_name": "হাসনাবাদ",
+  "type": "place/village",
+  "display": "হাসনাবাদ, কেরাণীগঞ্জ উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1204, বাংলাদেশ",
+  "query": "Hasnabad, Dhaka, Bangladesh"
+ },
+ "Hazaribag": {
+  "lat": 23.7323653,
+  "lon": 90.3663412,
+  "bn": "",
+  "osm_name": "Hazaribag Bazar Road",
+  "type": "highway/tertiary",
+  "display": "Hazaribag Bazar Road, হাজারীবাগ ট্যানারি এলাকা, গজমহল, হাজারীবাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1205, বাংলাদেশ",
+  "query": "Hazaribag, Dhaka, Bangladesh"
+ },
+ "Hazipara": {
+  "lat": 23.8632798,
+  "lon": 90.4147242,
+  "bn": "হাজিপাড়া",
+  "osm_name": "হাজিপাড়া",
+  "type": "place/quarter",
+  "display": "হাজিপাড়া, আজমপুর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1230, বাংলাদেশ",
+  "query": "Hazipara, Dhaka, Bangladesh"
+ },
+ "Hemayetpur": {
+  "lat": 23.7935258,
+  "lon": 90.2708736,
+  "bn": "হেমায়েতপুর",
+  "osm_name": "হেমায়েতপুর",
+  "type": "place/suburb",
+  "display": "হেমায়েতপুর, বলিয়ারপুর, সাভার উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1347, বাংলাদেশ",
+  "query": "Hemayetpur, Dhaka, Bangladesh"
+ },
+ "High Court": {
+  "lat": 23.731685,
+  "lon": 90.4048858,
+  "bn": "",
+  "osm_name": "High Court Bus stop",
+  "type": "highway/bus_stop",
+  "display": "High Court Bus stop, মাওলানা ভাসানী সড়ক, ফুলবাড়িয়া, সেগুনবাগিচা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1000, বাংলাদেশ",
+  "query": "High Court, Dhaka, Bangladesh"
+ },
+ "House Building": {
+  "lat": 23.8748268,
+  "lon": 90.4006897,
+  "bn": "",
+  "osm_name": "House Building",
+  "type": "highway/bus_stop",
+  "display": "House Building, ঢাকা-ময়মনসিংহ মহাসড়ক, আব্দুল্লাহপুর, উত্তরা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1276, বাংলাদেশ",
+  "query": "House Building, Dhaka, Bangladesh"
+ },
+ "IDB": {
+  "lat": 23.7787456,
+  "lon": 90.3791739,
+  "bn": "Ryans Computers - IDB Branch",
+  "osm_name": "Ryans Computers - IDB Branch",
+  "type": "shop/computer",
+  "display": "Ryans Computers - IDB Branch, 123/5, স্থাপত্যাচার্য মাযহারুল ইসলাম স্বরণী, তালতলা, পশ্চিম কাফরুল, আগারগাঁও, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1207, বাংলাদেশ",
+  "query": "IDB, Dhaka, Bangladesh"
+ },
+ "Ittefaq Moor": {
+  "lat": 23.7214958,
+  "lon": 90.4212054,
+  "bn": "",
+  "osm_name": "Ittefaq Bus Stand, Bus stop",
+  "type": "highway/bus_stop",
+  "display": "Ittefaq Bus Stand, Bus stop, টয়েনবি রোড, ব্যাংক কলোনী, দক্ষিণ কমলাপুর, গোপীবাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1203, বাংলাদেশ",
+  "query": "Ittefaq, Tikatuli, Dhaka"
+ },
+ "Jahangir Gate": {
+  "lat": 23.7757744,
+  "lon": 90.3900382,
+  "bn": "",
+  "osm_name": "Jahangir Gate Bus stop",
+  "type": "highway/bus_stop",
+  "display": "Jahangir Gate Bus stop, বীর উত্তম জিয়াউর রহমান সড়ক, আরজতপাড়া, নাখালপাড়া, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 2467, বাংলাদেশ",
+  "query": "Jahangir Gate, Dhaka, Bangladesh"
+ },
+ "Jakir Hossen Road": {
+  "lat": 23.756423,
+  "lon": 90.3674809,
+  "bn": "",
+  "osm_name": "Zakir Hossain Road",
+  "type": "highway/residential",
+  "display": "Zakir Hossain Road, লালমাটিয়া, মোহাম্মদপুর, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1207, বাংলাদেশ",
+  "query": "Zakir Hossain Road, Mohammadpur, Dhaka"
+ },
+ "Jalkuri": {
+  "lat": 23.6632342,
+  "lon": 90.486848,
+  "bn": "",
+  "osm_name": "Jalkuri BRTC AC Bus Stop জালকুরী বি আর টি সি এসি বাস স্টপ",
+  "type": "highway/bus_stop",
+  "display": "Jalkuri BRTC AC Bus Stop জালকুরী বি আর টি সি এসি বাস স্টপ, ঢাকা-নারায়ণগঞ্জ সংযোগ সড়ক, ভুঁইগড়, নারায়ণগঞ্জ, নারায়ণগঞ্জ সদর উপজেলা, নারায়ণগঞ্জ জেলা, ঢাকা বিভাগ, 1421, বাংলাদেশ",
+  "query": "Jalkuri, Dhaka, Bangladesh"
+ },
+ "Jamgora": {
+  "lat": 23.9550824,
+  "lon": 90.3102503,
+  "bn": "",
+  "osm_name": "Jamgora-Bagbari Road",
+  "type": "highway/unclassified",
+  "display": "Jamgora-Bagbari Road, গাজীপুর, গাজীপুর সদর উপজেলা, গাজীপুর জেলা, ঢাকা বিভাগ, 1349, বাংলাদেশ",
+  "query": "Jamgora, Dhaka, Bangladesh"
+ },
+ "Jamuna Future Park": {
+  "lat": 23.8134982,
+  "lon": 90.4240893,
+  "bn": "যমুনা ফিউচার পার্ক",
+  "osm_name": "যমুনা ফিউচার পার্ক",
+  "type": "shop/mall",
+  "display": "যমুনা ফিউচার পার্ক, KA-244, Kuril, Al Haj Abdus Sobhan Road, ব্লক বি, কুড়িল, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1229, বাংলাদেশ",
+  "query": "Jamuna Future Park, Dhaka, Bangladesh"
+ },
+ "Janapath Moor": null,
+ "Japan Garden City": {
+  "lat": 23.764705,
+  "lon": 90.357781,
+  "bn": "জাপান গার্ডেন সিটি",
+  "osm_name": "জাপান গার্ডেন সিটি",
+  "type": "place/neighbourhood",
+  "display": "জাপান গার্ডেন সিটি, মোহাম্মদিয়া হাউজিং সোসাইটি, আদাবর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1207, বাংলাদেশ",
+  "query": "Japan Garden City, Dhaka, Bangladesh"
+ },
+ "Jarun": null,
+ "Jashimuddin": {
+  "lat": 23.8608599,
+  "lon": 90.4000486,
+  "bn": "",
+  "osm_name": "Jashimuddin Bus Stopage, Uttara",
+  "type": "highway/bus_stop",
+  "display": "Jashimuddin Bus Stopage, Uttara, ঢাকা - ময়মনসিংহ মহাসড়ক, সেক্টর ১, উত্তরা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1276, বাংলাদেশ",
+  "query": "Jashimuddin, Dhaka, Bangladesh"
+ },
+ "Jashimuddin (Uttara)": {
+  "lat": 23.8608721,
+  "lon": 90.4004138,
+  "bn": "",
+  "osm_name": "Jashimuddin Bus Stopage, Uttara",
+  "type": "highway/bus_stop",
+  "display": "Jashimuddin Bus Stopage, Uttara, ঢাকা-ময়মনসিংহ মহাসড়ক, সেক্টর ৬, উত্তরা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1276, বাংলাদেশ",
+  "query": "Jashimuddin (Uttara), Dhaka, Bangladesh"
+ },
+ "Jatrabari": {
+  "lat": 23.7093978,
+  "lon": 90.433806,
+  "bn": "যাত্রাবাড়ী",
+  "osm_name": "যাত্রাবাড়ী",
+  "type": "place/suburb",
+  "display": "যাত্রাবাড়ী, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1232, বাংলাদেশ",
+  "query": "Jatrabari, Dhaka, Bangladesh"
+ },
+ "Jigatola": {
+  "lat": 23.7403194,
+  "lon": 90.372048,
+  "bn": "জিগাতলা",
+  "osm_name": "জিগাতলা",
+  "type": "place/suburb",
+  "display": "জিগাতলা, পশ্চিম ধানমন্ডি, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1205, বাংলাদেশ",
+  "query": "Jigatola, Dhaka, Bangladesh"
+ },
+ "Joydebpur": {
+  "lat": 24.0001226,
+  "lon": 90.4235314,
+  "bn": "জয়দেবপুর",
+  "osm_name": "জয়দেবপুর",
+  "type": "place/suburb",
+  "display": "জয়দেবপুর, গাজীপুর, গাজীপুর সদর উপজেলা, গাজীপুর জেলা, ঢাকা বিভাগ, 1701, বাংলাদেশ",
+  "query": "Joydebpur, Dhaka, Bangladesh"
+ },
+ "Jurain": {
+  "lat": 23.6962458,
+  "lon": 90.4343127,
+  "bn": "জুরাইন",
+  "osm_name": "জুরাইন",
+  "type": "place/suburb",
+  "display": "জুরাইন, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1204, বাংলাদেশ",
+  "query": "Jurain, Dhaka, Bangladesh"
+ },
+ "Kachukhet": {
+  "lat": 23.7928066,
+  "lon": 90.3880232,
+  "bn": "",
+  "osm_name": "Kachukhet Bus Stop, Bus stop",
+  "type": "highway/bus_stop",
+  "display": "Kachukhet Bus Stop, Bus stop, Mirpur Road No.14, সেনাপল্লী, কচুক্ষেত, কাফরুল, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1206, বাংলাদেশ",
+  "query": "Kachukhet, Dhaka, Bangladesh"
+ },
+ "Kadamtali": {
+  "lat": 23.6851838,
+  "lon": 90.4489623,
+  "bn": "কদমতলী",
+  "osm_name": "কদমতলী",
+  "type": "place/suburb",
+  "display": "কদমতলী, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1236, বাংলাদেশ",
+  "query": "Kadamtali, Dhaka, Bangladesh"
+ },
+ "Kakoli": {
+  "lat": 23.7752815,
+  "lon": 90.3638404,
+  "bn": "",
+  "osm_name": "Kakoli",
+  "type": "building/yes",
+  "display": "Kakoli, Holy Lane, ঢাকা হাউজিং, উত্তর শ্যামলী, শ্যামলী, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1916, বাংলাদেশ",
+  "query": "Kakoli, Dhaka, Bangladesh"
+ },
+ "Kakrail": {
+  "lat": 23.7385398,
+  "lon": 90.4071475,
+  "bn": "কাকরাইল",
+  "osm_name": "কাকরাইল",
+  "type": "place/quarter",
+  "display": "কাকরাইল, সেগুনবাগিচা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1000, বাংলাদেশ",
+  "query": "Kakrail, Dhaka, Bangladesh"
+ },
+ "Kalabagan": {
+  "lat": 23.7479478,
+  "lon": 90.3813873,
+  "bn": "",
+  "osm_name": "Kalabagan 2nd Lane",
+  "type": "highway/residential",
+  "display": "Kalabagan 2nd Lane, লেক সার্কাস, কলাবাগান, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1205, বাংলাদেশ",
+  "query": "Kalabagan, Dhaka, Bangladesh"
+ },
+ "Kalampur": {
+  "lat": 23.9183438,
+  "lon": 90.1549357,
+  "bn": "কালামপুর",
+  "osm_name": "কালামপুর",
+  "type": "place/village",
+  "display": "কালামপুর, ধামরাই উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, বাংলাদেশ",
+  "query": "Kalampur, Dhaka, Bangladesh"
+ },
+ "Kallyanpur": {
+  "lat": 23.7806848,
+  "lon": 90.3613321,
+  "bn": "কল্যাণপুর",
+  "osm_name": "কল্যাণপুর",
+  "type": "place/suburb",
+  "display": "কল্যাণপুর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1916, বাংলাদেশ",
+  "query": "Kallyanpur, Dhaka, Bangladesh"
+ },
+ "Kalshi": {
+  "lat": 23.8218238,
+  "lon": 90.3773602,
+  "bn": "কালশী",
+  "osm_name": "কালশী",
+  "type": "place/quarter",
+  "display": "কালশী, মিরপুর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1216, বাংলাদেশ",
+  "query": "Kalshi, Dhaka, Bangladesh"
+ },
+ "Kamalapur": {
+  "lat": 23.7304029,
+  "lon": 90.4247983,
+  "bn": "কমলাপুর",
+  "osm_name": "কমলাপুর",
+  "type": "place/suburb",
+  "display": "কমলাপুর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1203, বাংলাদেশ",
+  "query": "Kamalapur, Dhaka, Bangladesh"
+ },
+ "Kamarpara": {
+  "lat": 23.890603,
+  "lon": 90.3839301,
+  "bn": "কামারপাড়া",
+  "osm_name": "কামারপাড়া",
+  "type": "place/quarter",
+  "display": "কামারপাড়া, ভাটুলিয়া, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1711, বাংলাদেশ",
+  "query": "Kamarpara, Dhaka, Bangladesh"
+ },
+ "Kamrangirchar": {
+  "lat": 23.7145473,
+  "lon": 90.3813578,
+  "bn": "",
+  "osm_name": "Kamrangirchar Bus Stop",
+  "type": "highway/bus_stop",
+  "display": "Kamrangirchar Bus Stop, বেড়িবাঁধ সড়ক, কামালবাগ, নলগোলা, বাবু বাজার, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1310, বাংলাদেশ",
+  "query": "Kamrangirchar, Dhaka, Bangladesh"
+ },
+ "Kanchan Bridge": null,
+ "Kanchpur": {
+  "lat": 23.7032459,
+  "lon": 90.5172833,
+  "bn": "কাঁচপুর সেতু",
+  "osm_name": "কাঁচপুর সেতু",
+  "type": "highway/trunk",
+  "display": "কাঁচপুর সেতু, আটি, শিমরাইল, নারায়ণগঞ্জ, নারায়ণগঞ্জ সদর উপজেলা, নারায়ণগঞ্জ জেলা, ঢাকা বিভাগ, 1430, বাংলাদেশ",
+  "query": "Kanchpur, Dhaka, Bangladesh"
+ },
+ "Kashimpur": {
+  "lat": 23.9879493,
+  "lon": 90.3171133,
+  "bn": "কাশিমপুর",
+  "osm_name": "কাশিমপুর",
+  "type": "place/village",
+  "display": "কাশিমপুর, গাজীপুর সদর উপজেলা, গাজীপুর জেলা, ঢাকা বিভাগ, 1346, বাংলাদেশ",
+  "query": "Kashimpur, Dhaka, Bangladesh"
+ },
+ "Katabon": {
+  "lat": 23.7376465,
+  "lon": 90.3889382,
+  "bn": "কাঁটাবন",
+  "osm_name": "কাঁটাবন",
+  "type": "place/quarter",
+  "display": "কাঁটাবন, শাহবাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1205, বাংলাদেশ",
+  "query": "Katabon, Dhaka, Bangladesh"
+ },
+ "Kawran Bazar": {
+  "lat": 23.75174,
+  "lon": 90.3938496,
+  "bn": "কাওরান বাজার",
+  "osm_name": "কাওরান বাজার",
+  "type": "place/suburb",
+  "display": "কাওরান বাজার, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1234, বাংলাদেশ",
+  "query": "Kawran Bazar, Dhaka, Bangladesh"
+ },
+ "Kazipara": {
+  "lat": 23.7992493,
+  "lon": 90.3726036,
+  "bn": "কাজীপাড়া",
+  "osm_name": "কাজীপাড়া",
+  "type": "place/suburb",
+  "display": "কাজীপাড়া, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1216, বাংলাদেশ",
+  "query": "Kazipara, Dhaka, Bangladesh"
+ },
+ "Kazla": {
+  "lat": 24.3644369,
+  "lon": 88.632798,
+  "bn": "Kazla Bus Stop",
+  "osm_name": "Kazla Bus Stop",
+  "type": "highway/bus_stop",
+  "display": "Kazla Bus Stop, Dhaka - Rajshahi Highway, পবা উপজেলা, রাজশাহী জেলা, রাজশাহী বিভাগ, 6206, বাংলাদেশ",
+  "query": "Kazla, Bangladesh"
+ },
+ "Keraniganj": {
+  "lat": 23.6983432,
+  "lon": 90.3472708,
+  "bn": "কেরাণীগঞ্জ উপজেলা",
+  "osm_name": "কেরাণীগঞ্জ উপজেলা",
+  "type": "boundary/administrative",
+  "display": "কেরাণীগঞ্জ উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, বাংলাদেশ",
+  "query": "Keraniganj, Dhaka, Bangladesh"
+ },
+ "Khamarbari": {
+  "lat": 23.7584744,
+  "lon": 90.3832482,
+  "bn": "",
+  "osm_name": "Khamarbari",
+  "type": "highway/bus_stop",
+  "display": "Khamarbari, মানিক মিয়া এভিনিউ, মণিপুরি পাড়া, সোবহানবাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1215, বাংলাদেশ",
+  "query": "Khamarbari, Dhaka, Bangladesh"
+ },
+ "Khilgaon": {
+  "lat": 23.7506546,
+  "lon": 90.4232818,
+  "bn": "খিলগাঁও",
+  "osm_name": "খিলগাঁও",
+  "type": "place/suburb",
+  "display": "খিলগাঁও, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1219, বাংলাদেশ",
+  "query": "Khilgaon, Dhaka, Bangladesh"
+ },
+ "Khilgaon Flyover": {
+  "lat": 23.7437987,
+  "lon": 90.4266073,
+  "bn": "খিলগাও ফ্লাইওভার",
+  "osm_name": "খিলগাও ফ্লাইওভার",
+  "type": "highway/primary",
+  "display": "খিলগাও ফ্লাইওভার, শাহজাহানপুর রেলওয়ে কলোনি, দক্ষিণ বাসাবো, শাহজাহানপুর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1214, বাংলাদেশ",
+  "query": "Khilgaon Flyover, Dhaka, Bangladesh"
+ },
+ "Khilkhet": {
+  "lat": 23.8316678,
+  "lon": 90.4248321,
+  "bn": "খিলক্ষেত",
+  "osm_name": "খিলক্ষেত",
+  "type": "place/suburb",
+  "display": "খিলক্ষেত, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1229, বাংলাদেশ",
+  "query": "Khilkhet, Dhaka, Bangladesh"
+ },
+ "Konabari": {
+  "lat": 24.0120416,
+  "lon": 90.3166405,
+  "bn": "কোনাবাড়ী",
+  "osm_name": "কোনাবাড়ী",
+  "type": "place/village",
+  "display": "কোনাবাড়ী, গাজীপুর সদর উপজেলা, গাজীপুর জেলা, ঢাকা বিভাগ, 1346, বাংলাদেশ",
+  "query": "Konabari, Dhaka, Bangladesh"
+ },
+ "Kuchimura": null,
+ "Kuril Bishwa Road": {
+  "lat": 23.8207235,
+  "lon": 90.417603,
+  "bn": "",
+  "osm_name": "Kuril Bishwa Road, Bus stop",
+  "type": "highway/bus_stop",
+  "display": "Kuril Bishwa Road, Bus stop, নতুন বিমানবন্দর সড়ক, জিয়া কলোনি, বারিধারা ডিওএইচএস, জোয়ার সাহারা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1229, বাংলাদেশ",
+  "query": "Kuril Bishwa Road, Dhaka, Bangladesh"
+ },
+ "Kuril Chourasta": {
+  "lat": 23.8181379,
+  "lon": 90.4221294,
+  "bn": "কুড়িল",
+  "osm_name": "কুড়িল",
+  "type": "place/suburb",
+  "display": "কুড়িল, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1229, বাংলাদেশ",
+  "query": "Kuril, Dhaka"
+ },
+ "Kuril Flyover": {
+  "lat": 23.8223541,
+  "lon": 90.4200251,
+  "bn": "",
+  "osm_name": "Kuril Flyover",
+  "type": "highway/trunk_link",
+  "display": "Kuril Flyover, নিকুঞ্জ ১, কুরাতলি, কুড়িল, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1229, বাংলাদেশ",
+  "query": "Kuril Flyover, Dhaka, Bangladesh"
+ },
+ "Madanpur": {
+  "lat": 23.6922509,
+  "lon": 90.5470311,
+  "bn": "মদনপুর",
+  "osm_name": "মদনপুর",
+  "type": "place/village",
+  "display": "মদনপুর, বন্দর উপজেলা, নারায়ণগঞ্জ জেলা, ঢাকা বিভাগ, 1431, বাংলাদেশ",
+  "query": "Madanpur, Dhaka, Bangladesh"
+ },
+ "Madhya Badda": {
+  "lat": 23.7807959,
+  "lon": 90.4262663,
+  "bn": "মধ্য বাড্ডা",
+  "osm_name": "মধ্য বাড্ডা",
+  "type": "place/quarter",
+  "display": "মধ্য বাড্ডা, গুলশান, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1212, বাংলাদেশ",
+  "query": "Middle Badda, Dhaka"
+ },
+ "Malibagh": {
+  "lat": 23.7470671,
+  "lon": 90.4137718,
+  "bn": "মালিবাগ",
+  "osm_name": "মালিবাগ",
+  "type": "place/suburb",
+  "display": "মালিবাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1217, বাংলাদেশ",
+  "query": "Malibagh, Dhaka, Bangladesh"
+ },
+ "Malibagh Railgate": {
+  "lat": 23.7496972,
+  "lon": 90.4126346,
+  "bn": "",
+  "osm_name": "Malibagh Railgate South Bus Stop",
+  "type": "highway/bus_stop",
+  "display": "Malibagh Railgate South Bus Stop, মগবাজার-মৌচাক ফ্লাইওভার, সোনালীবাগ, বাগানবাড়ী, নয়াটোলা, মগবাজার, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1217, বাংলাদেশ",
+  "query": "Malibagh Railgate, Dhaka, Bangladesh"
+ },
+ "Manik Mia Avenue": {
+  "lat": 23.7583627,
+  "lon": 90.3792807,
+  "bn": "মানিক মিয়া এভিনিউ",
+  "osm_name": "মানিক মিয়া এভিনিউ",
+  "type": "highway/trunk",
+  "display": "মানিক মিয়া এভিনিউ, মণিপুরি পাড়া, সোবহানবাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1215, বাংলাদেশ",
+  "query": "Manik Mia Avenue, Dhaka, Bangladesh"
+ },
+ "Manik Nagar": {
+  "lat": 23.7224852,
+  "lon": 90.4289394,
+  "bn": "",
+  "osm_name": "Manik Nagar Bus stop",
+  "type": "highway/bus_stop",
+  "display": "Manik Nagar Bus stop, Maniknagar Road, পুকুরপাড়, উত্তর মানিকনগর, মানিকনগর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1203, বাংলাদেশ",
+  "query": "Manik Nagar, Dhaka, Bangladesh"
+ },
+ "Manikganj": {
+  "lat": 23.8329836,
+  "lon": 89.9666878,
+  "bn": "মানিকগঞ্জ জেলা",
+  "osm_name": "মানিকগঞ্জ জেলা",
+  "type": "boundary/administrative",
+  "display": "মানিকগঞ্জ জেলা, ঢাকা বিভাগ, বাংলাদেশ",
+  "query": "Manikganj, Dhaka, Bangladesh"
+ },
+ "Maowa": {
+  "lat": 23.4740429,
+  "lon": 90.2552704,
+  "bn": "",
+  "osm_name": "Maowa Bus Stand, Dhaka - Barisal Highway, Mawa",
+  "type": "highway/bus_stop",
+  "display": "Maowa Bus Stand, Dhaka - Barisal Highway, Mawa, AH1, মাওয়া, লৌহজং উপজেলা, মুন্সিগঞ্জ জেলা, ঢাকা বিভাগ, 1535, বাংলাদেশ",
+  "query": "Maowa, Dhaka, Bangladesh"
+ },
+ "Matsya Bhaban": {
+  "lat": 23.7339341,
+  "lon": 90.4041812,
+  "bn": "",
+  "osm_name": "Matshya Bhaban",
+  "type": "building/yes",
+  "display": "Matshya Bhaban, Bhasani road, কাকরাইল, সেগুনবাগিচা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1000, বাংলাদেশ",
+  "query": "Matshya Bhaban, Dhaka"
+ },
+ "Matuail": {
+  "lat": 23.7052675,
+  "lon": 90.4606328,
+  "bn": "মাতুয়াইল",
+  "osm_name": "মাতুয়াইল",
+  "type": "place/suburb",
+  "display": "মাতুয়াইল, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1362, বাংলাদেশ",
+  "query": "Matuail, Dhaka, Bangladesh"
+ },
+ "Mazar Road": {
+  "lat": 23.7918841,
+  "lon": 90.3485699,
+  "bn": "মাজার রোড",
+  "osm_name": "মাজার রোড",
+  "type": "highway/secondary",
+  "display": "মাজার রোড, বাতেন নগর, ২য় কলোনী, বিশিল, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1916, বাংলাদেশ",
+  "query": "Mazar Road, Dhaka, Bangladesh"
+ },
+ "Meghna Ghat": {
+  "lat": 23.6191319,
+  "lon": 90.6158026,
+  "bn": "",
+  "osm_name": "Meghna Ghat",
+  "type": "place/Meghna Ghat",
+  "display": "Meghna Ghat, সোনারগাঁও, সোনারগাঁও উপজেলা, নারায়ণগঞ্জ জেলা, ঢাকা বিভাগ, 1440, বাংলাদেশ",
+  "query": "Meghna Ghat, Dhaka, Bangladesh"
+ },
+ "Merul": {
+  "lat": 23.7722114,
+  "lon": 90.4260775,
+  "bn": "মেরুল বাড্ডা",
+  "osm_name": "মেরুল বাড্ডা",
+  "type": "place/quarter",
+  "display": "মেরুল বাড্ডা, গুলশান, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1029, বাংলাদেশ",
+  "query": "Merul, Dhaka, Bangladesh"
+ },
+ "MES": {
+  "lat": 23.8145365,
+  "lon": 90.4040677,
+  "bn": "",
+  "osm_name": "MES Park, MES Lake",
+  "type": "leisure/park",
+  "display": "MES Park, MES Lake, বারিধারা ডিওএইচএস, কুর্মিটোলা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1206, বাংলাদেশ",
+  "query": "MES, Cantonment, Dhaka"
+ },
+ "Metro Hall": {
+  "lat": 23.6243358,
+  "lon": 90.5047895,
+  "bn": "",
+  "osm_name": "New Metro Hall নিউ মেট্রো হলের",
+  "type": "amenity/cinema",
+  "display": "New Metro Hall নিউ মেট্রো হলের, নবাব সিরাজউদ্দৌলা সড়ক, দিঘু বাবুর বাজার, নারায়ণগঞ্জ, নারায়ণগঞ্জ সদর উপজেলা, নারায়ণগঞ্জ জেলা, ঢাকা বিভাগ, 1400, বাংলাদেশ",
+  "query": "Metro Hall, Dhaka, Bangladesh"
+ },
+ "Mill Gate": {
+  "lat": 23.8960141,
+  "lon": 90.3993768,
+  "bn": "",
+  "osm_name": "Mill Gate Bus Stop মিল গেট বাস স্টপ",
+  "type": "highway/bus_stop",
+  "display": "Mill Gate Bus Stop মিল গেট বাস স্টপ, ঢাকা-ময়মনসিংহ মহাসড়ক, পূর্ব আরিচপুর, চেরাগ আলী, টঙ্গী, গাজীপুর সদর উপজেলা, গাজীপুর জেলা, ঢাকা বিভাগ, 1712, বাংলাদেশ",
+  "query": "Mill Gate, Dhaka, Bangladesh"
+ },
+ "Mirpur 1": {
+  "lat": 23.801924,
+  "lon": 90.3523456,
+  "bn": "মিরপুর ১",
+  "osm_name": "মিরপুর ১",
+  "type": "place/quarter",
+  "display": "মিরপুর ১, শাহ আলী বাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1216, বাংলাদেশ",
+  "query": "Mirpur 1, Dhaka, Bangladesh"
+ },
+ "Mirpur 10": {
+  "lat": 23.8095873,
+  "lon": 90.3723626,
+  "bn": "মিরপুর ১০",
+  "osm_name": "মিরপুর ১০",
+  "type": "boundary/administrative",
+  "display": "মিরপুর ১০, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, বাংলাদেশ",
+  "query": "Mirpur 10, Dhaka, Bangladesh"
+ },
+ "Mirpur 11": {
+  "lat": 23.8173854,
+  "lon": 90.3748383,
+  "bn": "মিরপুর ১১",
+  "osm_name": "মিরপুর ১১",
+  "type": "boundary/administrative",
+  "display": "মিরপুর ১১, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, বাংলাদেশ",
+  "query": "Mirpur 11, Dhaka, Bangladesh"
+ },
+ "Mirpur 12": {
+  "lat": 23.8251043,
+  "lon": 90.3706719,
+  "bn": "মিরপুর ১২",
+  "osm_name": "মিরপুর ১২",
+  "type": "boundary/administrative",
+  "display": "মিরপুর ১২, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, বাংলাদেশ",
+  "query": "Mirpur 12, Dhaka, Bangladesh"
+ },
+ "Mirpur 13": {
+  "lat": 23.8064,
+  "lon": 90.3776496,
+  "bn": "মিরপুর ১৩",
+  "osm_name": "মিরপুর ১৩",
+  "type": "place/quarter",
+  "display": "মিরপুর ১৩, সেনপাড়া পর্বতা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1216, বাংলাদেশ",
+  "query": "Mirpur 13, Dhaka, Bangladesh"
+ },
+ "Mirpur 14": {
+  "lat": 23.7988425,
+  "lon": 90.3847119,
+  "bn": "মিরপুর ১৪",
+  "osm_name": "মিরপুর ১৪",
+  "type": "place/quarter",
+  "display": "মিরপুর ১৪, মিরপুর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1206, বাংলাদেশ",
+  "query": "Mirpur 14, Dhaka, Bangladesh"
+ },
+ "Mirpur 2": {
+  "lat": 23.8063402,
+  "lon": 90.3570259,
+  "bn": "",
+  "osm_name": "Mirpur 2",
+  "type": "boundary/administrative",
+  "display": "Mirpur 2, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, বাংলাদেশ",
+  "query": "Mirpur 2, Dhaka, Bangladesh"
+ },
+ "Mirpur DOHS": {
+  "lat": 23.8371883,
+  "lon": 90.3689834,
+  "bn": "মিরপুর ডিওএইচএস",
+  "osm_name": "মিরপুর ডিওএইচএস",
+  "type": "place/quarter",
+  "display": "মিরপুর ডিওএইচএস, মিরপুর সেনানিবাস, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1216, বাংলাদেশ",
+  "query": "Mirpur DOHS, Dhaka, Bangladesh"
+ },
+ "Mitford Ghat": {
+  "lat": 23.7100338,
+  "lon": 90.4016154,
+  "bn": "",
+  "osm_name": "Mitford Hospital Kheya Ghat, Mitford Rd, Dhaka",
+  "type": "amenity/hospital",
+  "display": "Mitford Hospital Kheya Ghat, Mitford Rd, Dhaka, বেড়িবাঁধ সড়ক, কামালবাগ, নলগোলা, বাবু বাজার, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1310, বাংলাদেশ",
+  "query": "Mitford Ghat, Dhaka, Bangladesh"
+ },
+ "Mogbazar": {
+  "lat": 23.7545873,
+  "lon": 90.4096892,
+  "bn": "মগবাজার",
+  "osm_name": "মগবাজার",
+  "type": "place/borough",
+  "display": "মগবাজার, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, বাংলাদেশ",
+  "query": "Mogbazar, Dhaka, Bangladesh"
+ },
+ "Mohakhali": {
+  "lat": 23.7794681,
+  "lon": 90.4046308,
+  "bn": "মহাখালী",
+  "osm_name": "মহাখালী",
+  "type": "place/suburb",
+  "display": "মহাখালী, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 2467, বাংলাদেশ",
+  "query": "Mohakhali, Dhaka, Bangladesh"
+ },
+ "Mohammadpur": {
+  "lat": 23.7636683,
+  "lon": 90.363244,
+  "bn": "মোহাম্মদপুর",
+  "osm_name": "মোহাম্মদপুর",
+  "type": "boundary/administrative",
+  "display": "মোহাম্মদপুর, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1207, বাংলাদেশ",
+  "query": "Mohammadpur, Dhaka, Bangladesh"
+ },
+ "Mohammadpur Bus Stand": {
+  "lat": 23.7569928,
+  "lon": 90.3617359,
+  "bn": "",
+  "osm_name": "Mohammadpur Bus Stand",
+  "type": "highway/bus_stop",
+  "display": "Mohammadpur Bus Stand, সাতমসজিদ রোড, চানমিয়া হাউজিং, বাঁশবাড়ি, লালমাটিয়া, মোহাম্মদপুর, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1207, বাংলাদেশ",
+  "query": "Mohammadpur Bus Stand, Dhaka, Bangladesh"
+ },
+ "Motijheel": {
+  "lat": 23.7272598,
+  "lon": 90.4211957,
+  "bn": "মতিঝিল",
+  "osm_name": "মতিঝিল",
+  "type": "place/suburb",
+  "display": "মতিঝিল, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1203, বাংলাদেশ",
+  "query": "Motijheel, Dhaka, Bangladesh"
+ },
+ "Mouchak": {
+  "lat": 24.0273773,
+  "lon": 90.2958494,
+  "bn": "মৌচাক",
+  "osm_name": "মৌচাক",
+  "type": "place/village",
+  "display": "মৌচাক, কালিয়াকৈর উপজেলা, গাজীপুর জেলা, ঢাকা বিভাগ, 1751, বাংলাদেশ",
+  "query": "Mouchak, Dhaka, Bangladesh"
+ },
+ "Mugdapara": {
+  "lat": 23.7291223,
+  "lon": 90.4335651,
+  "bn": "মুগদা",
+  "osm_name": "মুগদা",
+  "type": "place/suburb",
+  "display": "মুগদা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1203, বাংলাদেশ",
+  "query": "Mugdapara, Dhaka, Bangladesh"
+ },
+ "Nabisco": {
+  "lat": 23.7696456,
+  "lon": 90.4008637,
+  "bn": "",
+  "osm_name": "Nabisco Bus Stop, Bus station",
+  "type": "amenity/bus_station",
+  "display": "Nabisco Bus Stop, Bus station, শহীদ তাজউদ্দীন আহমদ সরণী, গুলশান, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1208, বাংলাদেশ",
+  "query": "Nabisco, Dhaka, Bangladesh"
+ },
+ "Nadda": {
+  "lat": 23.8103727,
+  "lon": 90.4195237,
+  "bn": "নদ্দা",
+  "osm_name": "নদ্দা",
+  "type": "place/quarter",
+  "display": "নদ্দা, গুলশান, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1229, বাংলাদেশ",
+  "query": "Nadda, Dhaka, Bangladesh"
+ },
+ "Nandan Park": {
+  "lat": 24.0300592,
+  "lon": 90.239812,
+  "bn": "নন্দন পার্ক",
+  "osm_name": "নন্দন পার্ক",
+  "type": "leisure/park",
+  "display": "নন্দন পার্ক, বারৈপাড়া, কালিয়াকৈর উপজেলা, গাজীপুর জেলা, ঢাকা বিভাগ, 1750, বাংলাদেশ",
+  "query": "Nandan Park, Dhaka, Bangladesh"
+ },
+ "Narshinghapur": {
+  "lat": 23.943305,
+  "lon": 90.3113437,
+  "bn": "",
+  "osm_name": "Narshinghapur Kashimpur Road",
+  "type": "highway/tertiary",
+  "display": "Narshinghapur Kashimpur Road, নরসিংহপুর, সাভার উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1349, বাংলাদেশ",
+  "query": "Narshinghapur, Dhaka, Bangladesh"
+ },
+ "Nawabganj": {
+  "lat": 23.6590292,
+  "lon": 90.1671842,
+  "bn": "নবাবগঞ্জ উপজেলা",
+  "osm_name": "নবাবগঞ্জ উপজেলা",
+  "type": "boundary/administrative",
+  "display": "নবাবগঞ্জ উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1323, বাংলাদেশ",
+  "query": "Nawabganj, Dhaka, Bangladesh"
+ },
+ "Naya Bazar": {
+  "lat": 23.7146166,
+  "lon": 90.406245,
+  "bn": "",
+  "osm_name": "Naya Bazar Municipal Market, Nawab Eusuf Rd, Dhaka",
+  "type": "amenity/marketplace",
+  "display": "Naya Bazar Municipal Market, Nawab Eusuf Rd, Dhaka, নবাব ইউসুফ সড়ক, জিন্দাবাহার, নয়াবাজার, তাঁতি বাজার, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1100, বাংলাদেশ",
+  "query": "Naya Bazar, Dhaka, Bangladesh"
+ },
+ "New Market": {
+  "lat": 23.6315253,
+  "lon": 90.4438571,
+  "bn": "",
+  "osm_name": "New Market",
+  "type": "amenity/marketplace",
+  "display": "New Market, Sadur Bazar Rd, কেরাণীগঞ্জ উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1311, বাংলাদেশ",
+  "query": "New Market, Dhaka, Bangladesh"
+ },
+ "Nila Market": null,
+ "Nilkhet": {
+  "lat": 23.7329358,
+  "lon": 90.3860855,
+  "bn": "নীলক্ষেত",
+  "osm_name": "নীলক্ষেত",
+  "type": "place/quarter",
+  "display": "নীলক্ষেত, আজিমপুর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1209, বাংলাদেশ",
+  "query": "Nilkhet, Dhaka, Bangladesh"
+ },
+ "Nimtola": {
+  "lat": 23.7431995,
+  "lon": 90.3641602,
+  "bn": "নিমতলা",
+  "osm_name": "নিমতলা",
+  "type": "place/neighbourhood",
+  "display": "নিমতলা, সুলতানগঞ্জ, রায়ের বাজার, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1205, বাংলাদেশ",
+  "query": "Nimtola, Dhaka, Bangladesh"
+ },
+ "Nobinagar": {
+  "lat": 23.7059999,
+  "lon": 90.4312589,
+  "bn": "",
+  "osm_name": "Mir Hazirbagh Bus stop, South Jatrabari, Nobinagar, Dhaka",
+  "type": "highway/bus_stop",
+  "display": "Mir Hazirbagh Bus stop, South Jatrabari, Nobinagar, Dhaka, দয়াগঞ্জ নতুন রাস্তা, ঋষিপাড়া, পশ্চিম যাত্রাবাড়ী, দয়াগঞ্জ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1232, বাংলাদেশ",
+  "query": "Nobinagar, Dhaka, Bangladesh"
+ },
+ "Notre Dame College": {
+  "lat": 23.7301888,
+  "lon": 90.4207873,
+  "bn": "নটর ডেম কলেজ",
+  "osm_name": "নটর ডেম কলেজ",
+  "type": "amenity/college",
+  "display": "নটর ডেম কলেজ, আউটার সার্কুলার রোড, ব্যাংক কলোনী, আরামবাগ, মতিঝিল, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1203, বাংলাদেশ",
+  "query": "Notre Dame College, Dhaka, Bangladesh"
+ },
+ "Notun Bazar": {
+  "lat": 23.7982944,
+  "lon": 90.4239709,
+  "bn": "নতুন বাজার",
+  "osm_name": "নতুন বাজার",
+  "type": "place/quarter",
+  "display": "নতুন বাজার, বারিধারা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1212, বাংলাদেশ",
+  "query": "Notun Bazar, Dhaka, Bangladesh"
+ },
+ "Old Airport": {
+  "lat": 23.7684547,
+  "lon": 90.3891736,
+  "bn": "পুরাতন বিমানবন্দর সড়ক",
+  "osm_name": "পুরাতন বিমানবন্দর সড়ক",
+  "type": "highway/trunk",
+  "display": "পুরাতন বিমানবন্দর সড়ক, এলেনবাড়ী, তেজগাঁও, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1215, বাংলাদেশ",
+  "query": "Old Airport, Dhaka, Bangladesh"
+ },
+ "Palashi": {
+  "lat": 23.7271304,
+  "lon": 90.3896349,
+  "bn": "পলাশী‌ বাজার",
+  "osm_name": "পলাশী‌ বাজার",
+  "type": "amenity/marketplace",
+  "display": "পলাশী‌ বাজার, পলাশী সড়ক, পলাশী, খাজে দেওয়ান, আজিমপুর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1211, বাংলাদেশ",
+  "query": "Palashi, Dhaka, Bangladesh"
+ },
+ "Pallabi": {
+  "lat": 23.8249938,
+  "lon": 90.3579782,
+  "bn": "পল্লবী",
+  "osm_name": "পল্লবী",
+  "type": "place/suburb",
+  "display": "পল্লবী, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1216, বাংলাদেশ",
+  "query": "Pallabi, Dhaka, Bangladesh"
+ },
+ "Palli Bidyut": {
+  "lat": 23.924306,
+  "lon": 90.263235,
+  "bn": "",
+  "osm_name": "Palli Bidyut",
+  "type": "highway/bus_stop",
+  "display": "Palli Bidyut, নবীনগর - চন্দ্রা মহাসড়ক, সাভার ডিওএইচএস, সাভার ক্যান্টনমেন্ট, নবীনগর, সাভার উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1334, বাংলাদেশ",
+  "query": "Palli Bidyut, Dhaka, Bangladesh"
+ },
+ "Paltan": {
+  "lat": 23.7317561,
+  "lon": 90.4114187,
+  "bn": "পল্টন",
+  "osm_name": "পল্টন",
+  "type": "place/suburb",
+  "display": "পল্টন, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1000, বাংলাদেশ",
+  "query": "Paltan, Dhaka, Bangladesh"
+ },
+ "Panthapath": {
+  "lat": 23.7505356,
+  "lon": 90.3900843,
+  "bn": "পান্থপথ",
+  "osm_name": "পান্থপথ",
+  "type": "highway/secondary",
+  "display": "পান্থপথ, বাংলা মোটর, পান্থপথ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 2015, বাংলাদেশ",
+  "query": "Panthapath, Dhaka, Bangladesh"
+ },
+ "Paturia": {
+  "lat": 23.7888496,
+  "lon": 89.8098957,
+  "bn": "পাটুরিয়া",
+  "osm_name": "পাটুরিয়া",
+  "type": "place/village",
+  "display": "পাটুরিয়া, শিবালয় উপজেলা, মানিকগঞ্জ জেলা, ঢাকা বিভাগ, বাংলাদেশ",
+  "query": "Paturia, Dhaka, Bangladesh"
+ },
+ "Police Plaza": {
+  "lat": 23.7723049,
+  "lon": 90.4157346,
+  "bn": "পুলিশ প্লাজা",
+  "osm_name": "পুলিশ প্লাজা",
+  "type": "amenity/ferry_terminal",
+  "display": "পুলিশ প্লাজা, Hatir Jheel Link Road, দক্ষিণ বাড্ডা, গুলশান, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1029, বাংলাদেশ",
+  "query": "Police Plaza, Dhaka, Bangladesh"
+ },
+ "Postagola": {
+  "lat": 23.6921384,
+  "lon": 90.4331267,
+  "bn": "",
+  "osm_name": "Postagola Bus stop, Dhaka Mawa Highway, Dhaka",
+  "type": "highway/bus_stop",
+  "display": "Postagola Bus stop, Dhaka Mawa Highway, Dhaka, N8, নতুন জুরাইন, পোস্তগোলা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1204, বাংলাদেশ",
+  "query": "Postagola, Dhaka, Bangladesh"
+ },
+ "Press Club": {
+  "lat": 23.7295084,
+  "lon": 90.4067004,
+  "bn": "প্রেস ক্লাব",
+  "osm_name": "প্রেস ক্লাব",
+  "type": "club/yes",
+  "display": "প্রেস ক্লাব, তোপখানা রোড, বিজয়নগর, পল্টন, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1000, বাংলাদেশ",
+  "query": "Press Club, Dhaka, Bangladesh"
+ },
+ "Proshika Moor": {
+  "lat": 24.415524,
+  "lon": 90.6552503,
+  "bn": "",
+  "osm_name": "Proshika Moor",
+  "type": "junction/yes",
+  "display": "Proshika Moor, Murog Mahal Rd, Hospital Quarter, Mridha Bari, দীপের শহর, হোসেনপুর উপজেলা, কিশোরগঞ্জ জেলা, ঢাকা বিভাগ, 2320, বাংলাদেশ",
+  "query": "Proshika Moor, Bangladesh"
+ },
+ "Purobi": {
+  "lat": 23.8190612,
+  "lon": 90.3652321,
+  "bn": "Sare 11",
+  "osm_name": "Sare 11",
+  "type": "highway/bus_stop",
+  "display": "Sare 11, বেগম রোকেয়া সরণী, Mirpur 6, মিরপুর ৭, মিরপুর, মিরপুর ৭, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1216, বাংলাদেশ",
+  "query": "Purobi, Dhaka, Bangladesh"
+ },
+ "Rajarbag": {
+  "lat": 23.7358296,
+  "lon": 90.440817,
+  "bn": "রাজারবাগ",
+  "osm_name": "রাজারবাগ",
+  "type": "place/suburb",
+  "display": "রাজারবাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1214, বাংলাদেশ",
+  "query": "Rajarbag, Dhaka, Bangladesh"
+ },
+ "Rajendrapur": {
+  "lat": 24.100134,
+  "lon": 90.448634,
+  "bn": "রাজেন্দ্রপুর",
+  "osm_name": "রাজেন্দ্রপুর",
+  "type": "place/village",
+  "display": "রাজেন্দ্রপুর, শ্রীপুর উপজেলা (গাজীপুর), গাজীপুর জেলা, ঢাকা বিভাগ, 1742, বাংলাদেশ",
+  "query": "Rajendrapur, Dhaka, Bangladesh"
+ },
+ "Rajlakshmi": {
+  "lat": 23.8643282,
+  "lon": 90.3999441,
+  "bn": "",
+  "osm_name": "Rajlakshmi Bus Stopage, Uttara",
+  "type": "highway/bus_stop",
+  "display": "Rajlakshmi Bus Stopage, Uttara, ঢাকা - ময়মনসিংহ মহাসড়ক, সেক্টর ১, উত্তরা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1276, বাংলাদেশ",
+  "query": "Rajlakshmi, Dhaka, Bangladesh"
+ },
+ "Rampura Bazar": {
+  "lat": 23.7602428,
+  "lon": 90.4186208,
+  "bn": "",
+  "osm_name": "Rampura Kacha Bazar",
+  "type": "amenity/marketplace",
+  "display": "Rampura Kacha Bazar, ডি আই টি সড়ক, পশ্চিম হাজিপাড়া, পূর্ব নয়াটোলা, নয়াটোলা, মগবাজার, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1219, বাংলাদেশ",
+  "query": "Rampura Bazar, Dhaka, Bangladesh"
+ },
+ "Rampura Bridge": {
+  "lat": 23.7680296,
+  "lon": 90.4233403,
+  "bn": "রামপুরা ব্রিজ",
+  "osm_name": "রামপুরা ব্রিজ",
+  "type": "highway/primary",
+  "display": "রামপুরা ব্রিজ, আনন্দ নগর, বাড্ডা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1029, বাংলাদেশ",
+  "query": "Rampura Bridge, Dhaka, Bangladesh"
+ },
+ "Ray Saheb Bazar": {
+  "lat": 23.7138661,
+  "lon": 90.411512,
+  "bn": "",
+  "osm_name": "Ray Saheb Bazar Boro Masjid, Nawabpur Rd, Dhaka",
+  "type": "amenity/place_of_worship",
+  "display": "Ray Saheb Bazar Boro Masjid, Nawabpur Rd, Dhaka, নবাবপুর সড়ক, কাপ্তান বাজার, ঠাটারী বাজার, নবাবপুর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1100, বাংলাদেশ",
+  "query": "Ray Saheb Bazar, Dhaka, Bangladesh"
+ },
+ "Rayer Bazar": {
+  "lat": 23.7448424,
+  "lon": 90.3627337,
+  "bn": "রায়ের বাজার",
+  "osm_name": "রায়ের বাজার",
+  "type": "place/borough",
+  "display": "রায়ের বাজার, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, বাংলাদেশ",
+  "query": "Rayer Bazar, Dhaka, Bangladesh"
+ },
+ "Rayerbag": {
+  "lat": 23.6980479,
+  "lon": 90.457102,
+  "bn": "রায়েরবাগ",
+  "osm_name": "রায়েরবাগ",
+  "type": "place/suburb",
+  "display": "রায়েরবাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1236, বাংলাদেশ",
+  "query": "Rayerbag, Dhaka, Bangladesh"
+ },
+ "Ring Road": {
+  "lat": 23.7704497,
+  "lon": 90.3590731,
+  "bn": "রিং রোড",
+  "osm_name": "রিং রোড",
+  "type": "highway/secondary",
+  "display": "রিং রোড, টিক্কাপাড়া, জহুরী মহল্লা, শ্যামলী, মোহাম্মদপুর, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1207, বাংলাদেশ",
+  "query": "Ring Road, Dhaka, Bangladesh"
+ },
+ "Rupnagar": {
+  "lat": 23.8146694,
+  "lon": 90.3545683,
+  "bn": "রূপনগর",
+  "osm_name": "রূপনগর",
+  "type": "place/quarter",
+  "display": "রূপনগর, পল্লবী, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1216, বাংলাদেশ",
+  "query": "Rupnagar, Dhaka, Bangladesh"
+ },
+ "Sadarghat": {
+  "lat": 23.705892,
+  "lon": 90.4092857,
+  "bn": "",
+  "osm_name": "BIWTA Dhaka River Port, Sadarghat",
+  "type": "natural/beach",
+  "display": "BIWTA Dhaka River Port, Sadarghat, বাংলাবাজার, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1100, বাংলাদেশ",
+  "query": "Sadarghat, Dhaka, Bangladesh"
+ },
+ "Sainik Club": {
+  "lat": 23.79123,
+  "lon": 90.399527,
+  "bn": "সৈনিক ক্লাব আর্মি সিনেমা হল",
+  "osm_name": "সৈনিক ক্লাব আর্মি সিনেমা হল",
+  "type": "amenity/cinema",
+  "display": "সৈনিক ক্লাব আর্মি সিনেমা হল, সড়ক ১, চেয়ারম্যান বাড়ি, কড়াইল, গুলশান, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 2467, বাংলাদেশ",
+  "query": "Sainik Club, Dhaka, Bangladesh"
+ },
+ "Salimullah Road": {
+  "lat": 23.7595657,
+  "lon": 90.3632411,
+  "bn": "",
+  "osm_name": "Salimullah Road",
+  "type": "highway/residential",
+  "display": "Salimullah Road, চানমিয়া হাউজিং, বাঁশবাড়ি, লালমাটিয়া, মোহাম্মদপুর, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1207, বাংলাদেশ",
+  "query": "Salimullah Road, Dhaka, Bangladesh"
+ },
+ "Sanarpar": {
+  "lat": 23.6969123,
+  "lon": 90.4903197,
+  "bn": "সানারপাড়",
+  "osm_name": "সানারপাড়",
+  "type": "place/suburb",
+  "display": "সানারপাড়, নারায়ণগঞ্জ, নারায়ণগঞ্জ সদর উপজেলা, নারায়ণগঞ্জ জেলা, ঢাকা বিভাগ, 1361, বাংলাদেশ",
+  "query": "Sanarpar, Dhaka, Bangladesh"
+ },
+ "Satrasta": {
+  "lat": 23.7574463,
+  "lon": 90.3924252,
+  "bn": "",
+  "osm_name": "Satrasta Road",
+  "type": "highway/tertiary",
+  "display": "Satrasta Road, তেজতুরী বাজার, কাওরান বাজার, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1215, বাংলাদেশ",
+  "query": "Satrasta, Dhaka, Bangladesh"
+ },
+ "Saudi Colony": {
+  "lat": 23.7783443,
+  "lon": 90.3893653,
+  "bn": "",
+  "osm_name": "Saudi Colony Bus Stop",
+  "type": "highway/bus_stop",
+  "display": "Saudi Colony Bus Stop, বীর উত্তম জিয়াউর রহমান সড়ক, আরজতপাড়া, নাখালপাড়া, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1208, বাংলাদেশ",
+  "query": "Saudi Colony, Dhaka, Bangladesh"
+ },
+ "Savar": {
+  "lat": 23.8875672,
+  "lon": 90.2926034,
+  "bn": "সাভার উপজেলা",
+  "osm_name": "সাভার উপজেলা",
+  "type": "boundary/administrative",
+  "display": "সাভার উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, বাংলাদেশ",
+  "query": "Savar, Dhaka, Bangladesh"
+ },
+ "Savar Cantonment": {
+  "lat": 23.9165413,
+  "lon": 90.2703256,
+  "bn": "সাভার ক্যান্টনমেন্ট",
+  "osm_name": "সাভার ক্যান্টনমেন্ট",
+  "type": "place/suburb",
+  "display": "সাভার ক্যান্টনমেন্ট, নবীনগর, সাভার উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1334, বাংলাদেশ",
+  "query": "Savar Cantonment, Dhaka, Bangladesh"
+ },
+ "Sayedabad": {
+  "lat": 23.7122102,
+  "lon": 90.429432,
+  "bn": "",
+  "osm_name": "Royal Express Sayedabad counter, Dhaka - Sylhet Hwy, Dhaka",
+  "type": "amenity/bus_station",
+  "display": "Royal Express Sayedabad counter, Dhaka - Sylhet Hwy, Dhaka, Jatrabari Road, উত্তর যাত্রাবাড়ী, যাত্রাবাড়ী, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1232, বাংলাদেশ",
+  "query": "Sayedabad, Dhaka, Bangladesh"
+ },
+ "Science Lab": {
+  "lat": 23.7391036,
+  "lon": 90.3833174,
+  "bn": "",
+  "osm_name": "Science Lab / City College Bus stop, Mirpur Rd, Dhaka",
+  "type": "highway/bus_stop",
+  "display": "Science Lab / City College Bus stop, Mirpur Rd, Dhaka, মিরপুর রোড, কাঁটাবন, কলাবাগান, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1205, বাংলাদেশ",
+  "query": "Science Lab, Dhaka, Bangladesh"
+ },
+ "Shahbag": {
+  "lat": 23.7373359,
+  "lon": 90.3961724,
+  "bn": "শাহবাগ",
+  "osm_name": "শাহবাগ",
+  "type": "place/suburb",
+  "display": "শাহবাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1209, বাংলাদেশ",
+  "query": "Shahbag, Dhaka, Bangladesh"
+ },
+ "Shahjadpur": {
+  "lat": 23.7919138,
+  "lon": 90.4242805,
+  "bn": "শাহজাদপুর",
+  "osm_name": "শাহজাদপুর",
+  "type": "place/suburb",
+  "display": "শাহজাদপুর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1212, বাংলাদেশ",
+  "query": "Shahjadpur, Dhaka, Bangladesh"
+ },
+ "Shanir Akhra": null,
+ "Shankar": {
+  "lat": 23.749615,
+  "lon": 90.3660979,
+  "bn": "শংকর",
+  "osm_name": "শংকর",
+  "type": "place/quarter",
+  "display": "শংকর, ধানমন্ডি, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1207, বাংলাদেশ",
+  "query": "Shankar, Dhaka, Bangladesh"
+ },
+ "Shantinagar": {
+  "lat": 23.7385358,
+  "lon": 90.4139156,
+  "bn": "শান্তিনগর",
+  "osm_name": "শান্তিনগর",
+  "type": "place/suburb",
+  "display": "শান্তিনগর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1217, বাংলাদেশ",
+  "query": "Shantinagar, Dhaka, Bangladesh"
+ },
+ "Shewra": {
+  "lat": 23.8179937,
+  "lon": 90.4136055,
+  "bn": "শেওড়া ফুটওভার ব্রিজ",
+  "osm_name": "শেওড়া ফুটওভার ব্রিজ",
+  "type": "highway/pedestrian",
+  "display": "শেওড়া ফুটওভার ব্রিজ, বারিধারা ডিওএইচএস, জোয়ার সাহারা, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1229, বাংলাদেশ",
+  "query": "Shewra, Dhaka, Bangladesh"
+ },
+ "Shewrapara": {
+  "lat": 23.7924342,
+  "lon": 90.3751652,
+  "bn": "শেওড়াপাড়া",
+  "osm_name": "শেওড়াপাড়া",
+  "type": "place/suburb",
+  "display": "শেওড়াপাড়া, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1916, বাংলাদেশ",
+  "query": "Shewrapara, Dhaka, Bangladesh"
+ },
+ "Shia Mosque": {
+  "lat": 23.7620967,
+  "lon": 90.3591133,
+  "bn": "",
+  "osm_name": "Shia Jame Masjid",
+  "type": "landuse/religious",
+  "display": "Shia Jame Masjid, বাঁশবাড়ি, লালমাটিয়া, মোহাম্মদপুর, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, বাংলাদেশ",
+  "query": "Shia Masjid, Mohammadpur, Dhaka"
+ },
+ "Shib Bari": {
+  "lat": 23.7291789,
+  "lon": 90.3978379,
+  "bn": "",
+  "osm_name": "Shib bari",
+  "type": "building/yes",
+  "display": "Shib bari, Kazi Motaher hossain vaban, নিমতলী, বকশীবাজার, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1000, বাংলাদেশ",
+  "query": "Shib Bari, Dhaka, Bangladesh"
+ },
+ "Shibu Market": {
+  "lat": 23.6441126,
+  "lon": 90.4934847,
+  "bn": "",
+  "osm_name": "Ranima Plazza,Shibu Market",
+  "type": "amenity/marketplace",
+  "display": "Ranima Plazza,Shibu Market, ঢাকা-নারায়ণগঞ্জ সংযোগ সড়ক, ফতুল্লা, নারায়ণগঞ্জ, নারায়ণগঞ্জ সদর উপজেলা, নারায়ণগঞ্জ জেলা, ঢাকা বিভাগ, 1401, বাংলাদেশ",
+  "query": "Shibu Market, Dhaka, Bangladesh"
+ },
+ "Shimultola": {
+  "lat": 23.7885732,
+  "lon": 90.3654816,
+  "bn": "শিমুলতলা",
+  "osm_name": "শিমুলতলা",
+  "type": "place/neighbourhood",
+  "display": "শিমুলতলা, মধ্য পীরেরবাগ, পীরেরবাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1916, বাংলাদেশ",
+  "query": "Shimultola, Dhaka, Bangladesh"
+ },
+ "Shishu Mela": {
+  "lat": 23.7729437,
+  "lon": 90.3671489,
+  "bn": "",
+  "osm_name": "Shishu Mela Bus stop, Bus stop",
+  "type": "highway/bus_stop",
+  "display": "Shishu Mela Bus stop, Bus stop, Khilji Road, জহুরী মহল্লা, শ্যামলী, মোহাম্মদপুর, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1207, বাংলাদেশ",
+  "query": "Shishu Mela, Dhaka, Bangladesh"
+ },
+ "Shiyal Bari": {
+  "lat": 23.8081946,
+  "lon": 90.3580172,
+  "bn": "",
+  "osm_name": "Shiyal Bari Mor Bus Stop",
+  "type": "highway/bus_stop",
+  "display": "Shiyal Bari Mor Bus Stop, Hazi Road, শিয়ালবাড়ী, বড়বাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1216, বাংলাদেশ",
+  "query": "Shiyal Bari, Dhaka, Bangladesh"
+ },
+ "Shonbari Sreenagar": {
+  "lat": 23.5446583,
+  "lon": 90.3011625,
+  "bn": "",
+  "osm_name": "Khanka-e Sultania Patabhog Chhonbari, Shrine, Shonbari, Sirnagor, Munshiganj Munshiganj, Sreenagar",
+  "type": "amenity/place_of_worship",
+  "display": "Khanka-e Sultania Patabhog Chhonbari, Shrine, Shonbari, Sirnagor, Munshiganj Munshiganj, Sreenagar, Munshiganj-Sreenagar-Ichapura Road, শ্রীনগর, শ্রীনগর উপজেলা, মুন্সিগঞ্জ জেলা, ঢাকা বিভাগ, 1550, বাংলাদেশ",
+  "query": "Shonbari Sreenagar, Dhaka, Bangladesh"
+ },
+ "Showari Ghat": {
+  "lat": 23.710865,
+  "lon": 90.3943553,
+  "bn": "",
+  "osm_name": "Showari Ghat",
+  "type": "amenity/ferry_terminal",
+  "display": "Showari Ghat, বেড়িবাঁধ সড়ক, কামালবাগ, নলগোলা, বাবু বাজার, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1310, বাংলাদেশ",
+  "query": "Showari Ghat, Dhaka, Bangladesh"
+ },
+ "Shukrabad": {
+  "lat": 23.7537064,
+  "lon": 90.3797806,
+  "bn": "শুক্রাবাদ",
+  "osm_name": "শুক্রাবাদ",
+  "type": "place/suburb",
+  "display": "শুক্রাবাদ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1215, বাংলাদেশ",
+  "query": "Shukrabad, Dhaka, Bangladesh"
+ },
+ "Shyamoli": {
+  "lat": 23.7743951,
+  "lon": 90.3654285,
+  "bn": "শ্যামলী",
+  "osm_name": "শ্যামলী",
+  "type": "place/suburb",
+  "display": "শ্যামলী, মোহাম্মদপুর, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1207, বাংলাদেশ",
+  "query": "Shyamoli, Dhaka, Bangladesh"
+ },
+ "Sign Board": {
+  "lat": 23.7098065,
+  "lon": 90.3666547,
+  "bn": "",
+  "osm_name": "Sign Board Bazar",
+  "type": "amenity/marketplace",
+  "display": "Sign Board Bazar, আশরাফাবাদ মূল সড়ক, হুজুরপাড়া, কামরাঙ্গীরচর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1312, বাংলাদেশ",
+  "query": "Sign Board, Dhaka, Bangladesh"
+ },
+ "Sikder Medical College": {
+  "lat": 23.7413377,
+  "lon": 90.3603919,
+  "bn": "",
+  "osm_name": "Sikder Medical College More",
+  "type": "amenity/college",
+  "display": "Sikder Medical College More, বেড়িবাঁধ সড়ক, শিকদার এস্টেট, চরকঘাটা, নবাবগঞ্জ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1312, বাংলাদেশ",
+  "query": "Sikder Medical College, Dhaka, Bangladesh"
+ },
+ "Sony Cinema Hall": {
+  "lat": 23.8004874,
+  "lon": 90.3553934,
+  "bn": "Sony Cinema Hall",
+  "osm_name": "Sony Cinema Hall",
+  "type": "amenity/cinema",
+  "display": "Sony Cinema Hall, চিড়িয়াখানা সড়ক, কলওয়ালা পাড়া, মিরপুর ১, শাহ আলী বাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1216, বাংলাদেশ",
+  "query": "Sony Cinema Hall, Dhaka, Bangladesh"
+ },
+ "South Banasree": {
+  "lat": 23.7523091,
+  "lon": 90.4402892,
+  "bn": "দক্ষিণ বনশ্রী",
+  "osm_name": "দক্ষিণ বনশ্রী",
+  "type": "place/suburb",
+  "display": "দক্ষিণ বনশ্রী, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1214, বাংলাদেশ",
+  "query": "South Banasree, Dhaka, Bangladesh"
+ },
+ "Sreepur": {
+  "lat": 24.1769991,
+  "lon": 90.4886487,
+  "bn": "শ্রীপুর উপজেলা (গাজীপুর)",
+  "osm_name": "শ্রীপুর উপজেলা (গাজীপুর)",
+  "type": "boundary/administrative",
+  "display": "শ্রীপুর উপজেলা (গাজীপুর), গাজীপুর জেলা, ঢাকা বিভাগ, বাংলাদেশ",
+  "query": "Sreepur, Dhaka, Bangladesh"
+ },
+ "Staff Road": {
+  "lat": 23.8127516,
+  "lon": 90.4017017,
+  "bn": "",
+  "osm_name": "Staff Road",
+  "type": "highway/residential",
+  "display": "Staff Road, নির্ঝর আবাসিক, ঢাকা সেনানিবাস, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1206, বাংলাদেশ",
+  "query": "Staff Road, Dhaka, Bangladesh"
+ },
+ "Star Kabab": {
+  "lat": 23.7475099,
+  "lon": 90.3702012,
+  "bn": "",
+  "osm_name": "Star Kabab",
+  "type": "amenity/fast_food",
+  "display": "Star Kabab, Road 12A, স্টাফ কোয়ার্টার, মধুবাজার, জিগাতলা, পশ্চিম ধানমন্ডি, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1209, বাংলাদেশ",
+  "query": "Star Kabab, Dhaka, Bangladesh"
+ },
+ "Station Road": {
+  "lat": 23.731954,
+  "lon": 90.4231587,
+  "bn": "স্টেশন সড়ক",
+  "osm_name": "স্টেশন সড়ক",
+  "type": "highway/secondary",
+  "display": "স্টেশন সড়ক, সবুজকানন, আরামবাগ, কমলাপুর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1203, বাংলাদেশ",
+  "query": "Station Road, Dhaka, Bangladesh"
+ },
+ "Sura Bari": {
+  "lat": 23.9628511,
+  "lon": 90.3168561,
+  "bn": "",
+  "osm_name": "Sura Bari",
+  "type": "highway/bus_stop",
+  "display": "Sura Bari, Narshinghapur Kashimpur Road, গাজীপুর, গাজীপুর সদর উপজেলা, গাজীপুর জেলা, ঢাকা বিভাগ, 1346, বাংলাদেশ",
+  "query": "Sura Bari, Dhaka, Bangladesh"
+ },
+ "Tajmahal Road": {
+  "lat": 23.7655147,
+  "lon": 90.3626389,
+  "bn": "",
+  "osm_name": "Tajmahal Road",
+  "type": "highway/residential",
+  "display": "Tajmahal Road, আজিজ মহল্লা, জেনেভা ক্যাম্প, শ্যামলী, মোহাম্মদপুর, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1207, বাংলাদেশ",
+  "query": "Tajmahal Road, Dhaka, Bangladesh"
+ },
+ "Taltola": {
+  "lat": 23.7527402,
+  "lon": 90.4229935,
+  "bn": "তালতলা",
+  "osm_name": "তালতলা",
+  "type": "place/quarter",
+  "display": "তালতলা, খিলগাঁও, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1219, বাংলাদেশ",
+  "query": "Taltola, Dhaka, Bangladesh"
+ },
+ "Tarabo": {
+  "lat": 23.7215666,
+  "lon": 90.5039592,
+  "bn": "তারাবো",
+  "osm_name": "তারাবো",
+  "type": "place/town",
+  "display": "তারাবো, রূপগঞ্জ উপজেলা, নারায়ণগঞ্জ জেলা, ঢাকা বিভাগ, 1360, বাংলাদেশ",
+  "query": "Tarabo, Dhaka, Bangladesh"
+ },
+ "Technical": {
+  "lat": 23.808916,
+  "lon": 90.362547,
+  "bn": "",
+  "osm_name": "Adorsho Technical Center",
+  "type": "amenity/driving_school",
+  "display": "Adorsho Technical Center, Lane 3, Mirpur 6, মিরপুর ৬, মিরপুর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1216, বাংলাদেশ",
+  "query": "Technical, Mirpur, Dhaka"
+ },
+ "Tikatuli": {
+  "lat": 23.7189757,
+  "lon": 90.424011,
+  "bn": "টিকাটুলি",
+  "osm_name": "টিকাটুলি",
+  "type": "place/suburb",
+  "display": "টিকাটুলি, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1203, বাংলাদেশ",
+  "query": "Tikatuli, Dhaka, Bangladesh"
+ },
+ "Tolarbag": {
+  "lat": 23.7890992,
+  "lon": 90.352055,
+  "bn": "টোলারবাগ",
+  "osm_name": "টোলারবাগ",
+  "type": "place/suburb",
+  "display": "টোলারবাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1916, বাংলাদেশ",
+  "query": "Tolarbag, Dhaka, Bangladesh"
+ },
+ "Tongi": {
+  "lat": 23.9084932,
+  "lon": 90.3980037,
+  "bn": "টঙ্গী",
+  "osm_name": "টঙ্গী",
+  "type": "place/town",
+  "display": "টঙ্গী, গাজীপুর সদর উপজেলা, গাজীপুর জেলা, ঢাকা বিভাগ, 1712, বাংলাদেশ",
+  "query": "Tongi, Dhaka, Bangladesh"
+ },
+ "TT Para": {
+  "lat": 23.724667,
+  "lon": 90.4278033,
+  "bn": "টিটিপাড়া",
+  "osm_name": "টিটিপাড়া",
+  "type": "place/neighbourhood",
+  "display": "টিটিপাড়া, দক্ষিণ কমলাপুর, গোপীবাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1203, বাংলাদেশ",
+  "query": "TT Para, Kamalapur, Dhaka"
+ },
+ "Uttar Badda": {
+  "lat": 23.7857042,
+  "lon": 90.4256113,
+  "bn": "",
+  "osm_name": "Uttar Badda Bus Stop",
+  "type": "highway/bus_stop",
+  "display": "Uttar Badda Bus Stop, বীর উত্তম রফিকুল ইসলাম এভিনিউ, গুপিপাড়া, মধ্য বাড্ডা, গুলশান, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1212, বাংলাদেশ",
+  "query": "Uttar Badda, Dhaka, Bangladesh"
+ },
+ "Vashantek": {
+  "lat": 23.8058546,
+  "lon": 90.3883455,
+  "bn": "",
+  "osm_name": "Vashantek Road",
+  "type": "highway/tertiary",
+  "display": "Vashantek Road, ভাসানটেক, ধামালকোট, ভাষানটেক, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1206, বাংলাদেশ",
+  "query": "Vashantek, Dhaka, Bangladesh"
+ },
+ "Victoria Park": {
+  "lat": 23.7092118,
+  "lon": 90.4123496,
+  "bn": "বাহাদুর শাহ পার্ক",
+  "osm_name": "বাহাদুর শাহ পার্ক",
+  "type": "leisure/park",
+  "display": "বাহাদুর শাহ পার্ক, কলতাবাজার, বাংলাবাজার, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, বাংলাদেশ",
+  "query": "Victoria Park, Dhaka, Bangladesh"
+ },
+ "Vulta": {
+  "lat": 23.7842755,
+  "lon": 90.5641893,
+  "bn": "",
+  "osm_name": "Vulta Bazar",
+  "type": "amenity/marketplace",
+  "display": "Vulta Bazar, ঢাকা-সিলেট মহাসড়ক, ভুলতা, রূপগঞ্জ উপজেলা, নারায়ণগঞ্জ জেলা, ঢাকা বিভাগ, 1462, বাংলাদেশ",
+  "query": "Vulta, Dhaka, Bangladesh"
+ },
+ "Wireless": {
+  "lat": 23.7504878,
+  "lon": 90.4086957,
+  "bn": "ওয়ারলেস",
+  "osm_name": "ওয়ারলেস",
+  "type": "place/neighbourhood",
+  "display": "ওয়ারলেস, বাগানবাড়ী, মগবাজার, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1248, বাংলাদেশ",
+  "query": "Wireless, Dhaka, Bangladesh"
+ },
+ "Workshop": {
+  "lat": 23.8679221,
+  "lon": 90.3332454,
+  "bn": "",
+  "osm_name": "Workshop",
+  "type": "building/industrial",
+  "display": "Workshop, Sathi Fashion to Saipara(Birulia), আশুলিয়া মডেল টাউন, পাড়াগাঁও, সাভার উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1341, বাংলাদেশ",
+  "query": "Workshop, Dhaka, Bangladesh"
+ },
+ "Zia Uddyan": null,
+ "Zirabo": {
+  "lat": 23.9132163,
+  "lon": 90.3212269,
+  "bn": "",
+  "osm_name": "Zirabo to Bishmail Road",
+  "type": "highway/residential",
+  "display": "Zirabo to Bishmail Road, জিরাবো, সাভার উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1341, বাংলাদেশ",
+  "query": "Zirabo, Dhaka, Bangladesh"
+ },
+ "Zirani Bazar": {
+  "lat": 23.9935433,
+  "lon": 90.2556357,
+  "bn": "",
+  "osm_name": "Zirani Bazar",
+  "type": "highway/bus_stop",
+  "display": "Zirani Bazar, নবীনগর - চন্দ্রা মহাসড়ক, ভবানীপুর, সাভার উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1349, বাংলাদেশ",
+  "query": "Zirani Bazar, Dhaka, Bangladesh"
+ }
+}

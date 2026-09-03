@@ -1,0 +1,41 @@
+{
+  "_comment": "Nominatim যেগুলো খুঁজে পায়নি, OSM-এর ট্যাগ থেকে (Overpass) হাতে বসানো। lat/lon যাচাই করা।",
+
+  "Shanir Akhra":   { "lat": 23.70366, "lon": 90.45088, "src": "OSM place=quarter শনির আখড়া" },
+  "Zia Uddyan":     { "lat": 23.76660, "lon": 90.37886, "src": "OSM leisure=park জিয়া উদ্যান" },
+  "Kanchan Bridge": { "lat": 23.83590, "lon": 90.54549, "src": "OSM কাঞ্চন সেতু" },
+  "Janapath Moor":  { "lat": 23.71271, "lon": 90.42861, "src": "OSM Jonopath Mor Bus Stop — রুটে এর পাশে যাত্রাবাড়ী/সায়েদাবাদ, তাই উত্তরার জনপথ নয়" },
+
+  "_comment2": "নিচেরগুলো Nominatim ভুল জেলায় বসিয়েছিল (Kazla→রাজশাহী, Technical→কাপাসিয়ার পুকুর)। OSM-এর highway=bus_stop নোড থেকে নেওয়া।",
+
+  "Technical":     { "lat": 23.78149, "lon": 90.35215, "src": "OSM টেকনিক্যাল বাস স্টপ, দারুস সালাম" },
+  "Kazla":         { "lat": 23.71057, "lon": 90.44138, "src": "OSM কাজলা বাস স্টপ, যাত্রাবাড়ী" },
+  "Baipayl":       { "lat": 23.93773, "lon": 90.26959, "src": "OSM Baipayl Bus Stop, আশুলিয়া" },
+  "Proshika Moor": { "lat": 23.80963, "lon": 90.36101, "src": "OSM Proshika More Bus Stop, মিরপুর" },
+  "MES":           { "lat": 23.81614, "lon": 90.40540, "src": "OSM এমইএস বাস স্টপ, ক্যান্টনমেন্ট" },
+
+  "_comment3": "একই নামের জায়গা ঢাকার বাইরেও আছে বলে ভুল হয়েছিল — Gabtoli→নারায়ণগঞ্জ, New Market→কেরানীগঞ্জ, Mouchak→কালিয়াকৈর, Nobinagar→যাত্রাবাড়ী।",
+
+  "Gabtoli":     { "lat": 23.78307, "lon": 90.34526, "src": "OSM গাবতলী বাস টার্মিনাল" },
+  "Mouchak":     { "lat": 23.74555, "lon": 90.41209, "src": "OSM মৌচাক বাস স্টপ, মালিবাগ" },
+  "New Market":  { "lat": 23.73422, "lon": 90.38447, "src": "OSM New Market Bus stop, মিরপুর রোড" },
+  "Amin Bazar":  { "lat": 23.78504, "lon": 90.33144, "src": "OSM আমিন বাজার, ঢাকা–আরিচা মহাসড়ক" },
+  "Nobinagar":   { "lat": 23.91237, "lon": 90.26052, "src": "OSM নবীনগর, সাভার" },
+  "Hazipara":    { "lat": 23.75801, "lon": 90.41784, "src": "OSM হাজীপাড়া, রামপুরা" },
+  "Sign Board":  { "lat": 23.69358, "lon": 90.48044, "src": "OSM Sign Board Bus Stop, সিদ্ধিরগঞ্জ" },
+
+  "_comment4": "একই নাম ঢাকায় দুই জায়গায়। রুটে এর আগে-পরে কোন স্টপেজ আছে দেখে ঠিকটা বাছা হয়েছে।",
+
+  "Station Road": { "lat": 23.89266, "lon": 90.40180, "src": "OSM স্টেশন রোড বাস স্টপ, টঙ্গী — পাশে টঙ্গী ও মিল গেট" },
+  "Cantonment":   { "lat": 23.79096, "lon": 90.38786, "src": "OSM Cantonment Circle বাস স্টপ — পাশে আদমজী কলেজ, সিএমএইচ" },
+  "Beribadh":     { "lat": 23.89240, "lon": 90.36148, "src": "OSM Ashulia - Beribadh Mor বাস স্টপ — পাশে ধউর, আশুলিয়া, বিরুলিয়া" },
+
+  "_comment5": "Nominatim একই নামের ছোট গলি/দোকান ধরে ফেলেছিল — 'Kakoli' মানে শ্যামলীর একটা লেন, 'Airport' মানে মহাখালীর একটা অফিস। আসল বাস স্টপ OSM থেকে।",
+
+  "Kakoli":   { "lat": 23.79432, "lon": 90.40145, "src": "OSM Kakoli / Banani Bus stop — শ্যামলীর 'Kakoli Holy Lane' নয়" },
+  "Airport":  { "lat": 23.84788, "lon": 90.40464, "src": "OSM হযরত শাহজালাল বিমানবন্দর — মহাখালীর কোনো অফিস নয়" },
+
+  "College Gate":  { "lat": 23.76942, "lon": 90.36889, "src": "OSM College Gate বাস স্টপ, মোহাম্মদপুর — পাশে আসাদ গেট, শিশুমেলা (খিলগাঁওয়ের নয়)" },
+  "Taltola":       { "lat": 23.78330, "lon": 90.37853, "src": "OSM তালতলা বাস স্টপ, আগারগাঁও — পাশে শেওড়াপাড়া, আগারগাঁও (খিলগাঁও তালতলা নয়)" },
+  "Bashundhara":   { "lat": 23.81190, "lon": 90.42118, "src": "OSM বসুন্ধরা বাস স্টপ, প্রগতি সরণি — আবাসিক এলাকার ভেতরের Kings Arena নয়" }
+}

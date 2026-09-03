@@ -1,0 +1,1451 @@
+{
+ "Abdullahpur": {
+  "lat": 23.879679,
+  "lon": 90.401353,
+  "moved_km": 0.123,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Abdullahpur Bus Stopage, Uttara"
+ },
+ "Adabor": {
+  "lat": 23.773753,
+  "lon": 90.361738,
+  "moved_km": 0.438,
+  "how": "নাম মিলেছে",
+  "osm_name": "আদাবর বাস স্টপ"
+ },
+ "Adamjee College": {
+  "lat": 23.795108,
+  "lon": 90.392953,
+  "moved_km": 0.139,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Adamjee Bus Stop"
+ },
+ "Agargaon": {
+  "lat": 23.783297,
+  "lon": 90.378527,
+  "moved_km": 0.3,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Taltola"
+ },
+ "Airport": {
+  "lat": 23.784475,
+  "lon": 90.399199,
+  "moved_km": 0.056,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "BRTC COUNTER, Dhaka to Kishoreganj"
+ },
+ "Amin Bazar": {
+  "lat": 23.785039,
+  "lon": 90.331439,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "আমিন বাজার ট্রাক স্ট্যান্ড"
+ },
+ "Ansar Camp": {
+  "lat": 23.791096,
+  "lon": 90.353924,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "আনসার ক্যাম্প"
+ },
+ "Arambagh": {
+  "lat": 23.730842,
+  "lon": 90.421205,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Arambagh Bus stop"
+ },
+ "Arambagh Kingdom": {
+  "lat": 23.730902,
+  "lon": 90.421566,
+  "moved_km": 0.0,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Arambagh Bus stop"
+ },
+ "Asad Gate": {
+  "lat": 23.760462,
+  "lon": 90.372723,
+  "moved_km": 0.037,
+  "how": "নাম মিলেছে",
+  "osm_name": "Asad Gate Bus Stand"
+ },
+ "Ashulia": {
+  "lat": 23.897869,
+  "lon": 90.330708,
+  "moved_km": 0.203,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Ashulia Bazaar"
+ },
+ "Ashulia Bazar": {
+  "lat": 23.897869,
+  "lon": 90.330708,
+  "moved_km": 0.203,
+  "how": "নাম মিলেছে",
+  "osm_name": "Ashulia Bazaar"
+ },
+ "Azampur": {
+  "lat": 23.868011,
+  "lon": 90.400482,
+  "moved_km": 0.982,
+  "how": "নাম মিলেছে",
+  "osm_name": "Azampur"
+ },
+ "Azimpur": {
+  "lat": 23.727463,
+  "lon": 90.386409,
+  "moved_km": 0.385,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Azimpur Bus stop, Azimpur Rd, Dhaka"
+ },
+ "Babubazar": {
+  "lat": 23.711755,
+  "lon": 90.403084,
+  "moved_km": 0.063,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Babu Bazaar Bus stop, Mitford Rd, Dhaka"
+ },
+ "Badda Link Road": {
+  "lat": 23.78062,
+  "lon": 90.424752,
+  "moved_km": 1.154,
+  "how": "নাম মিলেছে",
+  "osm_name": "লিংক রোড বাস স্টেশন"
+ },
+ "Baipayl": {
+  "lat": 23.937734,
+  "lon": 90.269589,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Baipayl Bus Stop"
+ },
+ "Baitul Mukarram": {
+  "lat": 23.727982,
+  "lon": 90.410676,
+  "moved_km": 0.258,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "G.P.O. Bus stop"
+ },
+ "Bakshi Bazar": {
+  "lat": 23.722303,
+  "lon": 90.395515,
+  "moved_km": 0.029,
+  "how": "নাম মিলেছে",
+  "osm_name": "Bakshibazar"
+ },
+ "Balughat": {
+  "lat": 23.829756,
+  "lon": 90.392265,
+  "moved_km": 0.209,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": ""
+ },
+ "Banani": {
+  "lat": 23.793342,
+  "lon": 90.40069,
+  "moved_km": 0.788,
+  "how": "নাম মিলেছে",
+  "osm_name": "Banani South Bus stop"
+ },
+ "Bangla College": {
+  "lat": 23.787194,
+  "lon": 90.353776,
+  "moved_km": 0.27,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Tolarbag Bus Stop, Bus stop"
+ },
+ "Bangla Motor": {
+  "lat": 23.745963,
+  "lon": 90.394613,
+  "moved_km": 0.036,
+  "how": "নাম মিলেছে",
+  "osm_name": "বাংলা মোটর বাস স্টপ"
+ },
+ "Bangladesh Bank": {
+  "lat": 23.726833,
+  "lon": 90.42197,
+  "moved_km": 0.102,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Motijheel Bus stop"
+ },
+ "Bashabo": {
+  "lat": 23.73924,
+  "lon": 90.427905,
+  "moved_km": 0.573,
+  "how": "নাম মিলেছে",
+  "osm_name": "বাসাবো উত্তর"
+ },
+ "Bashtola": {
+  "lat": 23.794385,
+  "lon": 90.424076,
+  "moved_km": 0.159,
+  "how": "নাম মিলেছে",
+  "osm_name": "Bashtola Bus Stand"
+ },
+ "Bata Signal": {
+  "lat": 23.738989,
+  "lon": 90.388255,
+  "moved_km": 0.044,
+  "how": "নাম মিলেছে",
+  "osm_name": "Bata Signal Bus Stop"
+ },
+ "Beribadh": {
+  "lat": 23.8924,
+  "lon": 90.361481,
+  "moved_km": 0.0,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Ashulia - Beribadh Mor Bus stop"
+ },
+ "Birulia": {
+  "lat": 23.85419,
+  "lon": 90.332421,
+  "moved_km": 0.473,
+  "how": "নাম মিলেছে",
+  "osm_name": "Birulia Bus Stop, Bus stop"
+ },
+ "Board Bazar": {
+  "lat": 23.944637,
+  "lon": 90.382713,
+  "moved_km": 0.067,
+  "how": "নাম মিলেছে",
+  "osm_name": "Board Bazaar Bus stop"
+ },
+ "Bosila": {
+  "lat": 23.745095,
+  "lon": 90.347553,
+  "moved_km": 0.59,
+  "how": "নাম মিলেছে",
+  "osm_name": "Bosila Bus Stop"
+ },
+ "CMH": {
+  "lat": 23.816201,
+  "lon": 90.395453,
+  "moved_km": 0.339,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Baganbari"
+ },
+ "Cantonment": {
+  "lat": 23.790887,
+  "lon": 90.387795,
+  "moved_km": 0.01,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Kochukhet - Cantonment Circle, Bus stop"
+ },
+ "Chairman Bari": {
+  "lat": 23.78786,
+  "lon": 90.400098,
+  "moved_km": 0.097,
+  "how": "নাম মিলেছে",
+  "osm_name": "Chairman Bari Bus Stop"
+ },
+ "Chandra": {
+  "lat": 24.047533,
+  "lon": 90.238208,
+  "moved_km": 0.035,
+  "how": "নাম মিলেছে",
+  "osm_name": "Chandra"
+ },
+ "Chankhar Pul": {
+  "lat": 23.723854,
+  "lon": 90.400264,
+  "moved_km": 0.008,
+  "how": "নাম মিলেছে",
+  "osm_name": "Chankharpul Bus Stop"
+ },
+ "Chashara": {
+  "lat": 23.625128,
+  "lon": 90.498404,
+  "moved_km": 0.266,
+  "how": "নাম মিলেছে",
+  "osm_name": "Chashara Bus Stand"
+ },
+ "Chiriyakhana": {
+  "lat": 23.810915,
+  "lon": 90.349215,
+  "moved_km": 0.275,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "চিড়িয়াখানা বাস স্ট্যান্ড"
+ },
+ "Chittagong Road": {
+  "lat": 23.697745,
+  "lon": 90.509252,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "চিটাগং রোড বাস স্টেশন"
+ },
+ "City College": {
+  "lat": 23.739104,
+  "lon": 90.383317,
+  "moved_km": 0.106,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Science Lab / City College Bus stop, Mirpur Rd, Dhaka"
+ },
+ "College Gate": {
+  "lat": 23.749254,
+  "lon": 90.418928,
+  "moved_km": 0.16,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Khilgaon Colony Bus stop"
+ },
+ "Dainik Bangla Moor": {
+  "lat": 23.730134,
+  "lon": 90.415248,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Dainik Bangla Mor Bus Stop"
+ },
+ "Darussalam": {
+  "lat": 23.758927,
+  "lon": 90.373634,
+  "moved_km": 0.383,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": ""
+ },
+ "Dayaganj": {
+  "lat": 23.710456,
+  "lon": 90.424103,
+  "moved_km": 0.055,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Doiya Gonj Mor Bus stop, Doyaganj New Rd, Dhaka"
+ },
+ "Demra Staff Quarter": {
+  "lat": 23.719729,
+  "lon": 90.490529,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Demra staff quarter"
+ },
+ "Dhakeshwari": {
+  "lat": 23.722474,
+  "lon": 90.389721,
+  "moved_km": 0.0,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Dhakeshwari Mandir Bus stop, Azad Staff Quarter Dhakeshwari Rd, Dhaka"
+ },
+ "Dhanmondi 15": {
+  "lat": 23.744358,
+  "lon": 90.372885,
+  "moved_km": 0.432,
+  "how": "নাম মিলেছে",
+  "osm_name": "Dhanmondi 15 Bus stop"
+ },
+ "Dhanmondi 27": {
+  "lat": 23.756032,
+  "lon": 90.375721,
+  "moved_km": 0.495,
+  "how": "নাম মিলেছে",
+  "osm_name": "Dhanmondi 27 Bus stop"
+ },
+ "Dhanmondi 32": {
+  "lat": 23.751602,
+  "lon": 90.377947,
+  "moved_km": 1.716,
+  "how": "নাম মিলেছে",
+  "osm_name": "Dhanmondi 32 Bus Stp"
+ },
+ "Dholairpar": {
+  "lat": 23.702791,
+  "lon": 90.435167,
+  "moved_km": 0.027,
+  "how": "নাম মিলেছে",
+  "osm_name": "Dholairpar Bus Stop"
+ },
+ "Dhour": {
+  "lat": 23.893829,
+  "lon": 90.373834,
+  "moved_km": 0.355,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Kalu Miah Haji Market, Bus stop"
+ },
+ "Dhupkhola": {
+  "lat": 23.705951,
+  "lon": 90.424065,
+  "moved_km": 0.221,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "13No Bus Station"
+ },
+ "Duaripara": {
+  "lat": 23.823573,
+  "lon": 90.356953,
+  "moved_km": 0.413,
+  "how": "নাম মিলেছে",
+  "osm_name": "Duaripara Bus Stand"
+ },
+ "ECB Square": {
+  "lat": 23.822575,
+  "lon": 90.393617,
+  "moved_km": 0.019,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "ECB Chottor Bus Stopage"
+ },
+ "Eden College": {
+  "lat": 23.72925,
+  "lon": 90.386074,
+  "moved_km": 0.117,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Eden Mohila College Bus stop, Azimpur Rd, Dhaka"
+ },
+ "Fakirapul": {
+  "lat": 23.734911,
+  "lon": 90.41712,
+  "moved_km": 0.263,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "fakirapool bus stoop"
+ },
+ "Fantasy Kingdom": {
+  "lat": 23.936652,
+  "lon": 90.290264,
+  "moved_km": 0.292,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Jamgara Bus Stand"
+ },
+ "Farmgate": {
+  "lat": 23.757309,
+  "lon": 90.390068,
+  "moved_km": 0.103,
+  "how": "নাম মিলেছে",
+  "osm_name": "Farmgate Bus Stop"
+ },
+ "Fulbaria": {
+  "lat": 23.722795,
+  "lon": 90.410336,
+  "moved_km": 0.504,
+  "how": "নাম মিলেছে",
+  "osm_name": "Fulbaria Bus Depot"
+ },
+ "GPO": {
+  "lat": 23.727982,
+  "lon": 90.410676,
+  "moved_km": 0.141,
+  "how": "নাম মিলেছে",
+  "osm_name": "G.P.O. Bus stop"
+ },
+ "Gabtoli": {
+  "lat": 23.783075,
+  "lon": 90.345265,
+  "moved_km": 0.001,
+  "how": "নাম মিলেছে",
+  "osm_name": "গাবতলী"
+ },
+ "Gandaria": {
+  "lat": 23.705951,
+  "lon": 90.424065,
+  "moved_km": 0.237,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "13No Bus Station"
+ },
+ "Gazipur Chourasta": {
+  "lat": 23.990009,
+  "lon": 90.381592,
+  "moved_km": 0.0,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Gazipur Chowrasta Bus Stand, Bus stop"
+ },
+ "Ghatar Char": {
+  "lat": 23.734004,
+  "lon": 90.336598,
+  "moved_km": 0.255,
+  "how": "নাম মিলেছে",
+  "osm_name": "Ghatarchar Mor"
+ },
+ "Golap Shah Mazar": {
+  "lat": 23.725057,
+  "lon": 90.410546,
+  "moved_km": 0.031,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": ""
+ },
+ "Golapbag Chourasta": {
+  "lat": 23.717293,
+  "lon": 90.429536,
+  "moved_km": 0.0,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Golapbagh Chowrasta Bus stop"
+ },
+ "Gulistan": {
+  "lat": 23.724595,
+  "lon": 90.411925,
+  "moved_km": 0.038,
+  "how": "নাম মিলেছে",
+  "osm_name": "Gulistan Bus Stop"
+ },
+ "Gulshan 1": {
+  "lat": 23.78102,
+  "lon": 90.416511,
+  "moved_km": 0.065,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Dhaka Chaka Bus Stop"
+ },
+ "Gulshan 2": {
+  "lat": 23.794375,
+  "lon": 90.413307,
+  "moved_km": 0.055,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Dhaka Chaka Bus Stop"
+ },
+ "Gulshan Link Road": {
+  "lat": 23.772219,
+  "lon": 90.401385,
+  "moved_km": 0.245,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "United Counter"
+ },
+ "Hasnabad": {
+  "lat": 23.683126,
+  "lon": 90.422607,
+  "moved_km": 0.412,
+  "how": "নাম মিলেছে",
+  "osm_name": "Hasnabad Bus Stop"
+ },
+ "Hazaribag": {
+  "lat": 23.732394,
+  "lon": 90.362845,
+  "moved_km": 0.356,
+  "how": "নাম মিলেছে",
+  "osm_name": "Hazaribagh Bus stop"
+ },
+ "Hazipara": {
+  "lat": 23.756765,
+  "lon": 90.418869,
+  "moved_km": 0.174,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": ""
+ },
+ "Hemayetpur": {
+  "lat": 23.793326,
+  "lon": 90.271127,
+  "moved_km": 0.034,
+  "how": "নাম মিলেছে",
+  "osm_name": "Hemayetpur Bus Stand"
+ },
+ "High Court": {
+  "lat": 23.731685,
+  "lon": 90.404886,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "High Court Bus stop"
+ },
+ "House Building": {
+  "lat": 23.874827,
+  "lon": 90.40069,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "House Building"
+ },
+ "Ittefaq Moor": {
+  "lat": 23.721496,
+  "lon": 90.421205,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Ittefaq Bus Stand, Bus stop"
+ },
+ "Jahangir Gate": {
+  "lat": 23.775774,
+  "lon": 90.390038,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Jahangir Gate Bus stop"
+ },
+ "Jakir Hossen Road": {
+  "lat": 23.759669,
+  "lon": 90.366281,
+  "moved_km": 0.381,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Mohammadpur Town Hall Bus stop"
+ },
+ "Jalkuri": {
+  "lat": 23.663234,
+  "lon": 90.486848,
+  "moved_km": 0.0,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Jalkuri BRTC AC Bus Stop জালকুরী বি আর টি সি এসি বাস স্টপ"
+ },
+ "Jamgora": {
+  "lat": 23.958134,
+  "lon": 90.31309,
+  "moved_km": 0.445,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Baghbari Madrasha Bus Stop"
+ },
+ "Jamuna Future Park": {
+  "lat": 23.811954,
+  "lon": 90.421294,
+  "moved_km": 0.332,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "বসুন্ধরা বাস স্টপ"
+ },
+ "Janapath Moor": {
+  "lat": 23.712707,
+  "lon": 90.428611,
+  "moved_km": 0.0,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Jonopath Mor Bus Stop"
+ },
+ "Jashimuddin": {
+  "lat": 23.859262,
+  "lon": 90.401561,
+  "moved_km": 0.235,
+  "how": "নাম মিলেছে",
+  "osm_name": "Jashimuddin Bus stop"
+ },
+ "Jashimuddin (Uttara)": {
+  "lat": 23.860872,
+  "lon": 90.400414,
+  "moved_km": 0.0,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Jashimuddin Bus Stopage, Uttara"
+ },
+ "Jatrabari": {
+  "lat": 23.709772,
+  "lon": 90.434253,
+  "moved_km": 0.062,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Jatrabari Bus stop, Mojib Market, Johura Market, Dakhin, Dhaka"
+ },
+ "Jigatola": {
+  "lat": 23.738909,
+  "lon": 90.375952,
+  "moved_km": 0.427,
+  "how": "নাম মিলেছে",
+  "osm_name": "Jhigatola Bus stop"
+ },
+ "Jurain": {
+  "lat": 23.693819,
+  "lon": 90.434613,
+  "moved_km": 0.272,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "জুরাইন রেল গেট বাস স্টপ"
+ },
+ "Kachukhet": {
+  "lat": 23.792807,
+  "lon": 90.388023,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Kachukhet Bus Stop, Bus stop"
+ },
+ "Kakoli": {
+  "lat": 23.775086,
+  "lon": 90.36505,
+  "moved_km": 0.125,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Shyamoli Bus stop, Bus stop"
+ },
+ "Kakrail": {
+  "lat": 23.737647,
+  "lon": 90.408311,
+  "moved_km": 0.154,
+  "how": "নাম মিলেছে",
+  "osm_name": "Kakrail Bus stop"
+ },
+ "Kalabagan": {
+  "lat": 23.747497,
+  "lon": 90.380197,
+  "moved_km": 0.131,
+  "how": "নাম মিলেছে",
+  "osm_name": "Kalabagan Bus Stand"
+ },
+ "Kalampur": {
+  "lat": 23.91803,
+  "lon": 90.154662,
+  "moved_km": 0.045,
+  "how": "নাম মিলেছে",
+  "osm_name": "Kalampur Bus Stop"
+ },
+ "Kallyanpur": {
+  "lat": 23.778212,
+  "lon": 90.360967,
+  "moved_km": 0.278,
+  "how": "নাম মিলেছে",
+  "osm_name": "Kalyanpur Bus stop, Bus stop"
+ },
+ "Kamalapur": {
+  "lat": 23.73151,
+  "lon": 90.425267,
+  "moved_km": 0.132,
+  "how": "নাম মিলেছে",
+  "osm_name": "Kamalapur Railway Station Bus stop"
+ },
+ "Kamarpara": {
+  "lat": 23.891624,
+  "lon": 90.388566,
+  "moved_km": 0.485,
+  "how": "নাম মিলেছে",
+  "osm_name": "Kamarpara Bus stop"
+ },
+ "Kamrangirchar": {
+  "lat": 23.714547,
+  "lon": 90.381358,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Kamrangirchar Bus Stop"
+ },
+ "Kanchpur": {
+  "lat": 23.700464,
+  "lon": 90.520429,
+  "moved_km": 0.445,
+  "how": "নাম মিলেছে",
+  "osm_name": "কাঁচপুর বাস স্টপ"
+ },
+ "Katabon": {
+  "lat": 23.739079,
+  "lon": 90.388677,
+  "moved_km": 0.162,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Bata Signal Bus Stop, Elephant Rd, Dhaka"
+ },
+ "Kawran Bazar": {
+  "lat": 23.750305,
+  "lon": 90.393025,
+  "moved_km": 0.18,
+  "how": "নাম মিলেছে",
+  "osm_name": "Kawran Bazaar Bus stop"
+ },
+ "Kazipara": {
+  "lat": 23.797108,
+  "lon": 90.372989,
+  "moved_km": 0.241,
+  "how": "নাম মিলেছে",
+  "osm_name": "Kazipara Bus Stand"
+ },
+ "Kazla": {
+  "lat": 23.710565,
+  "lon": 90.441378,
+  "moved_km": 0.001,
+  "how": "নাম মিলেছে",
+  "osm_name": "কাজলা বাস স্টপ"
+ },
+ "Khamarbari": {
+  "lat": 23.758474,
+  "lon": 90.383248,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Khamarbari"
+ },
+ "Khilgaon": {
+  "lat": 23.748106,
+  "lon": 90.423695,
+  "moved_km": 0.287,
+  "how": "নাম মিলেছে",
+  "osm_name": "Khilgaon Bus Stop"
+ },
+ "Khilkhet": {
+  "lat": 23.829695,
+  "lon": 90.419979,
+  "moved_km": 0.54,
+  "how": "নাম মিলেছে",
+  "osm_name": "খিলক্ষেত বাস স্টপ"
+ },
+ "Konabari": {
+  "lat": 24.011132,
+  "lon": 90.319768,
+  "moved_km": 0.333,
+  "how": "নাম মিলেছে",
+  "osm_name": "Konabari Main Bus stop"
+ },
+ "Kuril Bishwa Road": {
+  "lat": 23.820723,
+  "lon": 90.417603,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Kuril Bishwa Road, Bus stop"
+ },
+ "Kuril Chourasta": {
+  "lat": 23.820236,
+  "lon": 90.420376,
+  "moved_km": 0.294,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "কুড়িল বিশ্বরোড বাস স্টেশন"
+ },
+ "Kuril Flyover": {
+  "lat": 23.821208,
+  "lon": 90.419537,
+  "moved_km": 0.137,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Kuril Bishwa Road Bus Stop"
+ },
+ "MES": {
+  "lat": 23.816137,
+  "lon": 90.4054,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "MES Bus Stop"
+ },
+ "Madanpur": {
+  "lat": 23.69048,
+  "lon": 90.546887,
+  "moved_km": 0.197,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Modonpur Bus Stop মদনপুর বাস স্টপ"
+ },
+ "Madhya Badda": {
+  "lat": 23.78069,
+  "lon": 90.425676,
+  "moved_km": 0.061,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "লিংক রোড বাস স্টেশন"
+ },
+ "Malibagh": {
+  "lat": 23.744259,
+  "lon": 90.414245,
+  "moved_km": 0.316,
+  "how": "নাম মিলেছে",
+  "osm_name": "মালিবাগ মোড়"
+ },
+ "Malibagh Railgate": {
+  "lat": 23.749697,
+  "lon": 90.412635,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Malibagh Railgate South Bus Stop"
+ },
+ "Manik Mia Avenue": {
+  "lat": 23.758766,
+  "lon": 90.380391,
+  "moved_km": 0.122,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Parliament House Bus stop"
+ },
+ "Manik Nagar": {
+  "lat": 23.722485,
+  "lon": 90.428939,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Manik Nagar Bus stop"
+ },
+ "Maowa": {
+  "lat": 23.474043,
+  "lon": 90.25527,
+  "moved_km": 0.0,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Maowa Bus Stand, Dhaka - Barisal Highway, Mawa"
+ },
+ "Matsya Bhaban": {
+  "lat": 23.733992,
+  "lon": 90.403941,
+  "moved_km": 0.025,
+  "how": "নাম মিলেছে",
+  "osm_name": "Matshya Bhaban Bus stop"
+ },
+ "Matuail": {
+  "lat": 23.694896,
+  "lon": 90.466927,
+  "moved_km": 1.319,
+  "how": "নাম মিলেছে",
+  "osm_name": "মাতুয়াইল বাস স্টপ"
+ },
+ "Mazar Road": {
+  "lat": 23.782981,
+  "lon": 90.347137,
+  "moved_km": 1.001,
+  "how": "নাম মিলেছে",
+  "osm_name": "মাজার রোড বাস স্টপ"
+ },
+ "Merul": {
+  "lat": 23.771657,
+  "lon": 90.425388,
+  "moved_km": 0.093,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Merul Badda Bus Stand"
+ },
+ "Metro Hall": {
+  "lat": 23.624814,
+  "lon": 90.504851,
+  "moved_km": 0.054,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Narayanganj BRTC AC Bus Stop"
+ },
+ "Mill Gate": {
+  "lat": 23.896014,
+  "lon": 90.399377,
+  "moved_km": 0.0,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Mill Gate Bus Stop মিল গেট বাস স্টপ"
+ },
+ "Mirpur 1": {
+  "lat": 23.798376,
+  "lon": 90.353468,
+  "moved_km": 0.411,
+  "how": "নাম মিলেছে",
+  "osm_name": "Mirpur 1 Bus Stop, Bus station"
+ },
+ "Mirpur 10": {
+  "lat": 23.807401,
+  "lon": 90.3682,
+  "moved_km": 0.488,
+  "how": "নাম মিলেছে",
+  "osm_name": "Mirpur 10 Bus Station"
+ },
+ "Mirpur 11": {
+  "lat": 23.815669,
+  "lon": 90.366127,
+  "moved_km": 0.907,
+  "how": "নাম মিলেছে",
+  "osm_name": "Mirpur 11 Bus Station"
+ },
+ "Mirpur 13": {
+  "lat": 23.804518,
+  "lon": 90.376564,
+  "moved_km": 0.237,
+  "how": "নাম মিলেছে",
+  "osm_name": "Mirpur 13, Bus stop"
+ },
+ "Mirpur 14": {
+  "lat": 23.798712,
+  "lon": 90.386767,
+  "moved_km": 0.21,
+  "how": "নাম মিলেছে",
+  "osm_name": "Mirpur 14 Bus stop"
+ },
+ "Mirpur 2": {
+  "lat": 23.805394,
+  "lon": 90.363134,
+  "moved_km": 0.63,
+  "how": "নাম মিলেছে",
+  "osm_name": "Mirpur 2 Bus Stop"
+ },
+ "Mitford Ghat": {
+  "lat": 23.710769,
+  "lon": 90.402742,
+  "moved_km": 0.141,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Babu Bazar Bus Stop, Babubazar Bridge, Dhaka"
+ },
+ "Mogbazar": {
+  "lat": 23.748875,
+  "lon": 90.403634,
+  "moved_km": 0.885,
+  "how": "নাম মিলেছে",
+  "osm_name": "মগবাজার বাস স্টপ"
+ },
+ "Mohakhali": {
+  "lat": 23.777944,
+  "lon": 90.398483,
+  "moved_km": 0.648,
+  "how": "নাম মিলেছে",
+  "osm_name": "MOHAKHALI BUS STAND"
+ },
+ "Mohammadpur": {
+  "lat": 23.759669,
+  "lon": 90.366281,
+  "moved_km": 0.542,
+  "how": "নাম মিলেছে",
+  "osm_name": "Mohammadpur Town Hall Bus stop"
+ },
+ "Mohammadpur Bus Stand": {
+  "lat": 23.756993,
+  "lon": 90.361736,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Mohammadpur Bus Stand"
+ },
+ "Motijheel": {
+  "lat": 23.726833,
+  "lon": 90.42197,
+  "moved_km": 0.092,
+  "how": "নাম মিলেছে",
+  "osm_name": "Motijheel Bus stop"
+ },
+ "Mouchak": {
+  "lat": 23.74555,
+  "lon": 90.412088,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "মৌচাক বাস স্টপ"
+ },
+ "Mugdapara": {
+  "lat": 23.731178,
+  "lon": 90.428659,
+  "moved_km": 0.549,
+  "how": "নাম মিলেছে",
+  "osm_name": "Mugdapara Bus Stop, Bus Stop"
+ },
+ "Nabisco": {
+  "lat": 23.769646,
+  "lon": 90.400864,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Nabisco Bus Stop, Bus station"
+ },
+ "Nadda": {
+  "lat": 23.809396,
+  "lon": 90.421278,
+  "moved_km": 0.209,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "নর্দা বাস স্টপ"
+ },
+ "Nandan Park": {
+  "lat": 24.031199,
+  "lon": 90.241882,
+  "moved_km": 0.245,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Nandan Theme Park"
+ },
+ "Nawabganj": {
+  "lat": 23.661021,
+  "lon": 90.162187,
+  "moved_km": 0.555,
+  "how": "নাম মিলেছে",
+  "osm_name": "Nawabganj Bus Stop"
+ },
+ "Naya Bazar": {
+  "lat": 23.71427,
+  "lon": 90.406374,
+  "moved_km": 0.041,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Naya Bazaar Bus stop, Naya Bazaar, Dhaka"
+ },
+ "New Market": {
+  "lat": 23.734223,
+  "lon": 90.384472,
+  "moved_km": 0.0,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "New Market Bus stop, Mirpur Rd, Dhaka"
+ },
+ "Nilkhet": {
+  "lat": 23.732497,
+  "lon": 90.385168,
+  "moved_km": 0.105,
+  "how": "নাম মিলেছে",
+  "osm_name": "নীলক্ষেত বাস স্টপ"
+ },
+ "Nimtola": {
+  "lat": 23.741215,
+  "lon": 90.360514,
+  "moved_km": 0.432,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Sikder Medical Bus Stand"
+ },
+ "Nobinagar": {
+  "lat": 23.911852,
+  "lon": 90.2605,
+  "moved_km": 0.058,
+  "how": "নাম মিলেছে",
+  "osm_name": "Nobinagar Bus Stop"
+ },
+ "Notre Dame College": {
+  "lat": 23.730842,
+  "lon": 90.421205,
+  "moved_km": 0.084,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Arambagh Bus stop"
+ },
+ "Notun Bazar": {
+  "lat": 23.797445,
+  "lon": 90.423511,
+  "moved_km": 0.105,
+  "how": "নাম মিলেছে",
+  "osm_name": "Notun Bazar Bus Stop"
+ },
+ "Old Airport": {
+  "lat": 23.772189,
+  "lon": 90.390127,
+  "moved_km": 0.426,
+  "how": "নাম মিলেছে",
+  "osm_name": "Old Airport Bus stop"
+ },
+ "Palashi": {
+  "lat": 23.727463,
+  "lon": 90.386409,
+  "moved_km": 0.33,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Azimpur Bus stop, Azimpur Rd, Dhaka"
+ },
+ "Pallabi": {
+  "lat": 23.828321,
+  "lon": 90.364105,
+  "moved_km": 0.725,
+  "how": "নাম মিলেছে",
+  "osm_name": "Pallabi Bus Station"
+ },
+ "Palli Bidyut": {
+  "lat": 23.924306,
+  "lon": 90.263235,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Palli Bidyut"
+ },
+ "Paltan": {
+  "lat": 23.730305,
+  "lon": 90.409813,
+  "moved_km": 0.23,
+  "how": "নাম মিলেছে",
+  "osm_name": "Paltan Bus stop"
+ },
+ "Panthapath": {
+  "lat": 23.749934,
+  "lon": 90.392341,
+  "moved_km": 0.239,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Basnhundhara City South Bus Stop, Panthapath, Dhaka"
+ },
+ "Paturia": {
+  "lat": 23.789317,
+  "lon": 89.809967,
+  "moved_km": 0.052,
+  "how": "নাম মিলেছে",
+  "osm_name": "Paturia Ghat"
+ },
+ "Police Plaza": {
+  "lat": 23.772602,
+  "lon": 90.415555,
+  "moved_km": 0.038,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": ""
+ },
+ "Postagola": {
+  "lat": 23.692447,
+  "lon": 90.433196,
+  "moved_km": 0.035,
+  "how": "নাম মিলেছে",
+  "osm_name": "পোস্তগোলা বাস স্টপ"
+ },
+ "Press Club": {
+  "lat": 23.729896,
+  "lon": 90.406861,
+  "moved_km": 0.046,
+  "how": "নাম মিলেছে",
+  "osm_name": "Pressclub Bus stop"
+ },
+ "Proshika Moor": {
+  "lat": 23.80963,
+  "lon": 90.36101,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Proshika More Bus Stop"
+ },
+ "Purobi": {
+  "lat": 23.819061,
+  "lon": 90.365232,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Sare 11"
+ },
+ "Rajlakshmi": {
+  "lat": 23.864328,
+  "lon": 90.399944,
+  "moved_km": 0.0,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Rajlakshmi Bus Stopage, Uttara"
+ },
+ "Rampura Bazar": {
+  "lat": 23.756765,
+  "lon": 90.418869,
+  "moved_km": 0.388,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": ""
+ },
+ "Rampura Bridge": {
+  "lat": 23.767917,
+  "lon": 90.42317,
+  "moved_km": 0.021,
+  "how": "নাম মিলেছে",
+  "osm_name": "Rampura Bridge Bus Stop"
+ },
+ "Ray Saheb Bazar": {
+  "lat": 23.713738,
+  "lon": 90.411586,
+  "moved_km": 0.016,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Ray Shaheb Bazar Mor Bus depot, Nawabpur Rd, Dhaka"
+ },
+ "Rayer Bazar": {
+  "lat": 23.744631,
+  "lon": 90.359631,
+  "moved_km": 0.317,
+  "how": "নাম মিলেছে",
+  "osm_name": "Rayer Bazaar Bus stop"
+ },
+ "Rayerbag": {
+  "lat": 23.699431,
+  "lon": 90.457022,
+  "moved_km": 0.154,
+  "how": "নাম মিলেছে",
+  "osm_name": "Rayerbag bus stop"
+ },
+ "Rupnagar": {
+  "lat": 23.827317,
+  "lon": 90.345365,
+  "moved_km": 1.689,
+  "how": "নাম মিলেছে",
+  "osm_name": "Rupnagar Bus Stop, Bus stop"
+ },
+ "Sainik Club": {
+  "lat": 23.790526,
+  "lon": 90.399973,
+  "moved_km": 0.09,
+  "how": "নাম মিলেছে",
+  "osm_name": "সৈনিক ক্লাব"
+ },
+ "Salimullah Road": {
+  "lat": 23.757855,
+  "lon": 90.362969,
+  "moved_km": 0.192,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Malancha Bus Stop"
+ },
+ "Sanarpar": {
+  "lat": 23.694911,
+  "lon": 90.490249,
+  "moved_km": 0.223,
+  "how": "নাম মিলেছে",
+  "osm_name": "sanarpar bus stop"
+ },
+ "Satrasta": {
+  "lat": 23.757657,
+  "lon": 90.391791,
+  "moved_km": 0.069,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Mosjid Near Farmgate Bus Stand"
+ },
+ "Saudi Colony": {
+  "lat": 23.778344,
+  "lon": 90.389365,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Saudi Colony Bus Stop"
+ },
+ "Savar Cantonment": {
+  "lat": 23.917256,
+  "lon": 90.260387,
+  "moved_km": 1.013,
+  "how": "নাম মিলেছে",
+  "osm_name": "Savar Cantonment"
+ },
+ "Sayedabad": {
+  "lat": 23.71221,
+  "lon": 90.429432,
+  "moved_km": 0.0,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Royal Express Sayedabad counter, Dhaka - Sylhet Hwy, Dhaka"
+ },
+ "Science Lab": {
+  "lat": 23.738433,
+  "lon": 90.383666,
+  "moved_km": 0.083,
+  "how": "নাম মিলেছে",
+  "osm_name": "সায়েন্সল্যাব বাস স্টপ"
+ },
+ "Shahbag": {
+  "lat": 23.738306,
+  "lon": 90.395411,
+  "moved_km": 0.133,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Shahbag P.G. Hospital Bus stop, Shahbagh Rd, Dhaka"
+ },
+ "Shahjadpur": {
+  "lat": 23.792089,
+  "lon": 90.424501,
+  "moved_km": 0.03,
+  "how": "নাম মিলেছে",
+  "osm_name": "Shahjadpur Bus Stop"
+ },
+ "Shanir Akhra": {
+  "lat": 23.702873,
+  "lon": 90.450406,
+  "moved_km": 0.1,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "শনির-আখরা বাস স্টপ"
+ },
+ "Shankar": {
+  "lat": 23.750699,
+  "lon": 90.368527,
+  "moved_km": 0.275,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Sonkor Bus Stop"
+ },
+ "Shantinagar": {
+  "lat": 23.741566,
+  "lon": 90.412061,
+  "moved_km": 0.386,
+  "how": "নাম মিলেছে",
+  "osm_name": "Shantinagar"
+ },
+ "Shewra": {
+  "lat": 23.818838,
+  "lon": 90.415098,
+  "moved_km": 0.179,
+  "how": "নাম মিলেছে",
+  "osm_name": "শেওড়া বাস স্টপ"
+ },
+ "Shewrapara": {
+  "lat": 23.790491,
+  "lon": 90.375552,
+  "moved_km": 0.22,
+  "how": "নাম মিলেছে",
+  "osm_name": "Shewrapara"
+ },
+ "Shib Bari": {
+  "lat": 23.73224,
+  "lon": 90.395098,
+  "moved_km": 0.44,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Varsity Bus Stops, Nilkhet Rd, Dhaka"
+ },
+ "Shibu Market": {
+  "lat": 23.644132,
+  "lon": 90.493558,
+  "moved_km": 0.008,
+  "how": "নাম মিলেছে",
+  "osm_name": "Sibu Market Bus Stop"
+ },
+ "Shishu Mela": {
+  "lat": 23.772944,
+  "lon": 90.367149,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Shishu Mela Bus stop, Bus stop"
+ },
+ "Shiyal Bari": {
+  "lat": 23.808195,
+  "lon": 90.358017,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Shiyal Bari Mor Bus Stop"
+ },
+ "Shonbari Sreenagar": {
+  "lat": 23.545206,
+  "lon": 90.297453,
+  "moved_km": 0.383,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Wonderland Park, Bus stop, Dhaka - Mawa Hwy, Sreenagar"
+ },
+ "Showari Ghat": {
+  "lat": 23.711437,
+  "lon": 90.394335,
+  "moved_km": 0.064,
+  "how": "নাম মিলেছে",
+  "osm_name": "Showari Ghat Bus stop"
+ },
+ "Shukrabad": {
+  "lat": 23.752466,
+  "lon": 90.377664,
+  "moved_km": 0.256,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Shukrabad Bus Stopage"
+ },
+ "Shyamoli": {
+  "lat": 23.77442,
+  "lon": 90.365844,
+  "moved_km": 0.042,
+  "how": "নাম মিলেছে",
+  "osm_name": "Shyamoli Bus stop, Bus stop"
+ },
+ "Sign Board": {
+  "lat": 23.693583,
+  "lon": 90.480441,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Sign Board Bus Stop"
+ },
+ "Sikder Medical College": {
+  "lat": 23.741215,
+  "lon": 90.360514,
+  "moved_km": 0.018,
+  "how": "নাম মিলেছে",
+  "osm_name": "Sikder Medical Bus Stand"
+ },
+ "Sony Cinema Hall": {
+  "lat": 23.80042,
+  "lon": 90.355969,
+  "moved_km": 0.059,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Mirpur Road / Zoo Road, Bus stop"
+ },
+ "Staff Road": {
+  "lat": 23.811697,
+  "lon": 90.403689,
+  "moved_km": 0.234,
+  "how": "নাম মিলেছে",
+  "osm_name": "Staff Road Bus Station Bus station"
+ },
+ "Star Kabab": {
+  "lat": 23.747447,
+  "lon": 90.370713,
+  "moved_km": 0.053,
+  "how": "নাম মিলেছে",
+  "osm_name": "Star Kabab Bus Stop"
+ },
+ "Station Road": {
+  "lat": 23.892912,
+  "lon": 90.401985,
+  "moved_km": 0.034,
+  "how": "নাম মিলেছে",
+  "osm_name": "Station Road Bus Stand"
+ },
+ "Sura Bari": {
+  "lat": 23.962851,
+  "lon": 90.316856,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Sura Bari"
+ },
+ "TT Para": {
+  "lat": 23.724903,
+  "lon": 90.428691,
+  "moved_km": 0.094,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "T.T. Para Circle Bus stop"
+ },
+ "Technical": {
+  "lat": 23.781492,
+  "lon": 90.352152,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "টেকনিক্যাল বাস স্টপ"
+ },
+ "Tikatuli": {
+  "lat": 23.717629,
+  "lon": 90.419673,
+  "moved_km": 0.466,
+  "how": "নাম মিলেছে",
+  "osm_name": "Tikatuli Bus Stop"
+ },
+ "Tolarbag": {
+  "lat": 23.787194,
+  "lon": 90.353776,
+  "moved_km": 0.275,
+  "how": "নাম মিলেছে",
+  "osm_name": "Tolarbag Bus Stop, Bus stop"
+ },
+ "Tongi": {
+  "lat": 23.893842,
+  "lon": 90.403557,
+  "moved_km": 1.724,
+  "how": "নাম মিলেছে",
+  "osm_name": "Ena Counter Tongi"
+ },
+ "Uttar Badda": {
+  "lat": 23.785704,
+  "lon": 90.425611,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Uttar Badda Bus Stop"
+ },
+ "Vulta": {
+  "lat": 23.784585,
+  "lon": 90.565284,
+  "moved_km": 0.117,
+  "how": "নাম মিলেছে",
+  "osm_name": "Bhulta Bus Stand"
+ },
+ "Wireless": {
+  "lat": 23.749026,
+  "lon": 90.4079,
+  "moved_km": 0.182,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Moghbazaar Wireless Gate Bus stop"
+ },
+ "Zirabo": {
+  "lat": 23.913372,
+  "lon": 90.319522,
+  "moved_km": 0.174,
+  "how": "নাম মিলেছে",
+  "osm_name": "Jirabo"
+ },
+ "Zirani Bazar": {
+  "lat": 23.993543,
+  "lon": 90.255636,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Zirani Bazar"
+ }
+}

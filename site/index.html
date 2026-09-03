@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<title>ঢাকার বাস ভাড়া — কোথা থেকে কোথায়, কোন বাসে, কত ভাড়া</title>
+<meta name="description" content="ঢাকার যেকোনো জায়গা থেকে যেকোনো জায়গায় কোন কোন বাস যায়, কত কিলোমিটার আর সরকারি ভাড়া কত — ম্যাপে দেখুন।">
+<meta name="theme-color" content="#0b7a5b">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Anek+Bangla:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="style.css?v=3">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚌</text></svg>">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <span class="brand-mark">🚌</span>
+    <div>
+      <h1>ঢাকার বাস ভাড়া</h1>
+      <p>কোথা থেকে কোথায় · কোন বাসে · কত ভাড়া</p>
+    </div>
+  </div>
+  <div class="rate-chip" id="rateChip" title="বিআরটিএ নির্ধারিত হার"></div>
+</header>
+
+<main class="layout">
+
+  <aside class="panel" id="panel">
+    <nav class="tabs" role="tablist">
+      <button class="tab is-on" data-tab="find" role="tab">রুট খুঁজুন</button>
+      <button class="tab" data-tab="buses" role="tab">সব বাস ও স্টপেজ</button>
+    </nav>
+
+    <!-- ── ট্যাব ১: কোথা থেকে কোথায় ── -->
+    <section class="tabpane is-on" id="pane-find">
+      <div class="search-box">
+        <div class="field" data-role="from">
+          <label for="fromInput">কোথা থেকে</label>
+          <div class="input-wrap">
+            <span class="dot dot-from"></span>
+            <input id="fromInput" type="text" autocomplete="off" spellcheck="false"
+                   placeholder="যেমন: যাত্রাবাড়ী বা jatrabari">
+            <button class="clear" type="button" aria-label="মুছুন" hidden>×</button>
+          </div>
+          <ul class="suggest" hidden></ul>
+        </div>
+
+        <button class="swap" id="swapBtn" type="button" title="উল্টে দিন" aria-label="দুই জায়গা উল্টে দিন">⇅</button>
+
+        <div class="field" data-role="to">
+          <label for="toInput">কোথায় যাবেন</label>
+          <div class="input-wrap">
+            <span class="dot dot-to"></span>
+            <input id="toInput" type="text" autocomplete="off" spellcheck="false"
+                   placeholder="যেমন: উত্তরা, মিরপুর ১০, gulshan">
+            <button class="clear" type="button" aria-label="মুছুন" hidden>×</button>
+          </div>
+          <ul class="suggest" hidden></ul>
+        </div>
+
+        <button class="go" id="goBtn" type="button">বাস খুঁজুন</button>
+      </div>
+
+      <div class="results" id="results">
+        <div class="empty">
+          <p class="empty-big">দুই জায়গার নাম লিখুন</p>
+          <p>বাংলা বা ইংরেজি — দুইভাবেই লিখতে পারেন। যেমন <b>যাত্রাবাড়ী</b> লিখলেও আসবে, <b>jatrabari</b> লিখলেও।</p>
+          <div class="chips" id="quickChips"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ট্যাব ২: সব বাস ── -->
+    <section class="tabpane" id="pane-buses">
+      <div class="search-box">
+        <div class="field">
+          <label for="busSearch">বাসের নাম</label>
+          <div class="input-wrap">
+            <span class="dot dot-bus"></span>
+            <input id="busSearch" type="text" autocomplete="off" spellcheck="false" placeholder="যেমন: বিকল্প, Bikalpa">
+          </div>
+        </div>
+      </div>
+      <div class="results" id="busList"></div>
+    </section>
+
+  </aside>
+
+  <div class="map-wrap">
+    <div id="map"></div>
+    <button class="map-toggle" id="mapToggle" type="button">
+      <span id="mapToggleIcon">⤢</span><span id="mapToggleText">ম্যাপ বড় করুন</span>
+    </button>
+    <div class="map-note" id="mapNote">ম্যাপে রুট দেখতে ফলাফল থেকে যেকোনো বাসে চাপ দিন</div>
+  </div>
+</main>
+
+<footer class="foot">
+  <p>
+    ভাড়া হিসাব বিআরটিএ-র নির্ধারিত কিলোমিটার-হারে করা — <b id="footRate"></b>।
+    দূরত্ব OpenStreetMap-এর স্টপেজ অবস্থান ধরে মাপা, আর বিআরটিএ-র প্রকাশিত ভাড়ার
+    চার্টের সাথে মিলিয়ে যাচাই করা (হেরফের গড়ে ১০-২০%)। যেসব বাসের পাশে
+    <b>ভাড়া চার্ট দেখুন</b> লেখা আছে, সেখানে সরকারি তালিকাটাই দেখতে পাবেন — সেটাই চূড়ান্ত।
+    রুটের তথ্য জনসাধারণের উৎস থেকে সংগৃহীত; বাস্তবে বাস কিছু স্টপেজ বাদ দিতে পারে।
+  </p>
+  <p class="tiny">মানচিত্র © OpenStreetMap contributors · রুটিং OSRM · ভাড়ার হার brta.gov.bd</p>
+</footer>
+
+<div class="loading" id="loading"><div class="spin"></div><span>ডেটা আসছে…</span></div>
+
+<!-- বিআরটিএ-র ভাড়ার চার্ট দেখানোর জানালা -->
+<div class="sheet" id="chartSheet" hidden>
+  <div class="sheet-box" role="dialog" aria-modal="true" aria-labelledby="chartTitle">
+    <div class="sheet-head">
+      <div>
+        <h3 id="chartTitle"></h3>
+        <p id="chartSub"></p>
+      </div>
+      <button class="sheet-x" id="chartClose" type="button" aria-label="বন্ধ করুন">×</button>
+    </div>
+    <div class="sheet-body"><img id="chartImg" alt="বিআরটিএ-র ভাড়ার চার্ট"></div>
+    <div class="sheet-foot">
+      <span>সূত্র: বাংলাদেশ সড়ক পরিবহন কর্তৃপক্ষ (brta.gov.bd)</span>
+      <a id="chartOpen" href="#" target="_blank" rel="noopener">বড় করে দেখুন ↗</a>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="app.js?v=3"></script>
+</body>
+</html>

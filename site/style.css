@@ -1,0 +1,485 @@
+/* ঢাকার বাস ভাড়া — স্টাইল */
+
+:root {
+  --green: #0b7a5b;
+  --green-dk: #075940;
+  --green-lt: #e6f4ef;
+  --amber: #d97706;
+  --amber-lt: #fef3e2;
+  --ink: #16211d;
+  --ink-2: #4a5a54;
+  --ink-3: #7b8c85;
+  --line: #dfe7e3;
+  --bg: #f4f7f6;
+  --card: #ffffff;
+  --shadow: 0 1px 2px rgba(11, 40, 30, .06), 0 8px 24px rgba(11, 40, 30, .07);
+  --radius: 14px;
+  --panel-w: 420px;
+  --head-h: 62px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Hind Siliguri", "Noto Sans Bengali", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: "Anek Bangla", "Hind Siliguri", sans-serif; margin: 0; line-height: 1.3; }
+button, input { font: inherit; color: inherit; }
+button { cursor: pointer; }
+
+/* ── হেডার ── */
+.top {
+  height: var(--head-h);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 0 16px;
+  background: linear-gradient(100deg, var(--green-dk), var(--green));
+  color: #fff;
+  position: relative; z-index: 900;
+}
+.brand { display: flex; align-items: center; gap: 11px; min-width: 0; }
+.brand-mark {
+  font-size: 22px; line-height: 1;
+  background: rgba(255,255,255,.16); border-radius: 11px;
+  width: 40px; height: 40px; display: grid; place-items: center;
+  flex: none;
+}
+.brand h1 { font-size: 19px; font-weight: 700; letter-spacing: -.2px; }
+.brand p { margin: 0; font-size: 12.5px; opacity: .82; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.rate-chip {
+  background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.22);
+  border-radius: 999px; padding: 5px 13px; font-size: 13px; font-weight: 600;
+  white-space: nowrap; flex: none;
+}
+
+/* ── লেআউট ── */
+.layout {
+  display: grid;
+  grid-template-columns: var(--panel-w) 1fr;
+  height: calc(100vh - var(--head-h));
+}
+
+.panel {
+  background: var(--card);
+  border-right: 1px solid var(--line);
+  display: flex; flex-direction: column;
+  min-height: 0; overflow: hidden;
+}
+
+.map-wrap { position: relative; min-height: 0; }
+#map { position: absolute; inset: 0; background: #e8eeec; }
+
+.map-note {
+  position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%);
+  background: rgba(22,33,29,.86); color: #fff; backdrop-filter: blur(6px);
+  padding: 7px 15px; border-radius: 999px; font-size: 13px;
+  z-index: 500; pointer-events: none; max-width: 90%; text-align: center;
+  transition: opacity .25s;
+}
+.map-note[hidden] { display: none; }
+
+/* ── ট্যাব ── */
+.tabs { display: flex; gap: 2px; padding: 8px 8px 0; border-bottom: 1px solid var(--line); flex: none; }
+.tab {
+  flex: 1; border: 0; background: none; padding: 9px 6px 10px;
+  font-size: 14px; font-weight: 600; color: var(--ink-3);
+  border-bottom: 2.5px solid transparent; border-radius: 8px 8px 0 0;
+  transition: color .15s, background .15s;
+}
+.tab:hover { background: var(--bg); color: var(--ink-2); }
+.tab.is-on { color: var(--green); border-bottom-color: var(--green); }
+
+.tabpane { display: none; flex-direction: column; min-height: 0; flex: 1; }
+.tabpane.is-on { display: flex; }
+
+/* ── সার্চ বক্স ── */
+.search-box { padding: 14px 14px 12px; position: relative; flex: none; }
+.field { position: relative; }
+.field + .field { margin-top: 9px; }
+.field label {
+  display: block; font-size: 12px; font-weight: 600; color: var(--ink-3);
+  margin: 0 0 4px 3px; letter-spacing: .2px;
+}
+
+.input-wrap {
+  display: flex; align-items: center; gap: 9px;
+  background: var(--bg); border: 1.5px solid var(--line);
+  border-radius: 11px; padding: 0 10px;
+  transition: border-color .15s, background .15s;
+}
+.input-wrap:focus-within { border-color: var(--green); background: #fff; }
+.input-wrap input {
+  flex: 1; border: 0; background: none; outline: none;
+  padding: 10px 0; font-size: 15.5px; min-width: 0;
+}
+.input-wrap input::placeholder { color: var(--ink-3); opacity: .8; }
+
+.dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+.dot-from { background: var(--green); box-shadow: 0 0 0 3px var(--green-lt); }
+.dot-to { background: var(--amber); box-shadow: 0 0 0 3px var(--amber-lt); }
+.dot-bus { background: var(--ink-3); box-shadow: 0 0 0 3px #eceeed; }
+
+.clear {
+  border: 0; background: none; color: var(--ink-3); font-size: 21px;
+  line-height: 1; padding: 0 2px; border-radius: 6px;
+}
+.clear:hover { color: var(--ink); }
+
+.swap {
+  position: absolute; right: 22px; top: 50%; transform: translateY(-50%);
+  z-index: 5; width: 34px; height: 34px; border-radius: 50%;
+  border: 1.5px solid var(--line); background: #fff; color: var(--green);
+  font-size: 16px; display: grid; place-items: center;
+  box-shadow: 0 2px 6px rgba(11,40,30,.09);
+  transition: transform .2s, border-color .15s;
+}
+.swap:hover { border-color: var(--green); transform: translateY(-50%) rotate(180deg); }
+
+.go {
+  width: 100%; margin-top: 11px; padding: 12px;
+  border: 0; border-radius: 11px;
+  background: var(--green); color: #fff;
+  font-size: 16px; font-weight: 600; letter-spacing: .2px;
+  transition: background .15s, transform .08s;
+}
+.go:hover { background: var(--green-dk); }
+.go:active { transform: scale(.985); }
+
+/* ── সাজেশন ── */
+.suggest {
+  position: absolute; left: 0; right: 0; top: calc(100% + 4px);
+  z-index: 40; margin: 0; padding: 5px;
+  list-style: none; background: #fff;
+  border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: var(--shadow);
+  max-height: 290px; overflow-y: auto;
+}
+.suggest[hidden] { display: none; }
+.suggest li {
+  padding: 8px 10px; border-radius: 8px; cursor: pointer;
+  display: flex; align-items: baseline; gap: 8px;
+}
+.suggest li:hover, .suggest li.is-active { background: var(--green-lt); }
+.suggest .s-bn { font-size: 15.5px; font-weight: 600; }
+.suggest .s-en { font-size: 12.5px; color: var(--ink-3); }
+.suggest .s-n { margin-left: auto; font-size: 11.5px; color: var(--ink-3); white-space: nowrap; }
+.suggest mark { background: #fde68a; color: inherit; border-radius: 3px; padding: 0 1px; }
+
+/* ── ফলাফল ── */
+.results { flex: 1; min-height: 0; overflow-y: auto; padding: 0 14px 20px; }
+
+.empty { padding: 22px 6px; color: var(--ink-2); }
+.empty-big { font-family: "Anek Bangla", sans-serif; font-size: 17px; font-weight: 600; color: var(--ink); margin: 0 0 6px; }
+.empty p { margin: 0 0 8px; font-size: 14px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+.chip {
+  border: 1px solid var(--line); background: var(--bg);
+  border-radius: 999px; padding: 6px 13px; font-size: 13.5px; font-weight: 500;
+  transition: border-color .15s, background .15s;
+}
+.chip:hover { border-color: var(--green); background: var(--green-lt); color: var(--green-dk); }
+
+.res-head {
+  display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap;
+  padding: 12px 2px 9px; position: sticky; top: 0; background: var(--card); z-index: 3;
+  border-bottom: 1px solid var(--line); margin-bottom: 10px;
+}
+.res-head h2 { font-size: 15.5px; font-weight: 600; }
+.res-head .count { font-size: 13px; color: var(--ink-3); }
+
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 12px 13px;
+  margin-bottom: 9px; cursor: pointer;
+  transition: border-color .15s, box-shadow .15s, transform .08s;
+}
+.card:hover { border-color: var(--green); box-shadow: var(--shadow); }
+.card.is-on { border-color: var(--green); background: var(--green-lt); }
+.card:active { transform: scale(.995); }
+
+.card-top { display: flex; align-items: flex-start; gap: 10px; }
+.card-name { font-size: 16px; font-weight: 700; font-family: "Anek Bangla", sans-serif; }
+.card-en { font-size: 12px; color: var(--ink-3); margin-top: -2px; }
+.route-tag {
+  font-family: "Hind Siliguri", sans-serif; font-size: 12px; font-weight: 500;
+  color: var(--green-dk); background: var(--green-lt); border-radius: 6px;
+  padding: 1px 7px; margin-left: 5px; white-space: nowrap;
+}
+.card-fare { margin-left: auto; text-align: right; flex: none; }
+.fare-big { font-size: 21px; font-weight: 700; color: var(--green); font-family: "Anek Bangla", sans-serif; line-height: 1.1; }
+.fare-sub { font-size: 11.5px; color: var(--ink-3); }
+
+.card-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; }
+.pill {
+  font-size: 12px; padding: 3px 9px; border-radius: 999px;
+  background: var(--bg); color: var(--ink-2); border: 1px solid var(--line);
+}
+.pill-km { background: var(--green-lt); border-color: #c9e5da; color: var(--green-dk); font-weight: 600; }
+.pill-hop { background: var(--amber-lt); border-color: #f6dcb5; color: #9a5b06; font-weight: 600; }
+.pill-mini { background: #eef2ff; border-color: #dbe1fb; color: #4338ca; }
+
+.card-path { font-size: 12.5px; color: var(--ink-3); margin-top: 8px; line-height: 1.5; }
+.card-path b { color: var(--ink-2); font-weight: 600; }
+
+.pill-ok { background: #eefaf4; border-color: #bfe6d3; color: #0a6b4d; font-weight: 600; }
+
+/* কার্ডের নিচের ছোট বোতাম */
+.card-acts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.act {
+  border: 1px solid var(--line); background: #fff; color: var(--ink-2);
+  border-radius: 9px; padding: 7px 11px; font-size: 13px; font-weight: 600;
+  transition: border-color .15s, background .15s, color .15s;
+}
+.act:hover { border-color: var(--green); background: var(--green-lt); color: var(--green-dk); }
+.act-chart { border-color: #c9e5da; background: var(--green-lt); color: var(--green-dk); }
+.act-chart:hover { background: var(--green); color: #fff; border-color: var(--green); }
+.act.wide { display: block; width: 100%; text-align: center; padding: 11px; font-size: 14px; margin-bottom: 10px; }
+
+.st-en { color: var(--ink-3); font-size: 12px; }
+.stoplist li.trip { background: linear-gradient(90deg, var(--green-lt), transparent 70%); border-radius: 6px; }
+.stoplist li.trip::before { border-color: var(--green); }
+.tiny-note { font-size: 12px; color: var(--ink-3); margin: 10px 2px 0; }
+
+/* ভাড়ার চার্ট দেখানোর জানালা */
+.sheet {
+  position: fixed; inset: 0; z-index: 1500;
+  background: rgba(16, 26, 22, .62);
+  display: grid; place-items: center; padding: 20px;
+}
+.sheet[hidden] { display: none; }
+body.no-scroll { overflow: hidden; }
+
+.sheet-box {
+  background: #fff; border-radius: 16px; overflow: hidden;
+  width: min(1000px, 100%); max-height: 92vh;
+  display: flex; flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+}
+.sheet-head {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px 16px; border-bottom: 1px solid var(--line);
+  background: var(--green-lt);
+}
+.sheet-head h3 { font-size: 16.5px; color: var(--green-dk); }
+.sheet-head p { margin: 2px 0 0; font-size: 12.5px; color: var(--ink-2); }
+.sheet-x {
+  margin-left: auto; border: 0; background: rgba(0, 0, 0, .06);
+  width: 32px; height: 32px; border-radius: 50%; font-size: 21px;
+  line-height: 1; color: var(--ink-2); flex: none;
+}
+.sheet-x:hover { background: rgba(0, 0, 0, .13); }
+
+.sheet-body { overflow: auto; background: #f0f3f2; padding: 10px; flex: 1; }
+.sheet-body img { display: block; width: 100%; height: auto; background: #fff; border-radius: 6px; }
+
+.sheet-foot {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 10px 16px; border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-3);
+}
+.sheet-foot a { margin-left: auto; color: var(--green); font-weight: 600; text-decoration: none; }
+.sheet-foot a:hover { text-decoration: underline; }
+
+.section-title {
+  font-family: "Anek Bangla", sans-serif; font-size: 14px; font-weight: 600;
+  color: var(--ink-2); margin: 16px 2px 8px;
+  display: flex; align-items: center; gap: 8px;
+}
+.section-title::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+.note {
+  background: var(--amber-lt); border: 1px solid #f6dcb5; color: #7c4a05;
+  border-radius: 11px; padding: 10px 12px; font-size: 13.5px; margin-bottom: 10px;
+}
+
+/* রুটের স্টপেজ তালিকা */
+.stoplist { margin: 10px 0 2px; padding: 0; list-style: none; font-size: 13.5px; }
+.stoplist li {
+  position: relative; padding: 2px 0 2px 20px; color: var(--ink-2);
+}
+.stoplist li::before {
+  content: ""; position: absolute; left: 4px; top: 11px;
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #fff; border: 2px solid var(--line);
+}
+.stoplist li::after {
+  content: ""; position: absolute; left: 7px; top: 18px; bottom: -2px; width: 2px; background: var(--line);
+}
+.stoplist li:last-child::after { display: none; }
+.stoplist li.on { color: var(--ink); font-weight: 600; }
+.stoplist li.on::before { border-color: var(--green); background: var(--green); }
+.stoplist li.hi::before { border-color: var(--amber); background: var(--amber); }
+.stoplist .km { float: right; font-size: 12px; color: var(--ink-3); font-weight: 500; }
+
+/* অভিযোগ */
+.complain {
+  margin-top: 14px; border: 1px solid #f3d4d4; background: #fdf3f3;
+  border-radius: var(--radius); padding: 12px 13px;
+}
+.complain h3 { font-size: 14.5px; color: #9b2c2c; margin-bottom: 4px; }
+.complain p { margin: 0 0 9px; font-size: 13px; color: #7a3b3b; }
+.tel-row { display: flex; flex-wrap: wrap; gap: 7px; }
+.tel {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #fff; border: 1px solid #f0c9c9; border-radius: 10px;
+  padding: 7px 11px; text-decoration: none; color: #9b2c2c;
+  font-size: 13.5px; font-weight: 600;
+}
+.tel:hover { background: #9b2c2c; color: #fff; border-color: #9b2c2c; }
+.tel small { display: block; font-weight: 400; font-size: 11px; opacity: .8; }
+
+/* ── ফুটার ── */
+.foot { padding: 14px 18px 20px; color: var(--ink-3); font-size: 12.5px; background: var(--bg); border-top: 1px solid var(--line); }
+.foot p { margin: 0 0 5px; max-width: 78ch; }
+.foot .tiny { font-size: 11.5px; opacity: .85; }
+
+/* ── লোডিং ── */
+.loading {
+  position: fixed; inset: 0; z-index: 2000;
+  display: grid; place-items: center; gap: 12px; align-content: center;
+  background: rgba(244,247,246,.95); color: var(--ink-2); font-size: 14px;
+}
+.loading[hidden] { display: none; }
+.spin {
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 3px solid var(--line); border-top-color: var(--green);
+  animation: sp .8s linear infinite;
+}
+@keyframes sp { to { transform: rotate(360deg); } }
+
+/* ── ম্যাপ মার্কার ── */
+.pin {
+  width: 15px; height: 15px; border-radius: 50%;
+  border: 3px solid #fff; box-shadow: 0 1px 5px rgba(0,0,0,.35);
+}
+.pin-from { background: var(--green); }
+.pin-to { background: var(--amber); }
+.pin-mid { width: 9px; height: 9px; border-width: 2px; background: var(--ink-3); }
+.leaflet-container { font-family: inherit; }
+.leaflet-popup-content { margin: 9px 12px; font-size: 13.5px; }
+.leaflet-popup-content b { font-size: 14.5px; }
+
+/* ═══════════════════ মোবাইল ═══════════════════
+   বেশিরভাগ মানুষ ফোনেই দেখবে। তাই ম্যাপ উপরে ছোট করে বসে, নিচে
+   ফলাফল — আর ম্যাপ বড় করে দেখার জন্য একটা বোতাম। */
+
+.map-toggle { display: none; }
+
+@media (max-width: 900px) {
+  :root { --head-h: 54px; }
+
+  body { overscroll-behavior-y: none; }
+
+  /* HTML-এ প্যানেল আগে, ম্যাপ পরে (ডেস্কটপে বাঁয়ে-ডানে)। ফোনে ম্যাপটা
+     উপরে চাই, তাই order দিয়ে উল্টে দিই। */
+  .layout {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* ম্যাপ উপরে, ছোট করে — দরকার হলে বড় করা যায় */
+  .map-wrap {
+    order: -1;
+    height: 200px;
+    position: sticky;
+    top: 0;
+    z-index: 600;
+    border-bottom: 1px solid var(--line);
+    transition: height .28s cubic-bezier(.4, 0, .2, 1);
+  }
+  body.map-big .map-wrap { height: calc(100vh - var(--head-h)); }
+
+  .map-toggle {
+    display: flex; align-items: center; gap: 6px;
+    position: absolute; right: 10px; top: 10px; z-index: 620;
+    background: #fff; border: 1px solid var(--line);
+    border-radius: 999px; padding: 7px 13px;
+    font-size: 13px; font-weight: 600; color: var(--ink-2);
+    box-shadow: 0 2px 8px rgba(11, 40, 30, .14);
+  }
+  body.map-big .map-toggle { background: var(--green); color: #fff; border-color: var(--green); }
+
+  .map-note { bottom: 10px; font-size: 12px; padding: 6px 12px; }
+
+  .panel {
+    border-right: 0;
+    overflow: visible;
+    display: block;
+    min-height: 60vh;
+  }
+  body.map-big .panel,
+  body.map-big .foot { display: none; }
+
+  .results { overflow: visible; padding: 0 12px 24px; }
+  .tabpane { display: none; }
+  .tabpane.is-on { display: block; }
+
+  /* ট্যাব ম্যাপের ঠিক নিচে আটকে থাকে */
+  .tabs {
+    position: sticky; top: 200px; z-index: 590;
+    background: var(--card); padding: 6px 10px 0;
+    box-shadow: 0 1px 0 var(--line);
+  }
+  .tab { font-size: 14px; padding: 11px 4px 12px; }
+
+  .brand p { display: none; }
+  .brand h1 { font-size: 17px; }
+  .brand-mark { width: 34px; height: 34px; font-size: 19px; border-radius: 9px; }
+  .rate-chip { font-size: 11.5px; padding: 4px 9px; }
+
+  /* ইনপুট ১৬px-এর কম হলে iOS নিজে থেকে জুম করে ফেলে */
+  .input-wrap input { font-size: 16px; padding: 12px 0; }
+  .search-box { padding: 12px 12px 10px; }
+  .swap { right: 18px; width: 38px; height: 38px; }
+  .go { padding: 14px; font-size: 16.5px; }
+
+  .suggest { max-height: 46vh; }
+  .suggest li { padding: 11px 10px; }
+  .suggest .s-n { display: none; }
+
+  /* ট্যাব-বার আগেই আটকে আছে; হেডিংও আটকালে একটা আরেকটার নিচে ঢুকে যায় */
+  .res-head { position: static; padding: 11px 2px 8px; }
+  .card { padding: 13px; border-radius: 13px; }
+  .card-name { font-size: 16.5px; }
+  .fare-big { font-size: 22px; }
+  .route-tag { display: block; margin: 3px 0 0; width: fit-content; }
+
+  .stoplist li { padding: 5px 0 5px 20px; }
+  .stoplist .km { float: none; display: block; margin-top: 1px; }
+
+  .tel { flex: 1 1 calc(50% - 4px); justify-content: center; padding: 10px; }
+
+  .act { flex: 1 1 calc(50% - 3px); text-align: center; padding: 10px 8px; }
+  .card-acts { gap: 6px; }
+
+  /* চার্ট ফোনে নিচ থেকে উঠে আসে, পুরো পর্দা জুড়ে */
+  .sheet { padding: 0; place-items: end stretch; }
+  .sheet-box { border-radius: 16px 16px 0 0; max-height: 94vh; width: 100%; }
+  .sheet-head h3 { font-size: 15px; }
+  .sheet-body { padding: 6px; }
+  .sheet-body img { min-width: 700px; }   /* ছক ছোট হলে পড়া যায় না, পাশে স্ক্রল হোক */
+
+  .foot { padding: 12px 14px 26px; }
+}
+
+@media (max-width: 380px) {
+  .brand h1 { font-size: 15.5px; }
+  .rate-chip { display: none; }
+  .tab { font-size: 12.5px; }
+}
+
+/* ফোন কাত করলে ম্যাপ আরও ছোট, নইলে কিছুই দেখা যায় না */
+@media (max-width: 900px) and (max-height: 500px) {
+  .map-wrap { height: 150px; }
+  .tabs { top: 150px; }
+}
