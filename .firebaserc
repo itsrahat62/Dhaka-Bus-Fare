@@ -1,0 +1,7 @@
+{
+  "_comment": "কোন Firebase প্রজেক্টে নিয়ম ও ইনডেক্স যাবে। এতে করে `npx firebase deploy --only firestore` চালালেই firestore.rules আর firestore.indexes.json আপলোড হয়ে যায় — কনসোলে হাতে পেস্ট করতে হয় না।",
+
+  "projects": {
+    "default": "varakoto-a3aaa"
+  }
+}
