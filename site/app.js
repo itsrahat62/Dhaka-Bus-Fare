@@ -321,7 +321,7 @@ let linesPromise = null;
 
 function loadLines() {
   if (!linesPromise) {
-    linesPromise = fetch("data/lines.json?v=7")
+    linesPromise = fetch("data/lines.json?v=8")
       .then((r) => r.json())
       .then((v) => { LINES = v; return v; })
       .catch((e) => { console.warn("ম্যাপের লাইন আনা গেল না:", e); return null; });
@@ -1017,7 +1017,7 @@ async function renderReports() {
 /* ──────────────────────── চালু করা ──────────────────────── */
 
 async function boot() {
-  const res = await fetch("data/data.json?v=7");
+  const res = await fetch("data/data.json?v=8");
   DATA = await res.json();
   STOPS = DATA.stops;
   ROUTES = DATA.routes;

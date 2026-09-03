@@ -25,13 +25,16 @@ html, body {
   height: 100%;
   background: var(--bg);
   color: var(--ink);
-  font-family: "Hind Siliguri", "Noto Sans Bengali", system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Anek Bangla — কারণ এতে বাংলা সংখ্যাগুলো আলাদা করে চেনা যায়।
+     আগের Hind Siliguri-তে ১ আর ৬ প্রায় একই আকারের, ফলে "মিরপুর ১"
+     আর "মিরপুর ৬", কিংবা "চলে ১ জন" আর "চলে ৬ জন" গুলিয়ে যেত। */
+  font-family: "Anek Bangla", "Noto Sans Bengali", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 16px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 { font-family: "Anek Bangla", "Hind Siliguri", sans-serif; margin: 0; line-height: 1.3; }
+h1, h2, h3 { font-family: "Anek Bangla", sans-serif; margin: 0; line-height: 1.3; }
 button, input { font: inherit; color: inherit; }
 button { cursor: pointer; }
 
@@ -210,7 +213,7 @@ button { cursor: pointer; }
 .card-name { font-size: 16px; font-weight: 700; font-family: "Anek Bangla", sans-serif; }
 .card-en { font-size: 12px; color: var(--ink-3); margin-top: -2px; }
 .route-tag {
-  font-family: "Hind Siliguri", sans-serif; font-size: 12px; font-weight: 500;
+  font-family: "Anek Bangla", sans-serif; font-size: 12px; font-weight: 500;
   color: var(--green-dk); background: var(--green-lt); border-radius: 6px;
   padding: 1px 7px; margin-left: 5px; white-space: nowrap;
 }
