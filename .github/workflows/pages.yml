@@ -1,0 +1,44 @@
+# সাইটটা GitHub Pages-এ তোলে।
+#
+# রেপোর ভেতরে সাইট আছে site/ ফোল্ডারে, কিন্তু GitHub Pages নিজে থেকে শুধু
+# রুট বা docs/ ফোল্ডার নিতে পারে। তাই এই ওয়ার্কফ্লো site/ ফোল্ডারটাকেই
+# সাইটের গোড়া বানিয়ে তোলে — ঠিকানা হয় itsrahat62.github.io/Dhaka-Bus-Fare/
+#
+# main-এ push করলেই নিজে থেকে চলে। বিল্ড করার কিছু নেই, ফাইলগুলো এমনিতেই
+# তৈরি (tools/ দিয়ে বানানো হয়, সেগুলো গিটে কমিট করাই থাকে)।
+
+name: সাইট প্রকাশ
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:      # চাইলে হাতেও চালানো যায়
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# একসাথে দুইটা ডিপ্লয় না চলুক; চললে শেষেরটাই থাকুক
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/configure-pages@v5
+
+      - name: site/ ফোল্ডারটা প্যাকেজ করি
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
