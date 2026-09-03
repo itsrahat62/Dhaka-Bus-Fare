@@ -11,6 +11,7 @@ import re
 import os
 import datetime
 
+import polyline
 import stoppos
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -56,6 +57,10 @@ def straight_km(a, b):
 # সরলরেখার তুলনায় রাস্তা কতটা ঘোরে। বিআরটিএ-র ১০টা চার্টের সাথে
 # মিলিয়ে বের করা — ১.১০ ধরলে সরকারি দূরত্বের ±১০%-এর মধ্যে থাকে।
 CIRCUITY = 1.10
+
+# ম্যাপের লাইন কতটা হালকা করব। ১০ মিটারে শহরের জুমে পার্থক্য চোখে পড়ে না,
+# অথচ ডেটা ৭৩৫ KB থেকে ১৪৮ KB-তে নামে।
+LINE_TOLERANCE_M = 10.0
 
 
 def sane_leg(osrm_km, direct_km):
@@ -110,6 +115,7 @@ def main():
 
     # ২. রুট: শুধু সেই রুট যার OSRM দূরত্ব বেরিয়েছে
     out_routes = []
+    lines = []          # ম্যাপের লাইন, রুটের ক্রমেই
     trimmed = [0.0, 0.0]   # [যতটা ছাঁটা হলো, মোট কাঁচা দূরত্ব]
     rejected = []          # যেসব চার্ট-মিল বিশ্বাসযোগ্য নয়
     verified = []          # যেগুলোর দূরত্ব সরকারি সংখ্যার সাথে মিলেছে
@@ -143,8 +149,9 @@ def main():
             "type": r["service_type"],
             "s": [stop_ids[s] for s in seq],
             "km": cum,
-            "g": o["geometry"],
         }
+        # ম্যাপের লাইন আলাদা ফাইলে যায় — প্রথম লোডে দরকার নেই
+        lines.append(polyline.shrink(o["geometry"], LINE_TOLERANCE_M))
         # বিআরটিএ-র অফিসিয়াল ভাড়ার চার্ট। চার্টটা রুটের একটা নির্দিষ্ট
         # অংশের (a → b) — সেই অংশে আমাদের হিসাব করা দূরত্ব চার্টে লেখা
         # দূরত্বের কাছাকাছি কি না, মিলিয়ে দেখি। না মিললে চার্টটা
@@ -255,10 +262,17 @@ def main():
     with open(out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, separators=(",", ":"))
 
+    # ম্যাপের লাইন আলাদা ফাইলে — পাতা খোলার পর পেছনে নামে, তাই প্রথম
+    # লোড হালকা থাকে
+    lines_out = os.path.join(ROOT, "site", "data", "lines.json")
+    with open(lines_out, "w", encoding="utf-8") as f:
+        json.dump(lines, f, ensure_ascii=False, separators=(",", ":"))
+
     size = os.path.getsize(out) / 1024
+    lsize = os.path.getsize(lines_out) / 1024
     print(f"স্টপেজ : {len(stops)}")
     print(f"রুট    : {len(out_routes)} / {len(routes)}")
-    print(f"ফাইল   : {size:.0f} KB → site/data/data.json")
+    print(f"ফাইল   : {size:.0f} KB (data.json) + {lsize:.0f} KB (lines.json, পরে নামে)")
     if trimmed[1]:
         print(f"ঘুরপথ  : {trimmed[0]:.0f} / {trimmed[1]:.0f} কিমি ছাঁটা হলো ({trimmed[0] / trimmed[1] * 100:.1f}%)")
 

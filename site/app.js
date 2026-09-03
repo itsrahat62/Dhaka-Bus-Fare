@@ -313,10 +313,27 @@ function snapStops(line, stopIds) {
   return idx;
 }
 
+/* ম্যাপের লাইনগুলো আলাদা ফাইলে, পাতা খোলার পর পেছনে নামে।
+   প্রথম লোডে ওগুলো লাগে না, আর ওরাই সবচেয়ে ভারী — তাই আলাদা রাখলে
+   পাতা অনেক দ্রুত খোলে (মোবাইল ডেটায় এটা বড় ব্যাপার)। */
+let LINES = null;
+let linesPromise = null;
+
+function loadLines() {
+  if (!linesPromise) {
+    linesPromise = fetch("data/lines.json?v=6")
+      .then((r) => r.json())
+      .then((v) => { LINES = v; return v; })
+      .catch((e) => { console.warn("ম্যাপের লাইন আনা গেল না:", e); return null; });
+  }
+  return linesPromise;
+}
+
 const routeLineCache = new Map();
 function routeLine(ri) {
+  if (!LINES || !LINES[ri]) return null;
   if (!routeLineCache.has(ri)) {
-    const line = decodePolyline(ROUTES[ri].g);
+    const line = decodePolyline(LINES[ri]);
     routeLineCache.set(ri, { line, snap: snapStops(line, ROUTES[ri].s) });
   }
   return routeLineCache.get(ri);
@@ -336,13 +353,20 @@ const pin = (cls) => L.divIcon({ className: "", html: `<div class="pin ${cls}"><
 
 /* এক বা একাধিক ধাপ ম্যাপে আঁকি */
 function drawLegs(legs) {
+  // লাইনের ফাইল এখনো নামেনি? নামুক, তারপর আবার চেষ্টা
+  if (!LINES) {
+    loadLines().then((v) => { if (v) drawLegs(legs); });
+    return;
+  }
   layerRoute.clearLayers();
   layerPins.clearLayers();
   const colors = ["#0b7a5b", "#d97706"];
   const bounds = [];
 
   legs.forEach((leg, n) => {
-    const { line, snap } = routeLine(leg.route);
+    const rl = routeLine(leg.route);
+    if (!rl) return;
+    const { line, snap } = rl;
     const a = Math.min(snap[leg.i], snap[leg.j]);
     const b = Math.max(snap[leg.i], snap[leg.j]);
     const seg = line.slice(a, b + 1);
@@ -993,7 +1017,7 @@ async function renderReports() {
 /* ──────────────────────── চালু করা ──────────────────────── */
 
 async function boot() {
-  const res = await fetch("data/data.json");
+  const res = await fetch("data/data.json?v=6");
   DATA = await res.json();
   STOPS = DATA.stops;
   ROUTES = DATA.routes;
@@ -1009,6 +1033,8 @@ async function boot() {
     `মিনিবাস ৳${toBn(m.mini_rate.toFixed(2))}/কিমি (সর্বনিম্ন ৳${toBn(m.mini_min)}), কার্যকর ${m.effective}`;
 
   initMap();
+  // পাতা দেখানো শুরু হয়ে গেছে; ম্যাপের লাইনগুলো এখন পেছনে নামুক
+  loadLines();
 
   // ট্যাব ১
   const fromF = attachSuggest($('.field[data-role="from"]'), () => {});
