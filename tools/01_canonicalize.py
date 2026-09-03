@@ -13,7 +13,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 
 
-def load(p):
+def load(p, default=None):
+    if not os.path.exists(p):
+        return default
     with open(p, encoding="utf-8") as f:
         return json.load(f)
 
@@ -27,6 +29,14 @@ def norm(s):
 
 def main():
     src = load(os.path.join(ROOT, "data", "source-busroutebd.json"))["data"]
+
+    # দ্বিতীয় উৎসে (dhakabusroute) আরও কিছু বাস আছে — সেগুলোও নিই
+    extra = load(os.path.join(ROOT, "data", "extra-routes.json"), []) or []
+    src = src + [{"english": e["en"], "bangle": e["bn"], "routes": e["stops"],
+                  "service_type": ""} for e in extra]
+    if extra:
+        print(f"দ্বিতীয় উৎস থেকে বাড়তি বাস: {len(extra)}")
+
     rules = load(os.path.join(HERE, "aliases.json"))
     splits = {norm(k): v for k, v in rules["splits"].items()}
     aliases = {norm(k): v for k, v in rules["aliases"].items()}

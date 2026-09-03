@@ -475,5 +475,95 @@
   "a": "Kuril Bishwa Road",
   "b": "Azimpur",
   "km": 17.5
+ },
+ "Falgun Art Transport Private Limited": {
+  "page": "p2-27",
+  "no": "এ-৩৫৫",
+  "from": "কুড়িল বিশ্বরোড",
+  "to": "আজিমপুর",
+  "a": "Kuril Bishwa Road",
+  "b": "Azimpur",
+  "km": 17.5
+ },
+ "Grameen Suveccha": {
+  "page": "p2-26",
+  "no": "এ-৩৫৪",
+  "from": "আজিমপুর",
+  "to": "নন্দনপার্ক",
+  "a": "Azimpur",
+  "b": "Nandan Park",
+  "km": null
+ },
+ "Nabakali Bus Route Dhaka": {
+  "page": "p2-01",
+  "no": "এ-২৮৫",
+  "from": "চিড়িয়াখানা",
+  "to": "কেরানীগঞ্জ (নতুন জেলখানা)",
+  "a": "Chiriyakhana",
+  "b": "Keraniganj",
+  "km": 21.0
+ },
+ "Nilachol Bus Route Dhaka": {
+  "page": "p5-16",
+  "no": "এ-৪২১",
+  "from": "সাইনবোর্ড",
+  "to": "নবীনগর",
+  "a": "Sign Board",
+  "b": "Nobinagar",
+  "km": null
+ },
+ "Power Paribahan": {
+  "page": "p5-17",
+  "no": "এ-৪২২",
+  "from": "কামরাঙ্গীরচর (বেড়ীবাঁধ)",
+  "to": "কোনাবাড়ী",
+  "a": "Beribadh",
+  "b": "Konabari",
+  "km": null
+ },
+ "Raida Bus Route Dhaka": {
+  "page": "p2-14",
+  "no": "এ-৩১৭",
+  "from": "দিয়াবাড়ী",
+  "to": "পোস্তগোলা",
+  "a": "Diabari",
+  "b": "Postagola",
+  "km": 27.3
+ },
+ "Rajdhani Super Bus Route Dhaka": {
+  "page": "p2-13",
+  "no": "এ-৩১৪",
+  "from": "হেমায়েতপুর",
+  "to": "ডেমরা স্টাফ কোয়ার্টার",
+  "a": "Hemayetpur",
+  "b": "Demra Staff Quarter",
+  "km": 38.8
+ },
+ "Ramjan Bus Route Dhaka": {
+  "page": "p3-26",
+  "no": "এ-২৭৩",
+  "from": "গাবতলী",
+  "to": "রামপুরা",
+  "a": "Gabtoli",
+  "b": "Rampura Bridge",
+  "km": null
+ },
+ "Robrob Bus Route Dhaka": {
+  "page": "p3-26",
+  "no": "এ-২৭৩",
+  "from": "গাবতলী",
+  "to": "রামপুরা",
+  "a": "Gabtoli",
+  "b": "Rampura Bridge",
+  "km": null
+ },
+ "Somota Paribahan": {
+  "page": "p2-16",
+  "no": "এ-৩২০",
+  "from": "চিড়িয়াখানা",
+  "to": "যাত্রাবাড়ী",
+  "a": "Chiriyakhana",
+  "b": "Jatrabari",
+  "km": null
  }
 }

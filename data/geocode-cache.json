@@ -2192,5 +2192,51 @@
   "type": "highway/bus_stop",
   "display": "Zirani Bazar, নবীনগর - চন্দ্রা মহাসড়ক, ভবানীপুর, সাভার উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1349, বাংলাদেশ",
   "query": "Zirani Bazar, Dhaka, Bangladesh"
+ },
+ "Chalantika Moor": null,
+ "Dhaka College": {
+  "lat": 23.7349651,
+  "lon": 90.3817749,
+  "bn": "ঢাকা কলেজ",
+  "osm_name": "ঢাকা কলেজ",
+  "type": "amenity/college",
+  "display": "ঢাকা কলেজ, মিরপুর রোড, নীলক্ষেত, আজিমপুর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1205, বাংলাদেশ",
+  "query": "Dhaka College, Dhaka, Bangladesh"
+ },
+ "Kawlar": {
+  "lat": 23.8436198,
+  "lon": 90.421562,
+  "bn": "",
+  "osm_name": "Kawlar jamidar bari road",
+  "type": "highway/residential",
+  "display": "Kawlar jamidar bari road, ক্যাব কলোনি, কাওলা, খিলক্ষেত, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1230, বাংলাদেশ",
+  "query": "Kawlar, Dhaka, Bangladesh"
+ },
+ "Khejur Bagan": {
+  "lat": 23.8898191,
+  "lon": 90.3219224,
+  "bn": "",
+  "osm_name": "Khejur Bagan Bus Stop",
+  "type": "highway/bus_stop",
+  "display": "Khejur Bagan Bus Stop, Anowar Jung Road, আশুলিয়া, গৌরিপুর, সাভার উপজেলা, ঢাকা জেলা, ঢাকা বিভাগ, 1341, বাংলাদেশ",
+  "query": "Khejur Bagan, Dhaka, Bangladesh"
+ },
+ "Mirpur 6": {
+  "lat": 23.8105081,
+  "lon": 90.3635557,
+  "bn": "মিরপুর ৬",
+  "osm_name": "মিরপুর ৬",
+  "type": "place/quarter",
+  "display": "মিরপুর ৬, মিরপুর, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1216, বাংলাদেশ",
+  "query": "Mirpur 6, Dhaka, Bangladesh"
+ },
+ "Rainkhola": {
+  "lat": 23.8039954,
+  "lon": 90.3530786,
+  "bn": "",
+  "osm_name": "Rainkhola Jame Masjid, Mosque",
+  "type": "amenity/place_of_worship",
+  "display": "Rainkhola Jame Masjid, Mosque, Road-02, মিরপুর ১, শাহ আলী বাগ, ঢাকা, ঢাকা মহানগর, ঢাকা জেলা, ঢাকা বিভাগ, 1216, বাংলাদেশ",
+  "query": "Rainkhola, Dhaka, Bangladesh"
  }
 }

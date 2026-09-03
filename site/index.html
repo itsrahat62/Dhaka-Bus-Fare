@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Anek+Bangla:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚌</text></svg>">
 </head>
 <body>
@@ -32,8 +32,16 @@
   <aside class="panel" id="panel">
     <nav class="tabs" role="tablist">
       <button class="tab is-on" data-tab="find" role="tab">রুট খুঁজুন</button>
-      <button class="tab" data-tab="buses" role="tab">সব বাস ও স্টপেজ</button>
+      <button class="tab" data-tab="buses" role="tab">সব বাস</button>
+      <button class="tab" data-tab="reports" role="tab">সবার রিপোর্ট</button>
     </nav>
+
+    <div class="alert" id="staleNote">
+      <button class="alert-x" id="staleClose" type="button" aria-label="বন্ধ করুন">×</button>
+      <b>ঢাকায় বাস প্রতিনিয়ত যোগ হয়, বন্ধও হয়।</b> এখানকার তথ্যের উপর পুরোপুরি
+      ভরসা করবেন না — রওনা দেওয়ার আগে আশেপাশের মানুষকে জিজ্ঞেস করে নিন।
+      আপনি জানলে <b>চলে / চলে না</b> চেপে সবাইকে জানিয়ে দিন।
+    </div>
 
     <!-- ── ট্যাব ১: কোথা থেকে কোথায় ── -->
     <section class="tabpane is-on" id="pane-find">
@@ -88,6 +96,11 @@
       <div class="results" id="busList"></div>
     </section>
 
+    <!-- ── ট্যাব ৩: সবাই কী বলছে ── -->
+    <section class="tabpane" id="pane-reports">
+      <div class="results" id="reportList"></div>
+    </section>
+
   </aside>
 
   <div class="map-wrap">
@@ -130,7 +143,51 @@
   </div>
 </div>
 
+<!-- বাস নিয়ে মত দেওয়ার জানালা -->
+<div class="sheet" id="voteSheet" hidden>
+  <div class="sheet-box vote-box" role="dialog" aria-modal="true" aria-labelledby="voteTitle">
+    <div class="sheet-head">
+      <div>
+        <h3 id="voteTitle"></h3>
+        <p id="voteSub">আপনার অভিজ্ঞতা সবার কাজে লাগবে</p>
+      </div>
+      <button class="sheet-x" id="voteClose" type="button" aria-label="বন্ধ করুন">×</button>
+    </div>
+
+    <div class="sheet-body vote-body">
+      <p class="vote-q">এই বাসটা কি এখনো চলে?</p>
+      <div class="vote-row" id="voteBtns">
+        <button class="vbtn v-yes" data-v="runs" type="button">✅ চলে</button>
+        <button class="vbtn v-no" data-v="no" type="button">🚫 চলে না</button>
+        <button class="vbtn v-idk" data-v="unsure" type="button">🤔 জানি না</button>
+      </div>
+
+      <p class="vote-q">সেবা কেমন? <span class="opt">(স্টাফের ব্যবহার, ভিড়, অবস্থা)</span></p>
+      <div class="stars" id="starRow">
+        <button type="button" data-s="1">★</button><button type="button" data-s="2">★</button>
+        <button type="button" data-s="3">★</button><button type="button" data-s="4">★</button>
+        <button type="button" data-s="5">★</button>
+        <span class="star-label" id="starLabel">রেটিং দিন</span>
+      </div>
+
+      <textarea id="voteText" maxlength="500" rows="3"
+        placeholder="যা বলতে চান — কন্ডাক্টর ভাড়া বেশি নেয়, বাস ভাঙাচোরা, নাকি ভালো সার্ভিস…"></textarea>
+      <div class="vote-meta">
+        <input id="voteName" type="text" maxlength="40" placeholder="আপনার নাম (ইচ্ছা হলে)">
+        <span class="count"><span id="textCount">০</span>/৫০০</span>
+      </div>
+
+      <button class="go" id="voteSubmit" type="button">জমা দিন</button>
+      <p class="vote-msg" id="voteMsg"></p>
+
+      <div class="review-list" id="reviewList"></div>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="app.js?v=3"></script>
+<script src="firebase-config.js?v=4"></script>
+<script src="community.js?v=4"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>

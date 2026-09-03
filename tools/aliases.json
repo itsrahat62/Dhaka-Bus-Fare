@@ -1,29 +1,95 @@
 {
   "_comment": "busroutebd স্ক্র্যাপ ডেটার নাম পরিষ্কার করার নিয়ম। splits = দুইটা স্টপেজ জোড়া লেগে গেছে, ভেঙে দিতে হবে। aliases = বানানভেদ, এক canonical নামে মেলাতে হবে। drop = অর্থহীন/অস্পষ্ট এন্ট্রি।",
-
   "splits": {
-    "Adabor Shyamoli": ["Adabor", "Shyamoli"],
-    "Airport Jashimuddin (Uttara)": ["Airport", "Jashimuddin"],
-    "Bangla Motor Shahbag": ["Bangla Motor", "Shahbag"],
-    "Dhanmondi 32 Kalabagan": ["Dhanmondi 32", "Kalabagan"],
-    "Farmgate Bijoy Sarani": ["Farmgate", "Bijoy Sarani"],
-    "Ittefaq Moor Sayedabad": ["Ittefaq Moor", "Sayedabad"],
-    "Kalabagan City College": ["Kalabagan", "City College"],
-    "Kalshi Pallabi": ["Kalshi", "Pallabi"],
-    "Kazipara Shewrapara": ["Kazipara", "Shewrapara"],
-    "Khamar Bari Farmgate": ["Khamarbari", "Farmgate"],
-    "Mirpur 2 Mirpur 10": ["Mirpur 2", "Mirpur 10"],
-    "Mogbazar Mohakhali": ["Mogbazar", "Mohakhali"],
-    "New Market Nilkhet": ["New Market", "Nilkhet"],
-    "Nobinagar Baipayl": ["Nobinagar", "Baipayl"],
-    "Nobinagar Chandra": ["Nobinagar", "Chandra"],
-    "Press Club  Paltan": ["Press Club", "Paltan"],
-    "Purobi Pallabi": ["Purobi", "Pallabi"],
-    "Rajlakshmi House Building": ["Rajlakshmi", "House Building"],
-    "Sony Cinema Hall Mirpur 1": ["Sony Cinema Hall", "Mirpur 1"],
-    "Arambagh Notre Dame College": ["Arambagh", "Notre Dame College"]
+    "Adabor Shyamoli": [
+      "Adabor",
+      "Shyamoli"
+    ],
+    "Airport Jashimuddin (Uttara)": [
+      "Airport",
+      "Jashimuddin"
+    ],
+    "Bangla Motor Shahbag": [
+      "Bangla Motor",
+      "Shahbag"
+    ],
+    "Dhanmondi 32 Kalabagan": [
+      "Dhanmondi 32",
+      "Kalabagan"
+    ],
+    "Farmgate Bijoy Sarani": [
+      "Farmgate",
+      "Bijoy Sarani"
+    ],
+    "Ittefaq Moor Sayedabad": [
+      "Ittefaq Moor",
+      "Sayedabad"
+    ],
+    "Kalabagan City College": [
+      "Kalabagan",
+      "City College"
+    ],
+    "Kalshi Pallabi": [
+      "Kalshi",
+      "Pallabi"
+    ],
+    "Kazipara Shewrapara": [
+      "Kazipara",
+      "Shewrapara"
+    ],
+    "Khamar Bari Farmgate": [
+      "Khamarbari",
+      "Farmgate"
+    ],
+    "Mirpur 2 Mirpur 10": [
+      "Mirpur 2",
+      "Mirpur 10"
+    ],
+    "Mogbazar Mohakhali": [
+      "Mogbazar",
+      "Mohakhali"
+    ],
+    "New Market Nilkhet": [
+      "New Market",
+      "Nilkhet"
+    ],
+    "Nobinagar Baipayl": [
+      "Nobinagar",
+      "Baipayl"
+    ],
+    "Nobinagar Chandra": [
+      "Nobinagar",
+      "Chandra"
+    ],
+    "Press Club  Paltan": [
+      "Press Club",
+      "Paltan"
+    ],
+    "Purobi Pallabi": [
+      "Purobi",
+      "Pallabi"
+    ],
+    "Rajlakshmi House Building": [
+      "Rajlakshmi",
+      "House Building"
+    ],
+    "Sony Cinema Hall Mirpur 1": [
+      "Sony Cinema Hall",
+      "Mirpur 1"
+    ],
+    "Arambagh Notre Dame College": [
+      "Arambagh",
+      "Notre Dame College"
+    ],
+    "Sayedabad Janapath Moor": [
+      "Sayedabad",
+      "Janapath Moor"
+    ],
+    "Shukrabad Kalabagan": [
+      "Shukrabad",
+      "Kalabagan"
+    ]
   },
-
   "aliases": {
     "- Ray Saheb Bazar": "Ray Saheb Bazar",
     "Ray Shaheb Bazar": "Ray Saheb Bazar",
@@ -61,8 +127,29 @@
     "Bashundhara (300 Feet Gate)": "Bashundhara",
     "Golap Shah Mazar": "Golap Shah Mazar",
     "Baitul Mukarram": "Baitul Mukarram",
-    "Adamjee School": "Adamjee College"
+    "Adamjee School": "Adamjee College",
+    "Aminbazar": "Amin Bazar",
+    "Asad gate": "Asad Gate",
+    "Bijoy Soroni": "Bijoy Sarani",
+    "Chittagong Road (Narayanganj)": "Chittagong Road",
+    "Ghatarchor": "Ghatar Char",
+    "Malibagg Mor": "Malibagh",
+    "Malibagh Rail Gate": "Malibagh Railgate",
+    "Mirpur 14 Bus Stand": "Mirpur 14",
+    "Motso Vobon": "Matsya Bhaban",
+    "Natun Bazar": "Notun Bazar",
+    "Rajluxmi": "Rajlakshmi",
+    "Shia Masjid": "Shia Mosque",
+    "Sony Hall": "Sony Cinema Hall",
+    "Songsod Bhaban": "Manik Mia Avenue",
+    "Tejgaon College (Farmgate)": "Farmgate",
+    "Gazipur": "Gazipur Chourasta",
+    "Kawla": "Kawlar",
+    "Uttara": "Jashimuddin",
+    "Uttara House Building": "House Building"
   },
-
-  "drop": ["Signal"]
+  "drop": [
+    "Signal",
+    "Elevated Expressway"
+  ]
 }

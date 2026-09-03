@@ -1,0 +1,18 @@
+{
+  "name": "dhaka-bus-fare",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ঢাকার বাস ভাড়া, রুট ও দূরত্ব — সাথে যাত্রীদের দেওয়া তথ্য (কোন বাস এখনো চলে)",
+
+  "_note": "সাইটটা চালাতে npm লাগে না — site/ ফোল্ডারটা যেকোনো জায়গায় রাখলেই চলে। এই package.json শুধু লোকাল যাচাইয়ের জন্য: Firestore এমুলেটরে ভোট, রিভিউ আর security rules ঠিকঠাক কাজ করে কিনা দেখতে।",
+
+  "scripts": {
+    "site": "python -m http.server 8765 --bind 127.0.0.1 --directory site",
+    "emulator": "firebase emulators:start --project demo-dhakabus --only auth,firestore",
+    "rules": "firebase deploy --only firestore:rules,firestore:indexes"
+  },
+
+  "devDependencies": {
+    "firebase-tools": "13.35.1"
+  }
+}

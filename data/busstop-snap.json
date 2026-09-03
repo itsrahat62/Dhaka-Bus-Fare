@@ -28,11 +28,11 @@
   "osm_name": "Taltola"
  },
  "Airport": {
-  "lat": 23.784475,
-  "lon": 90.399199,
-  "moved_km": 0.056,
-  "how": "সবচেয়ে কাছের বাস স্টপ",
-  "osm_name": "BRTC COUNTER, Dhaka to Kishoreganj"
+  "lat": 23.851601,
+  "lon": 90.407336,
+  "moved_km": 0.496,
+  "how": "নাম মিলেছে",
+  "osm_name": "বিমান বন্দর বাস স্টপ"
  },
  "Amin Bazar": {
   "lat": 23.785039,
@@ -181,6 +181,13 @@
   "how": "নাম মিলেছে",
   "osm_name": "Bashtola Bus Stand"
  },
+ "Bashundhara": {
+  "lat": 23.811897,
+  "lon": 90.421179,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "বসুন্ধরা বাস স্টপ"
+ },
  "Bata Signal": {
   "lat": 23.738989,
   "lon": 90.388255,
@@ -280,11 +287,11 @@
   "osm_name": "Science Lab / City College Bus stop, Mirpur Rd, Dhaka"
  },
  "College Gate": {
-  "lat": 23.749254,
-  "lon": 90.418928,
-  "moved_km": 0.16,
-  "how": "সবচেয়ে কাছের বাস স্টপ",
-  "osm_name": "Khilgaon Colony Bus stop"
+  "lat": 23.76942,
+  "lon": 90.368892,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "College Gate, Bus stop"
  },
  "Dainik Bangla Moor": {
   "lat": 23.730134,
@@ -313,6 +320,13 @@
   "moved_km": 0.0,
   "how": "নাম মিলেছে",
   "osm_name": "Demra staff quarter"
+ },
+ "Dhaka College": {
+  "lat": 23.736049,
+  "lon": 90.383956,
+  "moved_km": 0.253,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Dhaka College Bus stop, Mirpur Rd, Dhaka"
  },
  "Dhakeshwari": {
   "lat": 23.722474,
@@ -623,11 +637,11 @@
   "osm_name": "Kachukhet Bus Stop, Bus stop"
  },
  "Kakoli": {
-  "lat": 23.775086,
-  "lon": 90.36505,
-  "moved_km": 0.125,
-  "how": "সবচেয়ে কাছের বাস স্টপ",
-  "osm_name": "Shyamoli Bus stop, Bus stop"
+  "lat": 23.795234,
+  "lon": 90.400902,
+  "moved_km": 0.116,
+  "how": "নাম মিলেছে",
+  "osm_name": "Kakoli Bus station"
  },
  "Kakrail": {
   "lat": 23.737647,
@@ -719,6 +733,13 @@
   "moved_km": 0.0,
   "how": "নাম মিলেছে",
   "osm_name": "Khamarbari"
+ },
+ "Khejur Bagan": {
+  "lat": 23.889819,
+  "lon": 90.321922,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Khejur Bagan Bus Stop"
  },
  "Khilgaon": {
   "lat": 23.748106,
@@ -901,6 +922,13 @@
   "moved_km": 0.63,
   "how": "নাম মিলেছে",
   "osm_name": "Mirpur 2 Bus Stop"
+ },
+ "Mirpur 6": {
+  "lat": 23.80963,
+  "lon": 90.36101,
+  "moved_km": 0.277,
+  "how": "সবচেয়ে কাছের বাস স্টপ",
+  "osm_name": "Proshika More Bus Stop"
  },
  "Mitford Ghat": {
   "lat": 23.710769,
@@ -1384,6 +1412,13 @@
   "moved_km": 0.094,
   "how": "সবচেয়ে কাছের বাস স্টপ",
   "osm_name": "T.T. Para Circle Bus stop"
+ },
+ "Taltola": {
+  "lat": 23.783297,
+  "lon": 90.378527,
+  "moved_km": 0.0,
+  "how": "নাম মিলেছে",
+  "osm_name": "Taltola"
  },
  "Technical": {
   "lat": 23.781492,

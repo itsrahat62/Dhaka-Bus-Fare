@@ -11,6 +11,13 @@ data/brta/*.pdf
 # শিরোনামের শিট — শুধু চার্টের তালিকা বানানোর সময় লেগেছিল
 data/headers/
 
+# Firebase — শুধু লোকাল এমুলেটরে যাচাইয়ের জন্য নামানো
+node_modules/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+.firebase/
+
 # এডিটর
 .idea/
 .vscode/

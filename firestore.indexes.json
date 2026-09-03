@@ -1,0 +1,14 @@
+{
+  "_comment": "\"সবার রিপোর্ট\" পাতায় সব বাসের রিভিউ একসাথে সময় ধরে সাজানো হয় (collectionGroup query)। Firestore-এ এর জন্য এই ইনডেক্সটা আগে বানিয়ে রাখতে হয়। Firebase Console → Firestore → Indexes → Single field অথবা firebase deploy --only firestore:indexes দিয়ে।",
+
+  "indexes": [
+    {
+      "collectionGroup": "reviews",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        { "fieldPath": "at", "order": "DESCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

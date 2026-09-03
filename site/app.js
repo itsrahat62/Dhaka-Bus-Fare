@@ -10,6 +10,7 @@ let ROUTES = [];          // [{en, bn, s:[stopId], km:[cumulative], g:polyline}]
 let STOP_ROUTES = [];     // stopId → [routeIdx]
 let map, layerRoute, layerPins;
 let lastFind = null;      // স্টপেজ দেখতে গেলে ফলাফলের তালিকা এখানে জমা থাকে
+let lastRun = null;       // শেষ খোঁজাটা আবার চালানোর জন্য (ভোট এলে সাজানো বদলায়)
 
 const $  = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -167,6 +168,16 @@ function fare(km, mini = false) {
 
 /* ────────────────────── রুট খোঁজার লজিক ────────────────────── */
 
+/* সবার মত অনুযায়ী স্তর: ২ = চলে, ১ = কেউ বলেনি/দ্বিমত, ০ = চলে না।
+   যে বাস চলে না বলে মানুষ জানিয়েছে, সেটা যত কাছেই হোক নিচেই থাকবে। */
+function tierOf(r) {
+  if (!window.Community) return 1;
+  const s = Community.statusOf(r.k).state;
+  if (s === "runs") return 2;
+  if (s === "no") return 0;
+  return 1;
+}
+
 /* সরাসরি: এক বাসেই যাওয়া যায় */
 function findDirect(from, to) {
   const res = [];
@@ -179,7 +190,9 @@ function findDirect(from, to) {
     if (km <= 0) continue;
     res.push({ kind: "direct", route: ri, i, j, km, stops: Math.abs(j - i) });
   }
-  res.sort((a, b) => a.km - b.km);
+  // আগে "চলে কি না", তারপর কাছের পথ
+  res.sort((a, b) =>
+    tierOf(ROUTES[b.route]) - tierOf(ROUTES[a.route]) || a.km - b.km);
   return res;
 }
 
@@ -349,6 +362,38 @@ function drawWholeRoute(ri) {
 
 const kmTxt = (km) => toBn(km.toFixed(1)) + " কিমি";
 
+/* ───────────── সবার দেওয়া তথ্য: চলে কি চলে না ───────────── */
+
+const STATE_LOOK = {
+  runs:    { cls: "st-yes", icon: "✅", word: "চলে" },
+  no:      { cls: "st-no",  icon: "🚫", word: "চলে না" },
+  mixed:   { cls: "st-mix", icon: "❔", word: "কেউ বলছে চলে, কেউ বলছে না" },
+  unknown: { cls: "st-unk", icon: "❓", word: "কেউ এখনো জানায়নি" },
+};
+
+/* বাসের নামের পাশে ছোট ব্যাজ */
+function statusPill(r) {
+  if (!window.Community) return "";
+  const s = Community.statusOf(r.k);
+  const look = STATE_LOOK[s.state];
+  const who = s.state === "unknown" ? "" :
+    ` <span class="st-n">${toBn(s.state === "no" ? s.no : s.runs)} জন</span>`;
+  const star = s.ratingCount
+    ? ` <span class="st-star">★ ${toBn(s.rating.toFixed(1))}</span>` : "";
+  return `<span class="st ${look.cls}">${look.icon} ${look.word}${who}</span>${star}`;
+}
+
+/* কার্ডে "আপনি জানেন?" বোতাম */
+function voteButton(routeIdx) {
+  if (!window.Community || !Community.configured()) return "";
+  const r = ROUTES[routeIdx];
+  const mine = Community.myVoteOf(r.k);
+  const label = mine
+    ? `✏️ আপনার মত বদলান`
+    : `🗳️ চলে কি না জানান`;
+  return `<button class="act act-vote" data-vote="${routeIdx}">${label}</button>`;
+}
+
 /* বিআরটিসি-র ৯টা রুট, আলিফের ৪টা — একই নাম। তাই দুই প্রান্ত জুড়ে আলাদা করি */
 function routeLabel(r) {
   if (!r.multi) return r.bn;
@@ -368,7 +413,7 @@ function cardActions(routeIdx) {
     ? `<button class="act act-chart" data-chart="${routeIdx}">📋 ভাড়া চার্ট দেখুন</button>`
     : "";
   return `<div class="card-acts">
-      <button class="act" data-stops="${routeIdx}">🚏 সব স্টপেজ</button>${chart}
+      <button class="act" data-stops="${routeIdx}">🚏 সব স্টপেজ</button>${chart}${voteButton(routeIdx)}
     </div>`;
 }
 
@@ -377,7 +422,7 @@ function cardDirect(o) {
   const f = fare(o.km), fm = fare(o.km, true);
   const path = pathPreview(r, o.i, o.j);
   return `
-    <div class="card" data-kind="direct" data-route="${o.route}" data-i="${o.i}" data-j="${o.j}">
+    <div class="card${tierOf(r) === 0 ? " is-dead" : ""}" data-kind="direct" data-route="${o.route}" data-i="${o.i}" data-j="${o.j}">
       <div class="card-top">
         <div>
           <div class="card-name">${routeLabel(r)}</div>
@@ -389,6 +434,7 @@ function cardDirect(o) {
         </div>
       </div>
       <div class="card-meta">
+        ${statusPill(r)}
         <span class="pill pill-km">${kmTxt(o.km)}</span>
         <span class="pill">${toBn(o.stops)} স্টপেজ</span>
         <span class="pill pill-mini">মিনিবাস ৳${toBn(fm)}</span>
@@ -592,15 +638,19 @@ function renderBusList(q = "") {
       return keys.some((k) => k.includes(raw) || (key && k.includes(key)));
     });
   }
-  list.sort((a, b) => a.r.bn.localeCompare(b.r.bn, "bn"));
+  // চলে বলে যাদের কথা জানা, তারা আগে; চলে না বলে জানা যারা, সবার শেষে
+  list.sort((a, b) =>
+    tierOf(b.r) - tierOf(a.r) || a.r.bn.localeCompare(b.r.bn, "bn"));
 
   const box = $("#busList");
+  const dead = list.filter(({ r }) => tierOf(r) === 0).length;
   box.innerHTML =
-    `<div class="res-head"><h2>সব বাস</h2><span class="count">${toBn(list.length)}টি</span></div>` +
+    `<div class="res-head"><h2>সব বাস</h2><span class="count">${toBn(list.length)}টি` +
+    (dead ? ` · ${toBn(dead)}টি চলে না` : "") + `</span></div>` +
     (list.length
       ? list.map(({ r, i }) => {
           const total = r.km[r.km.length - 1];
-          return `<div class="card" data-kind="route" data-route="${i}">
+          return `<div class="card${tierOf(r) === 0 ? " is-dead" : ""}" data-kind="route" data-route="${i}">
             <div class="card-top">
               <div>
                 <div class="card-name">${routeLabel(r)}</div>
@@ -612,6 +662,7 @@ function renderBusList(q = "") {
               </div>
             </div>
             <div class="card-meta">
+              ${statusPill(r)}
               <span class="pill pill-km">${kmTxt(total)}</span>
               <span class="pill">${toBn(r.s.length)} স্টপেজ</span>
               ${r.chart ? `<span class="pill pill-ok">সরকারি চার্ট আছে</span>` : ""}
@@ -691,6 +742,184 @@ function closeChart() {
   document.body.classList.remove("no-scroll");
 }
 
+/* ──────────── বাস নিয়ে মত দেওয়া ও অন্যদের মত পড়া ──────────── */
+
+let voteFor = null;      // এখন কোন বাসের জানালা খোলা
+let voteDraft = { vote: null, rating: 0 };
+
+const timeAgo = (d) => {
+  if (!d) return "";
+  const s = (Date.now() - d) / 1000;
+  if (s < 90) return "এইমাত্র";
+  if (s < 3600) return `${toBn(Math.round(s / 60))} মিনিট আগে`;
+  if (s < 86400) return `${toBn(Math.round(s / 3600))} ঘণ্টা আগে`;
+  if (s < 2592000) return `${toBn(Math.round(s / 86400))} দিন আগে`;
+  return `${toBn(Math.round(s / 2592000))} মাস আগে`;
+};
+
+const esc = (s) => String(s || "").replace(/[&<>"']/g,
+  (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+const STAR_WORDS = ["", "খুব খারাপ", "খারাপ", "মোটামুটি", "ভালো", "খুব ভালো"];
+
+function paintVoteForm() {
+  $$("#voteBtns .vbtn").forEach((b) =>
+    b.classList.toggle("is-on", b.dataset.v === voteDraft.vote));
+  $$("#starRow button").forEach((b) =>
+    b.classList.toggle("is-on", +b.dataset.s <= voteDraft.rating));
+  $("#starLabel").textContent = voteDraft.rating
+    ? STAR_WORDS[voteDraft.rating] : "রেটিং দিন";
+}
+
+async function openVote(ri) {
+  const r = ROUTES[ri];
+  voteFor = r;
+  const mine = Community.myVoteOf(r.k) || {};
+  voteDraft = { vote: mine.v || null, rating: mine.rating || 0 };
+
+  $("#voteTitle").textContent = r.bn;
+  const s = Community.statusOf(r.k);
+  $("#voteSub").textContent = s.total
+    ? `এ পর্যন্ত ${toBn(s.total)} জন জানিয়েছেন — ${toBn(s.runs)} জন বলেছেন চলে, ${toBn(s.no)} জন বলেছেন চলে না`
+    : "এই বাস নিয়ে এখনো কেউ কিছু জানাননি — আপনিই প্রথম";
+  $("#voteText").value = mine.text || "";
+  $("#voteName").value = mine.name || "";
+  $("#textCount").textContent = toBn((mine.text || "").length);
+  $("#voteMsg").textContent = "";
+  $("#voteMsg").className = "vote-msg";
+  paintVoteForm();
+
+  $("#reviewList").innerHTML = `<p class="rv-loading">অন্যদের মত আসছে…</p>`;
+  $("#voteSheet").hidden = false;
+  document.body.classList.add("no-scroll");
+
+  try {
+    const rows = await Community.reviewsOf(r.k);
+    renderReviews(rows);
+  } catch (e) {
+    $("#reviewList").innerHTML =
+      `<p class="rv-loading">অন্যদের মত আনা গেল না। ${esc(e.message)}</p>`;
+  }
+}
+
+function renderReviews(rows) {
+  const withText = rows.filter((x) => (x.text || "").trim());
+  if (!withText.length) {
+    $("#reviewList").innerHTML =
+      `<div class="rv-head">অন্যরা কী বলছেন</div>
+       <p class="rv-loading">এখনো কেউ কিছু লেখেননি।</p>`;
+    return;
+  }
+  $("#reviewList").innerHTML =
+    `<div class="rv-head">অন্যরা কী বলছেন <span>${toBn(withText.length)}টি</span></div>` +
+    withText.map((x) => {
+      const when = x.at && x.at.toMillis ? timeAgo(x.at.toMillis()) : "";
+      const stars = x.rating ? "★".repeat(x.rating) + "☆".repeat(5 - x.rating) : "";
+      const vote = x.v === "runs" ? `<span class="rv-v yes">চলে</span>`
+                 : x.v === "no" ? `<span class="rv-v no">চলে না</span>` : "";
+      return `<div class="rv${x.mine ? " mine" : ""}">
+        <div class="rv-top">
+          <b>${esc(x.name) || "একজন যাত্রী"}</b>${x.mine ? ' <span class="rv-me">আপনি</span>' : ""}
+          ${vote}
+          <span class="rv-when">${when}</span>
+        </div>
+        ${stars ? `<div class="rv-stars">${stars}</div>` : ""}
+        <p>${esc(x.text)}</p>
+      </div>`;
+    }).join("");
+}
+
+function closeVote() {
+  $("#voteSheet").hidden = true;
+  voteFor = null;
+  document.body.classList.remove("no-scroll");
+}
+
+async function saveVote() {
+  if (!voteFor) return;
+  const btn = $("#voteSubmit");
+  const msg = $("#voteMsg");
+  const text = $("#voteText").value.trim();
+
+  if (!voteDraft.vote && !voteDraft.rating && !text) {
+    msg.textContent = "অন্তত একটা কিছু জানান — চলে কি না, রেটিং, বা দুই লাইন লিখুন।";
+    msg.className = "vote-msg bad";
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = "জমা হচ্ছে…";
+  try {
+    await Community.submit(voteFor.k, {
+      vote: voteDraft.vote,
+      rating: voteDraft.rating,
+      text,
+      name: $("#voteName").value.trim(),
+    });
+    msg.textContent = "ধন্যবাদ! আপনার মত সবাই দেখতে পাবে।";
+    msg.className = "vote-msg good";
+    renderReviews(await Community.reviewsOf(voteFor.k));
+  } catch (e) {
+    msg.textContent = "জমা দেওয়া গেল না — ইন্টারনেট দেখে আবার চেষ্টা করুন। " + e.message;
+    msg.className = "vote-msg bad";
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "জমা দিন";
+  }
+}
+
+/* ──────────────── ট্যাব ৩: সবাই কী বলছে ──────────────── */
+
+async function renderReports() {
+  const box = $("#reportList");
+  if (!Community.configured()) {
+    box.innerHTML = `<div class="empty">
+      <p class="empty-big">এই অংশটা এখনো চালু হয়নি</p>
+      <p>সবার মত জমা রাখতে একটা ফ্রি Firebase প্রজেক্ট লাগে।
+         <code>site/firebase-config.js</code> ফাইলে সেটিংস বসালেই কাজ করবে।</p></div>`;
+    return;
+  }
+  box.innerHTML = `<div class="res-head"><h2>সবাই কী বলছেন</h2></div>
+    <p class="rv-loading">আনা হচ্ছে…</p>`;
+
+  const byKey = {};
+  ROUTES.forEach((r, i) => { byKey[r.k] = { r, i }; });
+
+  try {
+    const rows = await Community.recentAll(40);
+    if (!rows.length) {
+      box.innerHTML = `<div class="res-head"><h2>সবাই কী বলছেন</h2></div>
+        <div class="empty"><p class="empty-big">এখনো কেউ কিছু জানাননি</p>
+        <p>যেকোনো বাসের কার্ডে <b>চলে কি না জানান</b> চেপে আপনিই প্রথম হতে পারেন।</p></div>`;
+      return;
+    }
+    box.innerHTML =
+      `<div class="res-head"><h2>সবাই কী বলছেন</h2>
+         <span class="count">সাম্প্রতিক ${toBn(rows.length)}টি</span></div>` +
+      `<div class="note">এগুলো যাত্রীদের নিজের কথা — যাচাই করা হয়নি।</div>` +
+      rows.map((x) => {
+        const hit = byKey[x.bus];
+        const when = x.at && x.at.toMillis ? timeAgo(x.at.toMillis()) : "";
+        const vote = x.v === "runs" ? `<span class="rv-v yes">চলে</span>`
+                   : x.v === "no" ? `<span class="rv-v no">চলে না</span>`
+                   : x.v === "unsure" ? `<span class="rv-v idk">জানি না</span>` : "";
+        const stars = x.rating ? `<span class="rv-stars">${"★".repeat(x.rating)}</span>` : "";
+        return `<div class="card rv-card"${hit ? ` data-kind="route" data-route="${hit.i}"` : ""}>
+          <div class="rv-top">
+            <b>${hit ? esc(hit.r.bn) : esc(x.bus)}</b> ${vote} ${stars}
+            <span class="rv-when">${when}</span>
+          </div>
+          ${x.text ? `<p class="rv-text">${esc(x.text)}</p>` : ""}
+          <div class="rv-by">— ${esc(x.name) || "একজন যাত্রী"}${x.mine ? " (আপনি)" : ""}</div>
+        </div>`;
+      }).join("");
+  } catch (e) {
+    box.innerHTML = `<div class="res-head"><h2>সবাই কী বলছেন</h2></div>
+      <div class="empty"><p class="empty-big">আনা গেল না</p>
+      <p>${esc(e.message)}</p></div>`;
+  }
+}
+
 /* ──────────────────────── চালু করা ──────────────────────── */
 
 async function boot() {
@@ -723,6 +952,13 @@ async function boot() {
     }
     renderFind(fromF.value, toF.value);
   };
+  // ভোটের খবর এলে সাজানো বদলায়, তাই ফলাফল আবার আঁকা দরকার।
+  // তবে কেউ যদি স্টপেজের তালিকা দেখছে, তার পড়া নষ্ট করি না।
+  lastRun = () => {
+    if (fromF.value == null || toF.value == null) return;
+    if ($(".stoplist", $("#results"))) return;
+    renderFind(fromF.value, toF.value);
+  };
   $("#goBtn").addEventListener("click", run);
   $("#swapBtn").addEventListener("click", () => {
     const a = fromF.value, b = toF.value;
@@ -738,6 +974,7 @@ async function boot() {
     if (act) {
       e.stopPropagation();
       if (act.dataset.chart != null) { openChart(+act.dataset.chart); return; }
+      if (act.dataset.vote != null) { openVote(+act.dataset.vote); return; }
       if (act.dataset.stops != null) {
         const card = act.closest(".card");
         // সরাসরি বাস হলে যাত্রার অংশটুকু দাগ দিয়ে দেখাই
@@ -782,6 +1019,7 @@ async function boot() {
     if (act) {
       e.stopPropagation();
       if (act.dataset.chart != null) openChart(+act.dataset.chart);
+      else if (act.dataset.vote != null) openVote(+act.dataset.vote);
       else if (act.dataset.stops != null) showRouteDetail(+act.dataset.stops, $("#busList"));
       return;
     }
@@ -796,11 +1034,59 @@ async function boot() {
     if (e.target.id === "chartSheet") closeChart();
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !$("#chartSheet").hidden) closeChart();
+    if (e.key !== "Escape") return;
+    if (!$("#voteSheet").hidden) closeVote();
+    else if (!$("#chartSheet").hidden) closeChart();
   });
 
+  // ── সবার মত: ভোটের জানালা ──
+  $("#voteClose").addEventListener("click", closeVote);
+  $("#voteSheet").addEventListener("click", (e) => {
+    if (e.target.id === "voteSheet") closeVote();
+  });
+  $("#voteBtns").addEventListener("click", (e) => {
+    const b = e.target.closest(".vbtn");
+    if (!b) return;
+    // একই বোতামে আবার চাপলে ভোট তুলে নেওয়া
+    voteDraft.vote = voteDraft.vote === b.dataset.v ? null : b.dataset.v;
+    paintVoteForm();
+  });
+  $("#starRow").addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    voteDraft.rating = voteDraft.rating === +b.dataset.s ? 0 : +b.dataset.s;
+    paintVoteForm();
+  });
+  $("#voteText").addEventListener("input", (e) =>
+    $("#textCount").textContent = toBn(e.target.value.length));
+  $("#voteSubmit").addEventListener("click", saveVote);
+
+  $("#reportList").addEventListener("click", (e) => {
+    const card = e.target.closest(".card[data-route]");
+    if (card) { switchTab("buses"); showRouteDetail(+card.dataset.route, $("#busList")); }
+  });
+
+  // ওয়ার্নিং বন্ধ করলে মনে রাখি
+  if (localStorage.getItem("dbf.staleHidden") === "1") $("#staleNote").hidden = true;
+  $("#staleClose").addEventListener("click", () => {
+    $("#staleNote").hidden = true;
+    try { localStorage.setItem("dbf.staleHidden", "1"); } catch {}
+  });
+
+  // সবার মত এলে/বদলালে তালিকা নতুন করে আঁকি
+  Community.onChange(() => {
+    if ($("#pane-buses").classList.contains("is-on") && !$(".stoplist", $("#busList")))
+      renderBusList($("#busSearch").value);
+    if (lastRun) lastRun();
+  });
+  Community.loadMine();
+  Community.loadSummary();
+
   // ট্যাব বদল
-  $$(".tab").forEach((t) => t.addEventListener("click", () => switchTab(t.dataset.tab)));
+  $$(".tab").forEach((t) => t.addEventListener("click", () => {
+    switchTab(t.dataset.tab);
+    if (t.dataset.tab === "reports") renderReports();
+  }));
 
   // ফোনে ম্যাপ ছোট থাকে; বোতামে চাপ দিলে পুরো পর্দা জুড়ে
   $("#mapToggle").addEventListener("click", () => {

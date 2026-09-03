@@ -7,6 +7,7 @@
 """
 import json
 import math
+import re
 import os
 import datetime
 
@@ -31,6 +32,16 @@ def load(p, default=None):
         return default
     with open(p, encoding="utf-8") as f:
         return json.load(f)
+
+
+def route_key(route_id):
+    """রুটের স্থায়ী চাবি — Firestore-এ ভোট/রিভিউ এর নিচে জমা হয়।
+
+    "BRTC#9" → "brtc_9"। Firestore-এর ফিল্ড-পাথে ফাঁকা জায়গা বা # চলে না,
+    তাই অক্ষর-সংখ্যা ছাড়া সব আন্ডারস্কোর।
+    """
+    k = re.sub(r"[^a-z0-9]+", "_", route_id.lower()).strip("_")
+    return k or "unknown"
 
 
 def straight_km(a, b):
@@ -124,6 +135,9 @@ def main():
         entry = {
             "en": r["name_en"],
             "id": r["id"],
+            # ভোট-রিভিউ এই চাবির নিচে জমা হয়। ডেটা আবার বানালেও যেন
+            # ভোট হারিয়ে না যায়, তাই নামভিত্তিক ও স্থায়ী — সূচক নয়।
+            "k": route_key(r["id"]),
             "multi": r.get("multi", False),
             "bn": r["name_bn"] or r["name_en"],
             "type": r["service_type"],

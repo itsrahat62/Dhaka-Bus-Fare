@@ -38,6 +38,7 @@ Bosila
 Bottola
 Cantonment
 Chairman Bari
+Chalantika Moor
 Chandra
 Chankhar Pul
 Chashara
@@ -50,6 +51,7 @@ Dainik Bangla Moor
 Darussalam
 Dayaganj
 Demra Staff Quarter
+Dhaka College
 Dhakeshwari
 Dhamrai
 Dhanmondi 15
@@ -114,11 +116,13 @@ Kanchan Bridge
 Kanchpur
 Kashimpur
 Katabon
+Kawlar
 Kawran Bazar
 Kazipara
 Kazla
 Keraniganj
 Khamarbari
+Khejur Bagan
 Khilgaon
 Khilgaon Flyover
 Khilkhet
@@ -150,6 +154,7 @@ Mirpur 12
 Mirpur 13
 Mirpur 14
 Mirpur 2
+Mirpur 6
 Mirpur DOHS
 Mitford Ghat
 Mogbazar
@@ -184,6 +189,7 @@ Postagola
 Press Club
 Proshika Moor
 Purobi
+Rainkhola
 Rajarbag
 Rajendrapur
 Rajlakshmi

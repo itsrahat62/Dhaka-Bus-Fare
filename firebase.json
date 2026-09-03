@@ -1,0 +1,14 @@
+{
+  "_comment": "শুধু লোকাল এমুলেটরে যাচাই করার জন্য — ভোট, রিভিউ আর security rules ঠিকঠাক কাজ করে কিনা দেখতে। চালাতে: npx firebase emulators:start --project demo-dhakabus",
+
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "emulators": {
+    "auth": { "port": 9099 },
+    "firestore": { "port": 8080 },
+    "ui": { "enabled": false },
+    "singleProjectMode": true
+  }
+}

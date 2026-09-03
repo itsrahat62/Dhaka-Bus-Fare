@@ -1,0 +1,61 @@
+rules_version = '2';
+
+// ঢাকার বাস ভাড়া — Firestore-এর নিয়ম।
+//
+// Firebase Console → Firestore Database → Rules-এ পুরোটা পেস্ট করে
+// Publish দিন।
+//
+// মূল কথা: পড়তে সবাই পারবে (সাইটটা সবার জন্য), কিন্তু লিখতে হলে
+// লগইন করা থাকতে হবে (anonymous auth-ও চলবে) আর নিজের ডকুমেন্টেই
+// কেবল লেখা যাবে। ডকুমেন্টের আইডি = ব্যবহারকারীর uid, তাই এক ফোন
+// থেকে একটা বাসে একটাই মত জমা হয় — বারবার ভোট দিয়ে সংখ্যা বাড়ানো
+// যায় না।
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── সব বাসের গোনাগুনতি, এক ডকুমেন্টে ──
+    // পুরো তালিকা এক ডকুমেন্টে রাখায় পেজ খুললে মাত্র একটা read লাগে।
+    match /summary/all {
+      allow read: if true;
+      // লগইন করা যে কেউ নিজের ভোটের সময় গোনাগুনতি হালনাগাদ করে।
+      // ১ MiB-এর সীমার অনেক নিচে থাকে (২০০ বাসে ~১০ KB)।
+      allow write: if request.auth != null;
+    }
+
+    // ── একজনের একটা বাস নিয়ে মত ──
+    match /buses/{bus}/reviews/{uid} {
+      allow read: if true;
+
+      allow create, update: if request.auth != null
+        && request.auth.uid == uid
+        && validReview(request.resource.data);
+
+      // নিজের মত নিজেই মুছতে পারবে
+      allow delete: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // ── "সবার রিপোর্ট" পাতা ──
+    // সব বাসের রিভিউ একসাথে সময় ধরে সাজিয়ে আনা হয় (collectionGroup)।
+    // উপরের /buses/{bus}/reviews/{uid} নিয়মটা এই কোয়েরিতে খাটে না —
+    // collectionGroup-এর জন্য পথটা {path=**} দিয়ে লিখতে হয়। এটা না
+    // থাকলে কোয়েরি "false for 'list'" বলে আটকে যায়।
+    match /{path=**}/reviews/{uid} {
+      allow read: if true;
+    }
+
+    // উপরে যা লেখা নেই, সব বন্ধ
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+
+  function validReview(d) {
+    return d.keys().hasOnly(['v', 'rating', 'text', 'name', 'bus', 'at'])
+      && (d.v == null || d.v in ['runs', 'no', 'unsure'])
+      && d.rating is int && d.rating >= 0 && d.rating <= 5
+      && d.text is string && d.text.size() <= 500
+      && d.name is string && d.name.size() <= 40
+      && d.bus is string && d.bus.size() <= 80;
+  }
+}
