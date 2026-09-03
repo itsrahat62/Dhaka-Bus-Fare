@@ -91,7 +91,8 @@ async function loadSummary() {
   // আগে ক্যাশ দেখাই যাতে পাতা সাথে সাথে ভরে, পরে নতুনটা আনি
   const cached = readCache(LS_SUM, SUMMARY_TTL);
   if (cached) {
-    summary = cached;
+    summary = cached.b || cached;      // পুরোনো ক্যাশে শুধু b ছিল
+    approved = cached.x || [];
     fire();
   }
   const c = await connect();
@@ -100,8 +101,10 @@ async function loadSummary() {
   try {
     const { doc, getDoc } = c.store;
     const snap = await getDoc(doc(c.db, "summary", "all"));
-    summary = (snap.exists() ? snap.data().b : null) || {};
-    writeCache(LS_SUM, summary);
+    const d = snap.exists() ? snap.data() : {};
+    summary = d.b || {};
+    approved = d.x || [];        // সবার যাচাই করা নতুন বাসগুলো
+    writeCache(LS_SUM, { b: summary, x: approved });
   } catch (e) {
     console.warn("হিসাব আনা গেল না:", e.message);
   }
@@ -161,7 +164,10 @@ async function submit(routeKey, { vote, rating, text, name } = {}) {
     myVotes[routeKey] = { v: mine.v, rating: mine.rating, text: mine.text, name: mine.name };
   });
 
-  writeCache(LS_SUM, summary);
+  // ক্যাশে {b, x} আকারেই লিখতে হয় — শুধু summary লিখলে অনুমোদিত
+  // বাসগুলোর তালিকা (x) মুছে যেত, আর পরের বার পাতা খুললে ওগুলো
+  // উধাও হয়ে যেত যতক্ষণ না সার্ভার থেকে নতুন করে আসে
+  writeCache(LS_SUM, { b: summary, x: approved });
   writeCache(LS_MINE, myVotes);
   fire();
 }
@@ -225,9 +231,130 @@ const myVoteOf = (routeKey) => myVotes[routeKey] || null;
 const onChange = (fn) => listeners.push(fn);
 const fire = () => listeners.forEach((f) => { try { f(); } catch (e) { console.error(e); } });
 
+/* ═══════════════ নতুন বাস যোগ করা ═══════════════
+
+   তালিকাটা পুরোনো, নতুন বাস নামছে — তাই যে কেউ বাস যোগ করার প্রস্তাব
+   দিতে পারে। তবে সরাসরি সাইটে ঢোকে না:
+
+     ১. প্রস্তাব জমা হয় proposals/<id>-তে, status="pending"
+     ২. অন্যরা "চিনি / চিনি না" ভোট দেয় — কোনটা আসল সেটা বোঝা যায়
+     ৩. অ্যাডমিন (Google লগইন) চূড়ান্ত হ্যাঁ/না বলেন
+     ৪. অনুমোদিত হলে extra/buses ডকুমেন্টে যোগ হয়, সাইট ওখান থেকেই পড়ে
+
+   স্টপেজ চেনাতে ইংরেজি নাম ব্যবহার করা হয়, সূচক নয় — ডেটা আবার তৈরি
+   করলে সূচক বদলে যায়, নাম বদলায় না।                                */
+
+// কতজন "চিনি" বললে বাসটা নিজে থেকেই তালিকায় ঢুকবে
+const APPROVE_AT = 10;
+
+/* অনুমোদিত বাসগুলো summary/all ডকুমেন্টের ভেতরেই (x ফিল্ডে) রাখা হয়।
+   ওই ডকুমেন্ট এমনিতেই প্রতিবার পড়া হয়, তাই এতে একটাও বাড়তি read
+   লাগে না — ফ্রি কোটার জন্য এটা বড় ব্যাপার। */
+let approved = [];
+const approvedBuses = () => approved;
+
+/** নতুন বাসের প্রস্তাব জমা দিই */
+async function propose({ bn, en, stops, note }) {
+  const c = await connect();
+  if (!c) throw new Error("সার্ভারের সাথে যোগাযোগ নেই");
+  const { collection, addDoc, serverTimestamp } = c.store;
+  return addDoc(collection(c.db, "proposals"), {
+    bn: (bn || "").trim().slice(0, 40),
+    en: (en || "").trim().slice(0, 40),
+    stops: stops.slice(0, 60),
+    note: (note || "").trim().slice(0, 200),
+    by: c.uid,
+    at: serverTimestamp(),
+    status: "pending",
+    yes: 0,
+    no: 0,
+  });
+}
+
+/** অপেক্ষায় থাকা প্রস্তাবগুলো, নতুনগুলো আগে */
+async function proposals(status = "pending", limitTo = 30) {
+  const c = await connect();
+  if (!c) return [];
+  const { collection, query, where, orderBy, limit, getDocs } = c.store;
+  const q = query(collection(c.db, "proposals"),
+    where("status", "==", status), orderBy("at", "desc"), limit(limitTo));
+  const snap = await getDocs(q);
+  return snap.docs.map((d) => ({ id: d.id, ...d.data(), mine: d.data().by === c.uid }));
+}
+
+/** প্রস্তাবে "চিনি / চিনি না" ভোট — এক ফোন, এক ভোট।
+
+    যথেষ্ট মানুষ (APPROVE_AT জন) চিনি বললে বাসটা ওই লেনদেনেই তালিকায়
+    ঢুকে যায় — কারও অনুমোদনের অপেক্ষা করতে হয় না। ভুল কিছু ঢুকে গেলে
+    অ্যাডমিন পরে সরাতে পারেন। */
+async function voteProposal(id, v) {
+  const c = await connect();
+  if (!c) throw new Error("সার্ভারের সাথে যোগাযোগ নেই");
+  const { doc, runTransaction, serverTimestamp } = c.store;
+  const pRef = doc(c.db, "proposals", id);
+  const vRef = doc(c.db, "proposals", id, "votes", c.uid);
+  const sRef = doc(c.db, "summary", "all");
+  let becameApproved = false;
+
+  await runTransaction(c.db, async (tx) => {
+    // Firestore-এ লেনদেনের সব পড়া আগে, তারপর লেখা
+    const prev = await tx.get(vRef);
+    const p = await tx.get(pRef);
+    if (!p.exists()) throw new Error("প্রস্তাবটা আর নেই");
+    const d = p.data();
+    const sum = await tx.get(sRef);
+
+    let yes = d.yes || 0, no = d.no || 0;
+    const old = prev.exists() ? prev.data().v : null;
+    if (old === "yes") yes = Math.max(0, yes - 1);
+    if (old === "no") no = Math.max(0, no - 1);
+    if (v === "yes") yes += 1; else no += 1;
+
+    tx.set(vRef, { v, at: serverTimestamp() });
+
+    // "চিনি না" যারা বলেছেন তাঁরাও গোনায় ধরা — নইলে ১০ জন জোগাড় করে
+    // যা খুশি ঢোকানো যেত
+    const ready = d.status === "pending" && (yes - no) >= APPROVE_AT;
+    tx.update(pRef, ready ? { yes, no, status: "approved" } : { yes, no });
+
+    if (ready) {
+      const list = (sum.exists() ? sum.data().x : null) || [];
+      if (!list.some((x) => x.id === id)) {
+        list.push({ id, bn: d.bn, stops: d.stops, by: d.by });
+        tx.set(sRef, { x: list }, { merge: true });
+        approved = list;
+        becameApproved = true;
+      }
+    }
+  });
+
+  propVotes[id] = v;
+  writeCache(LS_PROP, propVotes);
+  if (becameApproved) { writeCache(LS_SUM, { b: summary, x: approved }); fire(); }
+  return becameApproved;
+}
+
+/* আমি কোন প্রস্তাবে কী ভোট দিয়েছি — এটা এই ফোনেই জমা থাকে।
+
+   আগে প্রতিটা প্রস্তাবের জন্য আলাদা getDoc করা হতো। ৩০টা প্রস্তাব
+   থাকলে প্রতিবার পাতা খুললেই ৩০টা read — ফ্রি কোটা (দিনে ৫০ হাজার)
+   কয়েকশো ভিজিটেই শেষ। অথচ পরিচয়টা anonymous auth-এর, সেটা এমনিতেই
+   এই ব্রাউজারেই বাঁধা; তাই লোকাল হিসাবটাই সমান কাজের।
+
+   কেউ ব্রাউজারের তথ্য মুছে ফেললে আবার জিজ্ঞেস করা হবে, কিন্তু ভোট
+   দুইবার গোনা হবে না — লেনদেনে আগের ভোট বাদ দিয়ে নতুনটা বসে। */
+const LS_PROP = "dbf.propVotes.v1";
+let propVotes = readCache(LS_PROP) || {};
+
+async function myProposalVotes() {
+  return propVotes;
+}
+
 window.Community = {
   configured, connect, loadSummary, loadMine, submit,
   reviewsOf, recentAll, statusOf, rankOf, myVoteOf, onChange,
+  approvedBuses, propose, proposals, voteProposal, myProposalVotes,
+  APPROVE_AT,
   get uid() { return fb && fb.uid; },
 };
 

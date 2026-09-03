@@ -14,7 +14,7 @@
      দেখাতো "চলে ৬ জন"। ভাড়ার সাইটে সংখ্যা ভুল পড়া চলে না। -->
 <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<link rel="stylesheet" href="style.css?v=12">
+<link rel="stylesheet" href="style.css?v=13">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚌</text></svg>">
 </head>
 <body>
@@ -34,9 +34,10 @@
 
   <aside class="panel" id="panel">
     <nav class="tabs" role="tablist">
-      <button class="tab is-on" data-tab="find" role="tab">রুট খুঁজুন</button>
+      <button class="tab is-on" data-tab="find" role="tab">খুঁজুন</button>
       <button class="tab" data-tab="buses" role="tab">সব বাস</button>
-      <button class="tab" data-tab="reports" role="tab">সবার রিপোর্ট</button>
+      <button class="tab" data-tab="reports" role="tab">রিপোর্ট</button>
+      <button class="tab" data-tab="add" role="tab">বাস যোগ</button>
     </nav>
 
     <div class="alert" id="staleNote">
@@ -102,6 +103,52 @@
     <!-- ── ট্যাব ৩: সবাই কী বলছে ── -->
     <section class="tabpane" id="pane-reports">
       <div class="results" id="reportList"></div>
+    </section>
+
+    <!-- ── ট্যাব ৪: নতুন বাস যোগ করা ── -->
+    <section class="tabpane" id="pane-add">
+      <div class="search-box">
+        <div class="field">
+          <label for="addName">বাসের নাম</label>
+          <div class="input-wrap">
+            <span class="dot dot-bus"></span>
+            <input id="addName" type="text" maxlength="40" autocomplete="off"
+                   spellcheck="false" placeholder="যেমন: রাইদা পরিবহন">
+          </div>
+        </div>
+
+        <div class="field" data-role="addFrom">
+          <label for="addFrom">কোথা থেকে ছাড়ে</label>
+          <div class="input-wrap">
+            <span class="dot dot-from"></span>
+            <input id="addFrom" type="text" autocomplete="off" spellcheck="false"
+                   placeholder="প্রথম স্টপেজ">
+            <button class="clear" type="button" aria-label="মুছুন" hidden>×</button>
+          </div>
+          <ul class="suggest" hidden></ul>
+        </div>
+
+        <div class="field" data-role="addTo">
+          <label for="addTo">কোথায় গিয়ে থামে</label>
+          <div class="input-wrap">
+            <span class="dot dot-to"></span>
+            <input id="addTo" type="text" autocomplete="off" spellcheck="false"
+                   placeholder="শেষ স্টপেজ">
+            <button class="clear" type="button" aria-label="মুছুন" hidden>×</button>
+          </div>
+          <ul class="suggest" hidden></ul>
+        </div>
+      </div>
+
+      <div class="results" id="addBody">
+        <div class="empty">
+          <p class="empty-big">নতুন বাস জানেন? যোগ করে দিন</p>
+          <p>বাসের নাম আর দুই প্রান্ত দিন। ওই পথে যত রকম রুট আছে সব দেখাব —
+             আপনার বাসটা যেটা দিয়ে যায়, সেটা বেছে নিলেই হবে।</p>
+          <p class="tiny-note">সরাসরি সাইটে যোগ হয় না। আগে সবাই দেখে বলবে
+             চেনে কি না, তারপর যাচাই করে ছাড়া হয়।</p>
+        </div>
+      </div>
     </section>
 
   </aside>
@@ -188,9 +235,38 @@
   </div>
 </div>
 
+<!-- নতুন প্রস্তাব করা বাস চেনেন কি না — যাচাইয়ের জানালা।
+     যে পথে প্রস্তাব এসেছে সেই পথে কেউ খোঁজ করলেই এটা আসে। একবার মত
+     দিলে ঐ ব্যক্তিকে আর দেখানো হয় না। -->
+<div class="sheet" id="askSheet" hidden>
+  <div class="sheet-box ask-box" role="dialog" aria-modal="true" aria-labelledby="askTitle">
+    <div class="sheet-head">
+      <div>
+        <h3 id="askTitle"></h3>
+        <p id="askSub"></p>
+      </div>
+      <button class="sheet-x" id="askClose" type="button" aria-label="বন্ধ করুন">×</button>
+    </div>
+
+    <div class="sheet-body ask-body">
+      <p class="ask-label">প্রস্তাবিত পথ</p>
+      <p class="ask-path" id="askPath"></p>
+      <p class="vote-q">এই নামে বাসটা কি সত্যিই এই পথে চলে?</p>
+      <div class="vote-row" id="askBtns">
+        <button class="vbtn v-yes" data-v="yes" type="button">✅ হ্যাঁ, চেনি</button>
+        <button class="vbtn v-no" data-v="no" type="button">🚫 না, এমন বাস নেই</button>
+        <button class="vbtn v-idk" data-v="skip" type="button">🤔 জানি না</button>
+      </div>
+      <p class="tiny-note" id="askLeft"></p>
+      <p class="vote-msg" id="askMsg"></p>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="firebase-config.js?v=12"></script>
-<script src="community.js?v=12"></script>
-<script src="app.js?v=12"></script>
+<script src="badwords.js?v=13"></script>
+<script src="firebase-config.js?v=13"></script>
+<script src="community.js?v=13"></script>
+<script src="app.js?v=13"></script>
 </body>
 </html>

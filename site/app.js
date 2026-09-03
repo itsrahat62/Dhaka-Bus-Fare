@@ -11,6 +11,7 @@ let STOP_ROUTES = [];     // stopId → [routeIdx]
 let map, layerRoute, layerPins;
 let lastFind = null;      // স্টপেজ দেখতে গেলে ফলাফলের তালিকা এখানে জমা থাকে
 let lastRun = null;       // শেষ খোঁজাটা আবার চালানোর জন্য (ভোট এলে সাজানো বদলায়)
+let showHidden = false;   // "চলে না" বলে সরিয়ে রাখা বাসগুলো দেখানো হবে কি না
 
 const $  = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -215,6 +216,20 @@ function tierOf(r) {
   return 1;
 }
 
+// এতজন "চলে না" বললে বাসটা আর দেখানো হয় না
+const HIDE_AT = 10;
+
+/* বাসটা কি একেবারে লুকিয়ে ফেলার মতো?
+
+   কয়েকজন বললে নিচে নামে, কিন্তু অনেকে মিলে বললে আর দেখানোর মানে হয় না —
+   বন্ধ হয়ে যাওয়া বাস তালিকায় রেখে মানুষকে বিভ্রান্ত করা হয়। "চলে" বলা
+   ভোট বাদ দিয়ে হিসাব করি, যাতে দ্বিমত থাকলে লুকানো না হয়। */
+function isHidden(r) {
+  if (!window.Community) return false;
+  const s = Community.statusOf(r.k);
+  return (s.no - s.runs) >= HIDE_AT;
+}
+
 /* সরাসরি: এক বাসেই যাওয়া যায় */
 function findDirect(from, to) {
   const res = [];
@@ -223,6 +238,7 @@ function findDirect(from, to) {
     const i = r.s.indexOf(from);
     const j = r.s.indexOf(to);
     if (i < 0 || j < 0 || i === j) continue;
+    if (isHidden(r)) continue;          // অনেকে বলেছেন আর চলে না
     const km = Math.abs(r.km[j] - r.km[i]);
     if (km <= 0) continue;
     res.push({ kind: "direct", route: ri, i, j, km, stops: Math.abs(j - i) });
@@ -241,6 +257,7 @@ function findTransfer(from, to, directRoutes) {
   for (const ra of STOP_ROUTES[from]) {
     if (directRoutes.has(ra)) continue;          // সরাসরিই যায়, বদলানোর দরকার নেই
     const A = ROUTES[ra];
+    if (isHidden(A)) continue;
     const ai = A.s.indexOf(from);
     for (let k = 0; k < A.s.length; k++) {
       const x = A.s[k];
@@ -251,6 +268,7 @@ function findTransfer(from, to, directRoutes) {
       for (const rb of STOP_ROUTES[x]) {
         if (rb === ra || !toRoutes.has(rb)) continue;
         const B = ROUTES[rb];
+        if (isHidden(B)) continue;
         const bi = B.s.indexOf(x);
         const bj = B.s.indexOf(to);
         if (bi < 0 || bj < 0 || bi === bj) continue;
@@ -638,6 +656,11 @@ function renderFind(from, to) {
   // প্রথম ফলাফলটা ম্যাপে দেখিয়ে দিই
   const firstCard = $(".card", box);
   if (firstCard) selectCard(firstCard);
+
+  /* এই পথে কেউ নতুন বাসের প্রস্তাব দিয়েছে? তাহলে জিজ্ঞেস করি —
+     যিনি এই পথ খুঁজছেন, তিনিই তো সবচেয়ে ভালো জানেন। ফলাফল দেখার
+     একটু পরে, যাতে হুট করে পপআপ মুখের উপর না পড়ে। */
+  setTimeout(() => askAboutPending(from, to), 900);
 }
 
 function selectCard(el) {
@@ -743,6 +766,11 @@ function renderBusList(q = "") {
       return keys.some((k) => k.includes(raw) || (key && k.includes(key)));
     });
   }
+  // অনেকে "চলে না" বলেছেন এমন বাস তালিকা থেকে সরিয়ে রাখি। তবে ভোট
+  // ভুলও হতে পারে, তাই একেবারে হারিয়ে ফেলি না — নিচে একটা লিংক থাকে।
+  const hidden = list.filter(({ r }) => isHidden(r));
+  if (!showHidden) list = list.filter(({ r }) => !isHidden(r));
+
   // চলে বলে যাদের কথা জানা, তারা আগে; চলে না বলে জানা যারা, সবার শেষে
   list.sort((a, b) =>
     tierOf(b.r) - tierOf(a.r) || a.r.bn.localeCompare(b.r.bn, "bn"));
@@ -776,7 +804,13 @@ function renderBusList(q = "") {
             ${cardActions(i)}
           </div>`;
         }).join("")
-      : `<div class="empty"><p class="empty-big">এই নামে কোনো বাস নেই</p></div>`);
+      : `<div class="empty"><p class="empty-big">এই নামে কোনো বাস নেই</p></div>`) +
+    (hidden.length
+      ? `<button class="chip show-hidden" id="toggleHidden">
+           ${showHidden ? "লুকানো বাসগুলো আবার সরান"
+             : `${toBn(hidden.length)}টি বাস "চলে না" বলে সরানো হয়েছে — দেখুন`}
+         </button>`
+      : "");
 }
 
 /* একটা বাসের পুরো স্টপেজ তালিকা।
@@ -868,6 +902,13 @@ const timeAgo = (d) => {
 
 const esc = (s) => String(s || "").replace(/[&<>"']/g,
   (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+/* মানুষের লেখা দেখানোর আগে — গালিটুকু **** করে, তারপর HTML-এর জন্য নিরাপদ।
+
+   জমা দেওয়ার সময়ও ঢাকা হয়, কিন্তু দেখানোর সময়ও করি: শব্দের তালিকা
+   পরে বাড়লে আগের লেখাগুলোও ঢেকে যাবে, আর কেউ সরাসরি Firestore-এ
+   লিখে ফেললেও পাতায় গালি উঠবে না। */
+const clean = (s) => esc(window.BadWords ? BadWords.mask(String(s || "")) : s);
 
 const STAR_WORDS = ["", "খুব খারাপ", "খারাপ", "মোটামুটি", "ভালো", "খুব ভালো"];
 
@@ -971,12 +1012,12 @@ function renderReviews(rows) {
                  : x.v === "no" ? `<span class="rv-v no">চলে না</span>` : "";
       return `<div class="rv${x.mine ? " mine" : ""}">
         <div class="rv-top">
-          <b>${esc(x.name) || "একজন যাত্রী"}</b>${x.mine ? ' <span class="rv-me">আপনি</span>' : ""}
+          <b>${clean(x.name) || "একজন যাত্রী"}</b>${x.mine ? ' <span class="rv-me">আপনি</span>' : ""}
           ${vote}
           <span class="rv-when">${when}</span>
         </div>
         ${stars ? `<div class="rv-stars">${stars}</div>` : ""}
-        <p>${esc(x.text)}</p>
+        <p>${clean(x.text)}</p>
       </div>`;
     }).join("");
 }
@@ -999,16 +1040,27 @@ async function saveVote() {
     return;
   }
 
+  // রিভিউতে গালি থাকলে লেখাটা আটকাই না — অভিযোগটা আসল, রাগটাও আসল।
+  // শুধু গালিটুকু **** হয়ে জমা পড়ে। (বাস যোগ করার বেলায় উল্টো —
+  // ওখানে নাম স্থায়ী, তাই একেবারে আটকে দেওয়া হয়।)
+  const nameRaw = $("#voteName").value.trim();
+  const masked = window.BadWords
+    ? { text: BadWords.mask(text), name: BadWords.mask(nameRaw) }
+    : { text, name: nameRaw };
+  const wasMasked = masked.text !== text || masked.name !== nameRaw;
+
   btn.disabled = true;
   btn.textContent = "জমা হচ্ছে…";
   try {
     await Community.submit(voteFor.k, {
       vote: voteDraft.vote,
       rating: voteDraft.rating,
-      text,
-      name: $("#voteName").value.trim(),
+      text: masked.text,
+      name: masked.name,
     });
-    msg.textContent = "ধন্যবাদ! আপনার মত সবাই দেখতে পাবে।";
+    msg.textContent = wasMasked
+      ? "ধন্যবাদ! আপনার মত জমা হয়েছে — কিছু শব্দ ঢেকে দেওয়া হয়েছে।"
+      : "ধন্যবাদ! আপনার মত সবাই দেখতে পাবে।";
     msg.className = "vote-msg good";
     btn.textContent = "জমা হয়েছে ✓";
     // জমা হয়ে গেলে জানালাটা নিজেই বন্ধ হয়ে যাক। লেখাটা বক্সে পড়ে থাকলে
@@ -1023,6 +1075,351 @@ async function saveVote() {
     msg.className = "vote-msg bad";
     btn.disabled = false;
     btn.textContent = "আবার চেষ্টা করুন";
+  }
+}
+
+/* ═══════════ নতুন বাস যোগ করা ও যাচাই ═══════════
+
+   স্টপেজ এক এক করে টাইপ করানো হয় না — ফোনে কষ্ট, আর বানান ভুল হলে
+   ডেটাও নষ্ট। বদলে দুই প্রান্ত নিলে ঐ পথে এখন যত রকম স্টপেজ-ক্রম চালু
+   আছে সব দেখাই; ব্যবহারকারী একটা বেছে নেন। ফলে নতুন বাসের স্টপেজগুলো
+   আগে থেকেই চেনা — দূরত্ব, ভাড়া, ম্যাপ সব সাথে সাথে কাজ করে।
+
+   যাচাই: প্রস্তাবিত বাস সরাসরি সাইটে ঢোকে না। কেউ ঐ পথে খোঁজ করলে
+   তাকে জিজ্ঞেস করা হয় "এই বাসটা চেনেন?" — ১০ জন চিনি বললে বাসটা
+   নিজে থেকেই তালিকায় ঢুকে যায়, আর কাউকে আর জিজ্ঞেস করা হয় না।  */
+
+let addPaths = [];      // এখন যেসব পথ দেখানো হচ্ছে
+let addPick = -1;       // কোনটা বেছে নেওয়া হয়েছে
+let pendingList = [];   // যাচাইয়ের অপেক্ষায় থাকা প্রস্তাব
+let myPropVotes = {};   // আমি কোনটায় কী ভোট দিয়েছি
+let askedThisSearch = null;
+
+/* দুই স্টপেজের মাঝে যত আলাদা স্টপেজ-ক্রম আছে, সব বের করি।
+   একই ক্রম অনেক বাসে থাকে — এক করে দেখাই, কয়টা বাস চলে তা সহ। */
+function pathsBetween(from, to) {
+  const byShape = new Map();
+  for (const r of ROUTES) {
+    const i = r.s.indexOf(from), j = r.s.indexOf(to);
+    if (i < 0 || j < 0 || i === j) continue;
+    const step = i < j ? 1 : -1;
+    const stops = [];
+    for (let k = i; k !== j + step; k += step) stops.push(r.s[k]);
+    const km = Math.abs(r.km[j] - r.km[i]);
+    const shape = stops.join(",");
+    const cur = byShape.get(shape);
+    if (cur) cur.buses.push(r.bn);
+    else byShape.set(shape, { stops, km, buses: [r.bn] });
+  }
+  return [...byShape.values()].sort((a, b) => b.buses.length - a.buses.length || a.km - b.km);
+}
+
+/* ─────────── একই বাস দুইবার ঢুকছে কি না ───────────
+
+   হুবহু নাম মেলানো যথেষ্ট নয়। ঢাকার বাসের নামে "বাস", "পরিবহন",
+   "সার্ভিস", "লিমিটেড" — এগুলো যোগ হয়, বাদ পড়ে, জায়গা বদলায়। তাই
+   "বিকল্প অটো সার্ভিস" লিখলে "বিকল্প বাস অটো সার্ভিস" ধরা পড়ত না,
+   আর তালিকায় একই বাস দুইবার বসে যেত।
+
+   বদলে যা করি: নামটাকে শব্দে ভাঙি, সাধারণ শব্দগুলো ফেলে দিই, বাকি
+   "আসল" শব্দগুলো মিলিয়ে দেখি। যা থাকে সেটাই বাসের পরিচয় —
+   বিকল্প+অটো, রাইদা, তুরাগ।
+
+   সাধারণ শব্দ বাদ দিলে কিছুই না থাকলে (যেমন নাম "সিটি সার্ভিস")
+   পুরো নামটাই মিলিয়ে দেখি, নইলে সব একরকম মনে হতো।
+
+   একটার শব্দগুলো অন্যটার ভেতরে পড়লেই "এক" ধরি না — শুধু দুই পাশের
+   আসল শব্দ হুবহু মিললে। কারণ ঢাকায় "সুপার", "শুভেচ্ছা", "এক্সপ্রেস"
+   অনেক আলাদা কোম্পানির নামেই আছে; ভেতরে-পড়া দেখলে "সুপার বাস"-এর
+   কারণে "অনাবিল সুপার", "পল্লবী সুপার বাস" — সবই আটকে যেত। ভুল করে
+   একটা ঢুকে পড়া, ভুল করে একটা আটকে দেওয়ার চেয়ে ভালো: ঢোকার পথে
+   ১০ জনের যাচাই তো আছেই।  */
+const FILLER = new Set(["বাস", "bus", "পরিবহন", "পরিবহণ", "poribohon", "paribahan",
+  "সার্ভিস", "service", "services", "লিমিটেড", "limited", "ltd",
+  "কোম্পানি", "company", "co", "প্রাইভেট", "private", "pvt"].map(fold));
+
+function coreWords(s) {
+  const w = String(s).split(/[\s,\-–—/]+/).map(fold).filter(Boolean);
+  const core = w.filter((x) => !FILLER.has(x));
+  return core.length ? core : w;
+}
+
+/* স্বরধ্বনি ফেলে দিলে যা থাকে। বাংলা আর ইংরেজি বানানে স্বরধ্বনিই
+   সবচেয়ে বেশি হেরফের হয় — "বিকল্প" → bikolp, "Bikalpa" → bikalpa;
+   ব্যঞ্জনগুলো (bklp) দুইদিকেই এক।
+
+   সংখ্যা রেখে দিই: "৪নং বাস" আর "৬নং বাস" আলাদা বাস, ওখানে সংখ্যাটাই
+   পুরো পরিচয়। আর ছোট কঙ্কাল (৩ অক্ষরের কম) মেলাই না — "ইটিসি" আর
+   "ইতিহাস" দুইটাই "ts" হয়ে এক হয়ে যেত। */
+const skel = (w) => {
+  const k = w.replace(/[aeiou]/g, "");
+  return k.replace(/[0-9]/g, "").length >= 3 ? k : w;
+};
+
+function sameBus(a, b) {
+  if (fold(a) === fold(b)) return true;
+  const A = coreWords(a), B = coreWords(b);
+  if (!A.length) return false;
+
+  /* পুরো নামটাকে এক করে কঙ্কাল মিলিয়ে দেখি — শব্দ ভাগাভাগি আলাদা
+     হলেও ("অটো" / "Auto", "ভিআইপি" / "VIP") এতে ধরা পড়ে। যথেষ্ট লম্বা
+     হলে তবেই, নইলে ছোট নামে যা-তা মিলে যেত। */
+  const joint = (w) => skel(w.join(""));
+  const ja = joint(A), jb = joint(B);
+  if (ja === jb && ja.replace(/[0-9]/g, "").length >= 5) return true;
+
+  if (A.length !== B.length) return false;
+  const eq = (f) => {
+    const S = new Set(B.map(f));
+    return A.map(f).every((x) => S.has(x));
+  };
+  return eq((x) => x) || eq(skel);
+}
+
+let addShown = "";      // এখন কোন জোড়ার পথ দেখানো হচ্ছে
+
+function renderAddPaths(from, to) {
+  const box = $("#addBody");
+
+  /* একই দুই প্রান্ত নিয়ে আবার ডাকা হলে কিছু করি না।
+
+     না হলে যা হতো: কেউ "কোথায় থামে" ঘরে লিখে সাজেশন বেছে নিলেন,
+     তারপর নিচের কোনো পথে চাপ দিলেন — ওই চাপেই ইনপুট থেকে ফোকাস সরে
+     ব্রাউজার দেরিতে change ইভেন্ট ছাড়ে, তালিকা নতুন করে আঁকা হয়, আর
+     তাঁর মাত্র বেছে নেওয়া পথটা মুছে যায়। ব্যবহারকারীর চোখে বাছাইটা
+     "লাগছেই না"। */
+  const pair = `${from}|${to}`;
+  if (pair === addShown) return;
+  addShown = pair;
+  addPick = -1;
+
+  if (!Community.configured()) {
+    box.innerHTML = `<div class="empty"><p class="empty-big">এই অংশটা এখনো চালু হয়নি</p>
+      <p>নতুন বাস জমা রাখতে Firebase লাগে।</p></div>`;
+    return;
+  }
+  if (from == null || to == null) {
+    box.innerHTML = `<div class="empty">
+      <p class="empty-big">দুই প্রান্ত দিন</p>
+      <p>বাসটা কোথা থেকে ছেড়ে কোথায় গিয়ে থামে — দুইটা দিলেই ঐ পথের
+         সব রুট দেখাব, একটা বেছে নিলেই হবে।</p></div>`;
+    return;
+  }
+  if (from === to) {
+    box.innerHTML = `<div class="empty"><p class="empty-big">দুই প্রান্ত একই</p>
+      <p>আলাদা দুইটা জায়গা দিন।</p></div>`;
+    return;
+  }
+
+  addPaths = pathsBetween(from, to);
+  const A = STOPS[from].bn, B = STOPS[to].bn;
+
+  if (!addPaths.length) {
+    box.innerHTML = `<div class="empty">
+      <p class="empty-big">এই পথে কোনো রুট জানা নেই</p>
+      <p><b>${esc(A)}</b> থেকে <b>${esc(B)}</b> — এই দুই জায়গার মাঝে চলে এমন
+         কোনো বাস তালিকায় নেই, তাই স্টপেজের ক্রমটাও জানি না। কাছাকাছি বড়
+         কোনো মোড় দিয়ে চেষ্টা করে দেখুন।</p></div>`;
+    return;
+  }
+
+  box.innerHTML =
+    `<div class="res-head"><h2>${esc(A)} → ${esc(B)}</h2>
+       <span class="count">${toBn(addPaths.length)} রকম পথ</span></div>
+     <div class="note">আপনার বাসটা কোন পথে যায়? মিলিয়ে একটা বেছে নিন।</div>` +
+    addPaths.map((p, n) => `
+      <div class="card path-card" data-path="${n}">
+        <div class="card-top">
+          <div>
+            <div class="card-name">${toBn(p.stops.length)} স্টপেজ</div>
+            <div class="card-en">${toBn(p.buses.length)}টি বাস এই পথে চলে</div>
+          </div>
+          <div class="card-fare">
+            <div class="fare-big">৳${toBn(fare(p.km))}</div>
+            <div class="fare-sub">${kmTxt(p.km)}</div>
+          </div>
+        </div>
+        <div class="card-path">${p.stops.map((s) => esc(STOPS[s].bn)).join(" · ")}</div>
+        <div class="card-en" style="margin-top:6px">যেমন:
+          ${p.buses.slice(0, 3).map(esc).join(", ")}${p.buses.length > 3 ? " …" : ""}</div>
+      </div>`).join("") +
+    `<div id="addFoot"></div>`;
+  paintAddFoot();
+}
+
+function paintAddFoot() {
+  $$(".path-card").forEach((c, n) => c.classList.toggle("is-on", n === addPick));
+  const foot = $("#addFoot");
+  if (!foot) return;
+  if (addPick < 0) {
+    foot.innerHTML = `<p class="tiny-note">উপর থেকে একটা পথ বেছে নিন —
+      না বাছলে যোগ করা যাবে না।</p>`;
+    return;
+  }
+  const p = addPaths[addPick];
+  foot.innerHTML = `
+    <div class="note">বাছাই করা পথ: <b>${toBn(p.stops.length)} স্টপেজ</b>,
+      ${kmTxt(p.km)}, ভাড়া ৳${toBn(fare(p.km))}</div>
+    <textarea id="addNote" maxlength="200" rows="2"
+      placeholder="কিছু বলার থাকলে — কোন সময়ে চলে, সিটিং না লোকাল (ইচ্ছা হলে)"></textarea>
+    <button class="go" id="addSubmit" type="button">প্রস্তাব জমা দিন</button>
+    <p class="vote-msg" id="addMsg"></p>`;
+}
+
+async function submitProposal() {
+  const msg = $("#addMsg"), btn = $("#addSubmit");
+  const name = $("#addName").value.trim();
+  const note = ($("#addNote") && $("#addNote").value.trim()) || "";
+  const bad = (t) => { msg.textContent = t; msg.className = "vote-msg bad"; };
+
+  if (name.length < 2) return bad("বাসের নামটা লিখুন।");
+  if (addPick < 0) return bad("কোন পথে যায় সেটা বেছে নিন।");
+  // গালি থাকলে ঢুকতে দেওয়া যায় না — নাম তালিকায় স্থায়ীভাবে বসে,
+  // ওখানে ঢেকে রাখারও মানে হয় না
+  if (window.BadWords && (BadWords.has(name) || BadWords.has(note)))
+    return bad("নামে বা মন্তব্যে আপত্তিকর শব্দ আছে — বদলে আবার চেষ্টা করুন।");
+  const dup = ROUTES.find((r) => sameBus(r.bn, name));
+  if (dup) return bad(`"${dup.bn}" নামে বাস তালিকায় আগেই আছে।`);
+
+  btn.disabled = true; btn.textContent = "জমা হচ্ছে…";
+  try {
+    await Community.propose({
+      bn: name, en: "",
+      stops: addPaths[addPick].stops.map((s) => STOPS[s].en),
+      note,
+    });
+    $("#addBody").innerHTML = `<div class="empty">
+      <p class="empty-big">✅ প্রস্তাব জমা হয়েছে</p>
+      <p><b>${esc(name)}</b> এখনই সাইটে যোগ হয়নি। এই পথে কেউ খোঁজ করলে
+         তাকে জিজ্ঞেস করা হবে বাসটা চেনে কি না —
+         <b>${toBn(Community.APPROVE_AT)} জন</b> চিনি বললে নিজে থেকেই
+         তালিকায় ঢুকে যাবে।</p></div>`;
+    $("#addName").value = "";
+    // সফল হলে বাক্সের ভেতরটা বদলে গেছে; আবার একই জোড়া দিলে যেন
+    // তালিকাটা ফিরে আসে
+    addShown = ""; addPick = -1;
+    loadPending();
+  } catch (e) {
+    console.warn("প্রস্তাব জমা দেওয়া গেল না:", e);
+    bad("জমা দেওয়া গেল না। ইন্টারনেট দেখে আবার চেষ্টা করুন।");
+    btn.disabled = false; btn.textContent = "প্রস্তাব জমা দিন";
+  }
+}
+
+/* ─────────── যাচাইয়ের পপআপ ───────────
+   কেউ এমন পথে খোঁজ করলে যেখানে কোনো প্রস্তাবিত বাস চলে, তাকে
+   জিজ্ঞেস করি। যে একবার মত দিয়েছে তাকে আর জিজ্ঞেস করা হয় না। */
+
+async function loadPending() {
+  if (!Community.configured()) return;
+  try {
+    pendingList = await Community.proposals("pending", 30);
+    myPropVotes = await Community.myProposalVotes(pendingList.map((p) => p.id));
+  } catch (e) {
+    console.warn("প্রস্তাব আনা গেল না:", e.message);
+  }
+}
+
+/** এই যাত্রার সাথে মেলে এমন কোনো প্রস্তাব, যাতে আমি ভোট দেইনি */
+function pendingFor(fromId, toId) {
+  const a = STOPS[fromId] && STOPS[fromId].en, b = STOPS[toId] && STOPS[toId].en;
+  if (!a || !b) return null;
+  return pendingList.find((p) =>
+    !myPropVotes[p.id] && p.by !== Community.uid &&
+    Array.isArray(p.stops) && p.stops.includes(a) && p.stops.includes(b)) || null;
+}
+
+/** ইংরেজি নামে জমা থাকা স্টপেজগুলো বাংলায় ফিরিয়ে দিই */
+function bnStops(list) {
+  return (list || []).map((en) => {
+    const st = STOPS.find((s) => s.en === en);
+    return st ? st.bn : en;
+  }).join(" · ");
+}
+
+function askAboutPending(fromId, toId) {
+  // অন্য কোনো জানালা খোলা থাকলে তার উপরে চাপাচাপি করি না
+  if (!$("#voteSheet").hidden || !$("#chartSheet").hidden) return;
+  const p = pendingFor(fromId, toId);
+  if (!p || askedThisSearch === p.id) return;
+  askedThisSearch = p.id;
+  const left = Math.max(0, Community.APPROVE_AT - ((p.yes || 0) - (p.no || 0)));
+  $("#askTitle").textContent = p.bn;
+  $("#askSub").textContent =
+    `কেউ একজন এই পথে "${p.bn}" নামে একটা বাস যোগ করার প্রস্তাব দিয়েছেন।`;
+  $("#askPath").textContent = bnStops(p.stops);
+  $("#askLeft").textContent = left
+    ? `আর ${toBn(left)} জন চিনি বললে বাসটা তালিকায় যোগ হয়ে যাবে।`
+    : "যথেষ্ট মানুষ চিনেছেন — যোগ হয়ে যাচ্ছে।";
+  $("#askSheet").dataset.id = p.id;
+  $("#askMsg").textContent = "";
+  $("#askSheet").hidden = false;
+}
+
+function closeAsk() {
+  $("#askSheet").hidden = true;
+}
+
+async function answerAsk(v) {
+  const id = $("#askSheet").dataset.id;
+  if (!id) return;
+  $("#askMsg").textContent = "জমা হচ্ছে…";
+  try {
+    const nowLive = await Community.voteProposal(id, v);
+    myPropVotes[id] = v;
+    const p = pendingList.find((x) => x.id === id);
+    if (p) { if (v === "yes") p.yes = (p.yes || 0) + 1; else p.no = (p.no || 0) + 1; }
+    $("#askMsg").textContent = nowLive
+      ? "ধন্যবাদ! যথেষ্ট মানুষ চিনেছেন — বাসটা এখন তালিকায় যোগ হলো।"
+      : "ধন্যবাদ, জানানোর জন্য।";
+    if (nowLive) { mergeApproved(); if (lastRun) lastRun(); }
+    setTimeout(closeAsk, 1200);
+  } catch (e) {
+    console.warn("ভোট জমা দেওয়া গেল না:", e);
+    $("#askMsg").textContent = "জমা দেওয়া গেল না — ইন্টারনেট দেখে আবার চেষ্টা করুন।";
+  }
+}
+
+/* ─────────── অনুমোদিত বাস মূল তালিকায় মেশানো ───────────
+   স্টপেজ চেনানো হয় ইংরেজি নামে, সূচকে নয় — ডেটা আবার তৈরি করলে
+   সূচক বদলায়, নাম বদলায় না। দূরত্ব এখানেই হিসাব করি (সরলরেখা ×
+   ১.১০), ঠিক যেভাবে পাইপলাইনে করা হয়। */
+const CIRCUITY = 1.10;
+let mergedCount = 0;
+
+function straightKm(a, b) {
+  const R = 6371, rad = Math.PI / 180;
+  const p1 = a.lat * rad, p2 = b.lat * rad;
+  const dp = p2 - p1, dl = (b.lon - a.lon) * rad;
+  const h = Math.sin(dp / 2) ** 2 + Math.cos(p1) * Math.cos(p2) * Math.sin(dl / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+
+function mergeApproved() {
+  if (!window.Community) return;
+  // আগেরবার মেশানোগুলো সরিয়ে নতুন করে বসাই
+  if (mergedCount) ROUTES.length -= mergedCount;
+  mergedCount = 0;
+
+  const byEn = {};
+  STOPS.forEach((s, i) => { byEn[s.en] = i; });
+
+  for (const b of Community.approvedBuses()) {
+    const ids = (b.stops || []).map((en) => byEn[en]).filter((v) => v != null);
+    if (ids.length < 3) continue;
+    if (ROUTES.some((r) => r.k === "u_" + b.id)) continue;
+    const km = [0];
+    for (let i = 1; i < ids.length; i++)
+      km.push(+(km[i - 1] + straightKm(STOPS[ids[i - 1]], STOPS[ids[i]]) * CIRCUITY).toFixed(2));
+    ROUTES.push({
+      en: b.bn, bn: b.bn, k: "u_" + b.id,
+      s: ids, km, user: true,
+    });
+    mergedCount++;
+  }
+  if (mergedCount) {
+    STOP_ROUTES = STOPS.map(() => []);
+    ROUTES.forEach((r, i) => new Set(r.s).forEach((s) => STOP_ROUTES[s].push(i)));
   }
 }
 
@@ -1067,8 +1464,8 @@ async function renderReports() {
             <b>${hit ? esc(hit.r.bn) : esc(x.bus)}</b> ${vote} ${stars}
             <span class="rv-when">${when}</span>
           </div>
-          ${x.text ? `<p class="rv-text">${esc(x.text)}</p>` : ""}
-          <div class="rv-by">— ${esc(x.name) || "একজন যাত্রী"}${x.mine ? " (আপনি)" : ""}</div>
+          ${x.text ? `<p class="rv-text">${clean(x.text)}</p>` : ""}
+          <div class="rv-by">— ${clean(x.name) || "একজন যাত্রী"}${x.mine ? " (আপনি)" : ""}</div>
         </div>`;
       }).join("");
   } catch (e) {
@@ -1192,8 +1589,43 @@ async function boot() {
       return;
     }
     if (e.target.id === "backBtn") { renderBusList($("#busSearch").value); return; }
+    if (e.target.id === "toggleHidden") {
+      showHidden = !showHidden;
+      renderBusList($("#busSearch").value);
+      return;
+    }
     const card = e.target.closest(".card");
     if (card && card.dataset.route != null) showRouteDetail(+card.dataset.route, $("#busList"));
+  });
+
+  // ট্যাব ৪ — নতুন বাস যোগ করা
+  const addF = attachSuggest($('.field[data-role="addFrom"]'), () => refreshAdd());
+  const addT = attachSuggest($('.field[data-role="addTo"]'), () => refreshAdd());
+  const refreshAdd = () => renderAddPaths(addF.value, addT.value);
+  ["addFrom", "addTo"].forEach((idn) =>
+    $("#" + idn).addEventListener("change", () => setTimeout(refreshAdd, 40)));
+  $('.field[data-role="addFrom"] .suggest')
+    .addEventListener("mouseup", () => setTimeout(refreshAdd, 60));
+  $('.field[data-role="addTo"] .suggest')
+    .addEventListener("mouseup", () => setTimeout(refreshAdd, 60));
+  $("#addBody").addEventListener("click", (e) => {
+    if (e.target.id === "addSubmit") { submitProposal(); return; }
+    const card = e.target.closest(".path-card");
+    if (card) { addPick = +card.dataset.path; paintAddFoot(); }
+  });
+
+  // যাচাইয়ের জানালা
+  $("#askClose").addEventListener("click", closeAsk);
+  $("#askSheet").addEventListener("click", (e) => {
+    if (e.target.id === "askSheet") closeAsk();
+  });
+  $("#askBtns").addEventListener("click", (e) => {
+    const b = e.target.closest(".vbtn");
+    if (!b) return;
+    // "জানি না" মানে মত নেই — গোনাগুনতিতে যায় না, শুধু জানালাটা বন্ধ হয়।
+    // তবে এই খোঁজায় আর জিজ্ঞেস করা হয় না, বিরক্তিকর হয়ে যেত।
+    if (b.dataset.v === "skip") { closeAsk(); return; }
+    answerAsk(b.dataset.v);
   });
 
   // চার্টের জানালা বন্ধ করা
@@ -1203,7 +1635,8 @@ async function boot() {
   });
   document.addEventListener("keydown", (e) => {
     if (e.key !== "Escape") return;
-    if (!$("#voteSheet").hidden) closeVote();
+    if (!$("#askSheet").hidden) closeAsk();
+    else if (!$("#voteSheet").hidden) closeVote();
     else if (!$("#chartSheet").hidden) closeChart();
   });
 
@@ -1250,7 +1683,15 @@ async function boot() {
     if (lastRun) lastRun();
   });
   Community.loadMine();
-  Community.loadSummary();
+  // অনুমোদিত বাসগুলো তালিকায় মেশানো — গোনাগুনতি আসার সাথে সাথেই,
+  // কারণ অনুমোদনের খবরটা ঐ এক ডকুমেন্টেই থাকে (বাড়তি read লাগে না)
+  Community.loadSummary().then(() => {
+    mergeApproved();
+    renderBusList($("#busSearch").value);
+    if (lastRun) lastRun();
+  });
+  // যাচাইয়ের অপেক্ষায় থাকা প্রস্তাব — পেছনে আসুক, পাতা খোলা আটকে নয়
+  loadPending();
 
   // ট্যাব বদল
   $$(".tab").forEach((t) => t.addEventListener("click", () => {

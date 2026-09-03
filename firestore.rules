@@ -44,10 +44,66 @@ service cloud.firestore {
       allow read: if true;
     }
 
+    // ── নতুন বাসের প্রস্তাব ──
+    // যে কেউ প্রস্তাব দিতে পারে, কিন্তু সরাসরি সাইটে ঢোকে না —
+    // status "pending" হয়ে বসে থাকে যতক্ষণ না অ্যাডমিন ছাড়েন।
+    match /proposals/{id} {
+      allow read: if true;
+
+      allow create: if request.auth != null
+        && request.resource.data.by == request.auth.uid
+        && request.resource.data.status == "pending"
+        && request.resource.data.yes == 0
+        && request.resource.data.no == 0
+        && validProposal(request.resource.data);
+
+      // সাধারণ ব্যবহারকারী শুধু গোনাগুনতি বদলাতে পারে। সাথে status
+      // "pending" থেকে "approved" হতে পারে, কিন্তু তখনই — যখন যথেষ্ট
+      // মানুষ চিনি বলেছেন (yes − no >= ১০)। বাসের নাম বা স্টপেজ
+      // এডিট করা যায় না, আর "rejected" করা শুধু অ্যাডমিনের কাজ।
+      allow update: if isAdmin() || (request.auth != null && (
+           request.resource.data.diff(resource.data).affectedKeys()
+             .hasOnly(['yes', 'no'])
+        || (request.resource.data.diff(resource.data).affectedKeys()
+              .hasOnly(['yes', 'no', 'status'])
+            && resource.data.status == 'pending'
+            && request.resource.data.status == 'approved'
+            && request.resource.data.yes - request.resource.data.no >= 10)
+      )
+      && request.resource.data.yes is int && request.resource.data.yes >= 0
+      && request.resource.data.no is int && request.resource.data.no >= 0);
+
+      allow delete: if isAdmin();
+    }
+
+    // প্রস্তাবে কে কী ভোট দিয়েছে — ডকুমেন্টের আইডি uid, তাই এক ফোন এক ভোট
+    match /proposals/{id}/votes/{uid} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.uid == uid
+        && request.resource.data.v in ['yes', 'no'];
+    }
+
     // উপরে যা লেখা নেই, সব বন্ধ
     match /{document=**} {
       allow read, write: if false;
     }
+  }
+
+  // অ্যাডমিন কে — Google লগইনের ইমেইল দিয়ে চেনা হয়। সাধারণ
+  // ব্যবহারকারীরা anonymous, তাঁদের কোনো ইমেইল থাকে না, তাই এই শর্ত
+  // তাঁদের ক্ষেত্রে কখনোই সত্য হয় না।
+  function isAdmin() {
+    return request.auth != null
+      && request.auth.token.email_verified == true
+      && request.auth.token.email == 'itsrokonujjaman@gmail.com';
+  }
+
+  function validProposal(d) {
+    return d.keys().hasOnly(['bn', 'en', 'stops', 'note', 'by', 'at', 'status', 'yes', 'no'])
+      && d.bn is string && d.bn.size() >= 2 && d.bn.size() <= 40
+      && d.en is string && d.en.size() <= 40
+      && d.note is string && d.note.size() <= 200
+      && d.stops is list && d.stops.size() >= 3 && d.stops.size() <= 60;
   }
 
   function validReview(d) {

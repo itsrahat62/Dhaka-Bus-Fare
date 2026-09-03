@@ -1,7 +1,18 @@
 {
   "_comment": "\"সবার রিপোর্ট\" পাতায় সব বাসের রিভিউ একসাথে সময় ধরে সাজানো হয় — collectionGroup('reviews') + orderBy('at','desc')। এক ফিল্ডের উপর সাজালে Firestore আলাদা composite index নেয় না ('this index is not necessary' বলে ফেরত দেয়); বদলে ওই ফিল্ডের single-field index-টাকে collection-group scope দিতে হয়। সেটাই fieldOverrides-এ করা।",
 
-  "indexes": [],
+  "_comment2": "নতুন বাসের প্রস্তাব আনা হয় status ধরে ছেঁকে, সময় ধরে সাজিয়ে — where('status','==','pending') + orderBy('at','desc')। দুই ফিল্ড মিলে বলে এটার জন্য সত্যিই composite index লাগে।",
+
+  "indexes": [
+    {
+      "collectionGroup": "proposals",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "status", "order": "ASCENDING" },
+        { "fieldPath": "at", "order": "DESCENDING" }
+      ]
+    }
+  ],
 
   "fieldOverrides": [
     {
