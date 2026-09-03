@@ -177,7 +177,69 @@ def main():
     for r in out_routes:
         r["s"] = [remap[i] for i in r["s"]]
 
+    # ৪. বিআরটিএ-র চার্টগুলো নিজেরাই — যেকোনো দুই স্টপেজের হুবহু সরকারি
+    #    ভাড়া বলার জন্য। চার্টের কিলোমিটার থেকেই ছকের ভাড়া বেরোয়:
+    #    ভাড়া = max(সর্বনিম্ন, round(|কিমি_খ − কিমি_ক| × হার))
+    resolved = load(os.path.join(ROOT, "data", "chart-resolved.json"), {}) or {}
+    index = {p["page"]: p for p in
+             (load(os.path.join(ROOT, "data", "chart-index.json"), {}) or {}).get("pages", [])}
+    stop_index = dict(stop_ids)
+    remap_stop = {old: new for old, new in remap.items()}
+
+    out_charts, bad_charts = [], []
+    for page, rows in sorted(resolved.items()):
+        meta = index.get(page)
+        if not meta:
+            continue
+        pts = []
+        for en, chart_name, km in rows:
+            sid = None
+            if en in stop_index and stop_index[en] in remap_stop:
+                sid = remap_stop[stop_index[en]]
+            pts.append([sid, chart_name, km])
+        if sum(1 for p in pts if p[0] is not None) < 2:
+            continue
+
+        # পাহারা: চার্টের কোনো স্টপেজ ভুল জায়গায় বসে গেলে ভাড়া কয়েকগুণ
+        # ভুল হয়ে যায়। যেমন "দিয়াবাড়ী" — মিরপুরেরটা, নাকি উত্তরারটা?
+        # ধরার উপায়: চার্টে লেখা দূরত্ব সরলরেখার দূরত্বের চেয়ে কম হতে
+        # পারে না (রাস্তা সরলরেখার চেয়ে ছোট হয় না)। যে স্টপেজ তার
+        # দুই পাশের প্রতিবেশীর সাথেই বেমানান, সেটাই দোষী — পুরো চার্ট
+        # বাদ না দিয়ে শুধু ওই স্টপেজটা বাদ দিই, বাকিটা কাজে লাগে।
+        def fits(i, j):
+            """pts[i] আর pts[j] — চার্টের দূরত্ব বাস্তবসম্মত কি না।"""
+            if pts[i][0] is None or pts[j][0] is None:
+                return True     # আগেই বাদ পড়েছে, যাচাইয়ের কিছু নেই
+            gap = abs(pts[j][2] - pts[i][2])
+            crow = straight_km(coords[stops[pts[i][0]]["en"]],
+                               coords[stops[pts[j][0]]["en"]])
+            return crow <= gap + 2.5
+
+        known = [i for i, p in enumerate(pts) if p[0] is not None]
+        for n, i in enumerate(known):
+            left = known[n - 1] if n > 0 else None
+            right = known[n + 1] if n + 1 < len(known) else None
+            ok_left = fits(left, i) if left is not None else None
+            ok_right = fits(i, right) if right is not None else None
+            checks = [c for c in (ok_left, ok_right) if c is not None]
+            if checks and not any(checks):
+                bad_charts.append((page, pts[i][1]))
+                pts[i][0] = None
+
+        if sum(1 for p in pts if p[0] is not None) < 2:
+            continue
+
+        out_charts.append({
+            "p": page,
+            "no": meta.get("no", ""),
+            "f": meta.get("from", ""),
+            "t": meta.get("to", ""),
+            "km": meta.get("km"),
+            "s": pts,
+        })
+
     data = {
+        "charts": out_charts,
         "meta": {
             **FARE,
             "generated": datetime.date.today().isoformat(),
@@ -199,6 +261,13 @@ def main():
     print(f"ফাইল   : {size:.0f} KB → site/data/data.json")
     if trimmed[1]:
         print(f"ঘুরপথ  : {trimmed[0]:.0f} / {trimmed[1]:.0f} কিমি ছাঁটা হলো ({trimmed[0] / trimmed[1] * 100:.1f}%)")
+
+    print(f"চার্টের ছক : {len(out_charts)} / {len(resolved)} — যেকোনো দুই স্টপেজের হুবহু সরকারি ভাড়া")
+    if bad_charts:
+        import collections as _c
+        cnt = _c.Counter(why for _, why in bad_charts)
+        print(f"সন্দেহে বাদ পড়া স্টপেজ: {len(bad_charts)}টি — " +
+              ", ".join(f"{w}({n})" for w, n in cnt.most_common(8)))
 
     with_chart = sum(1 for x in out_routes if "chart" in x)
     print(f"চার্ট   : {with_chart} রুটে সরকারি ভাড়ার তালিকা যুক্ত")

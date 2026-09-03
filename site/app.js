@@ -159,6 +159,35 @@ function searchStops(q, limit = 8) {
 
 /* ───────────────────────── ভাড়ার হিসাব ───────────────────────── */
 
+/* বিআরটিএ-র চার্ট থেকে হুবহু সরকারি ভাড়া।
+
+   চার্টে প্রতিটা স্টপেজের পাশে শুরু থেকে কত কিলোমিটার তা লেখা থাকে, আর
+   ছকের ভাড়া ওখান থেকেই বানানো — চার্টের ১০টা ঘর মিলিয়ে দেখা হয়েছে।
+   তাই দুই স্টপেজের কিলোমিটার বিয়োগ করলেই ওই চার্টের ভাড়া পাওয়া যায়।
+
+   একই দুই জায়গা একাধিক রুটে পড়তে পারে, আর রুট ভেদে পথের দৈর্ঘ্য আলাদা।
+   তাই সবগুলোই ফেরত দিই — কমেরটা আগে। */
+function officialFares(fromId, toId) {
+  if (!DATA.charts) return [];
+  const out = [];
+  for (const c of DATA.charts) {
+    let a = null, b = null;
+    for (const [sid, , km] of c.s) {
+      if (sid === fromId) a = km;
+      else if (sid === toId) b = km;
+    }
+    if (a == null || b == null) continue;
+    const km = Math.abs(b - a);
+    out.push({
+      page: c.p, no: c.no, from: c.f, to: c.t, km,
+      fare: Math.max(DATA.meta.bus_min, Math.round(km * DATA.meta.bus_rate)),
+      mini: Math.max(DATA.meta.mini_min, Math.round(km * DATA.meta.mini_rate)),
+    });
+  }
+  out.sort((x, y) => x.fare - y.fare || x.km - y.km);
+  return out;
+}
+
 function fare(km, mini = false) {
   const m = DATA.meta;
   const rate = mini ? m.mini_rate : m.bus_rate;
@@ -498,6 +527,43 @@ const complainBox = () => `
     </div>
   </div>`;
 
+/* এই দুই জায়গার জন্য সরকারি চার্টে যা যা লেখা আছে, সবই দেখাই।
+   এক জোড়া জায়গা একাধিক রুটে পড়ে, আর রুট ভেদে পথ আলাদা — তাই
+   ভাড়াও আলাদা। কোনটা আপনার বাসের, সেটা চার্ট খুলে মিলিয়ে নিন। */
+function officialBlock(from, to) {
+  const rows = officialFares(from, to);
+  if (!rows.length) {
+    return `<div class="note note-plain">এই দুই জায়গার ভাড়া বিআরটিএ-র প্রকাশিত
+      কোনো চার্টে সরাসরি পাওয়া যায়নি, তাই নিচের ভাড়া কিলোমিটার-হারে হিসাব করা।</div>`;
+  }
+  const same = rows.every((r) => r.fare === rows[0].fare);
+  const range = same ? `৳${toBn(rows[0].fare)}`
+    : `৳${toBn(rows[0].fare)} – ৳${toBn(rows[rows.length - 1].fare)}`;
+
+  return `<div class="official">
+    <div class="off-head">
+      <div>
+        <span class="off-tag">সরকারি ভাড়া</span>
+        <h3>${range}</h3>
+      </div>
+      <p>বিআরটিএ-র প্রকাশিত ভাড়ার চার্ট থেকে${
+        same ? "" : ` — ${toBn(rows.length)}টি রুটে পথের দৈর্ঘ্য আলাদা, তাই ভাড়াও আলাদা`}</p>
+    </div>
+    <div class="off-list">
+      ${rows.map((r) => `
+        <button class="off-row" data-page="${r.page}" data-no="${esc(r.no)}"
+                data-f="${esc(r.from)}" data-t="${esc(r.to)}">
+          <span class="off-fare">৳${toBn(r.fare)}</span>
+          <span class="off-rt">
+            <b>${esc(r.from)} ↔ ${esc(r.to)}</b>
+            <small>রুট ${esc(r.no)} · ${kmTxt(r.km)} · মিনিবাসে ৳${toBn(r.mini)}</small>
+          </span>
+          <span class="off-go">চার্ট&nbsp;›</span>
+        </button>`).join("")}
+    </div>
+  </div>`;
+}
+
 function renderFind(from, to) {
   const box = $("#results");
   const direct = findDirect(from, to);
@@ -508,13 +574,13 @@ function renderFind(from, to) {
   let html = `<div class="res-head"><h2>${A} → ${B}</h2>
     <span class="count">${direct.length ? toBn(direct.length) + "টি সরাসরি বাস" : "সরাসরি বাস নেই"}</span></div>`;
 
+  // সরকারি চার্টে এই দুই জায়গার ভাড়া লেখা আছে কিনা — থাকলে সেটাই আগে
+  html += officialBlock(from, to);
+
   if (direct.length) {
     const km = direct[0].km;
-    const withChart = direct.filter((d) => ROUTES[d.route].chart).length;
-    html += `<div class="note">সবচেয়ে কম পথ <b>${kmTxt(km)}</b> — বিআরটিএ-র হারে ভাড়া
-      <b>৳${toBn(fare(km))}</b> (মিনিবাসে ৳${toBn(fare(km, true))})।
-      ${withChart ? `এর মধ্যে <b>${toBn(withChart)}টি</b> বাসের সরকারি ভাড়ার চার্ট আছে —
-        কার্ডে <b>ভাড়া চার্ট দেখুন</b>-এ চাপ দিন।` : ""}</div>`;
+    html += `<div class="note">সবচেয়ে কম পথ <b>${kmTxt(km)}</b> — বিআরটিএ-র হারে হিসাব করলে
+      ভাড়া <b>৳${toBn(fare(km))}</b> (মিনিবাসে ৳${toBn(fare(km, true))})।</div>`;
     html += direct.slice(0, 25).map(cardDirect).join("");
   } else if (!transfer.length) {
     html += `<div class="empty"><p class="empty-big">এই দুই জায়গার মধ্যে কোনো বাস পাওয়া গেল না</p>
@@ -721,19 +787,23 @@ function showRouteDetail(ri, container, hi) {
 }
 
 /* বিআরটিএ-র অফিসিয়াল চার্ট দেখানো */
-function openChart(ri) {
-  const r = ROUTES[ri];
-  if (!r.chart) return;
-  const src = `charts/${r.chart.p}.jpg`;
-  $("#chartTitle").textContent = `${r.chart.f} ↔ ${r.chart.t}`;
-  const km = r.chart.km ? ` · মোট ${toBn(r.chart.km)} কিমি` : "";
-  $("#chartSub").textContent =
-    `বিআরটিএ রুট ${r.chart.no}${km} — ${r.bn} এই পথ দিয়েই যায়। ` +
-    `চার্টে যেকোনো দুই স্টপেজ মেলালেই সরকারি ভাড়া পাবেন।`;
+function showChart(page, title, sub) {
+  const src = `charts/${page}.jpg`;
+  $("#chartTitle").textContent = title;
+  $("#chartSub").textContent = sub;
   $("#chartImg").src = src;
   $("#chartOpen").href = src;
   $("#chartSheet").hidden = false;
   document.body.classList.add("no-scroll");
+}
+
+function openChart(ri) {
+  const r = ROUTES[ri];
+  if (!r.chart) return;
+  const km = r.chart.km ? ` · মোট ${toBn(r.chart.km)} কিমি` : "";
+  showChart(r.chart.p, `${r.chart.f} ↔ ${r.chart.t}`,
+    `বিআরটিএ রুট ${r.chart.no}${km} — ${r.bn} এই পথ দিয়েই যায়। ` +
+    `চার্টে যেকোনো দুই স্টপেজ মেলালেই সরকারি ভাড়া পাবেন।`);
 }
 
 function closeChart() {
@@ -969,6 +1039,14 @@ async function boot() {
   ["fromInput", "toInput"].forEach((idn) =>
     $("#" + idn).addEventListener("change", () => setTimeout(run, 40)));
   $("#results").addEventListener("click", (e) => {
+    // সরকারি ভাড়ার সারিতে চাপ দিলে ওই রুটের চার্ট
+    const off = e.target.closest(".off-row");
+    if (off) {
+      showChart(off.dataset.page, `${off.dataset.f} ↔ ${off.dataset.t}`,
+        `বিআরটিএ রুট ${off.dataset.no} — এই চার্টে আপনার দুই স্টপেজ খুঁজে ` +
+        `যেখানে সারি ও কলাম মেলে, সেই ঘরের সংখ্যাই সরকারি ভাড়া।`);
+      return;
+    }
     // নিচের ছোট বোতামগুলো আগে দেখি, নইলে কার্ড বাছাই হয়ে যাবে
     const act = e.target.closest(".act");
     if (act) {
